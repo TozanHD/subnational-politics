@@ -1,0 +1,933 @@
+{
+  "totalMembers": 555,
+  "overallParties": {
+    "自由民主党": {
+      "name": "自由民主党",
+      "male": 0,
+      "female": 0,
+      "total": 147,
+      "isRulingParty": true,
+      "color": "#D7033A"
+    },
+    "民主市民クラブ": {
+      "name": "民主市民クラブ",
+      "male": 0,
+      "female": 0,
+      "total": 5,
+      "isRulingParty": false,
+      "color": "#06b6d4"
+    },
+    "公明党": {
+      "name": "公明党",
+      "male": 0,
+      "female": 0,
+      "total": 54,
+      "isRulingParty": true,
+      "color": "#F55881"
+    },
+    "県民クラブ": {
+      "name": "県民クラブ",
+      "male": 0,
+      "female": 0,
+      "total": 3,
+      "isRulingParty": false,
+      "color": "#f59e0b"
+    },
+    "夢と希望あふれる栃木を創る会": {
+      "name": "夢と希望あふれる栃木を創る会",
+      "male": 0,
+      "female": 0,
+      "total": 3,
+      "isRulingParty": false,
+      "color": "#10b981"
+    },
+    "日本維新の会": {
+      "name": "日本維新の会",
+      "male": 0,
+      "female": 0,
+      "total": 5,
+      "isRulingParty": false,
+      "color": "#00b300"
+    },
+    "日本共産党": {
+      "name": "日本共産党",
+      "male": 0,
+      "female": 0,
+      "total": 27,
+      "isRulingParty": false,
+      "color": "#7957DA"
+    },
+    "つる舞う": {
+      "name": "つる舞う",
+      "male": 0,
+      "female": 0,
+      "total": 5,
+      "isRulingParty": false,
+      "color": "#06b6d4"
+    },
+    "リベラル群馬": {
+      "name": "リベラル群馬",
+      "male": 0,
+      "female": 0,
+      "total": 4,
+      "isRulingParty": false,
+      "color": "#ef4444"
+    },
+    "無所属": {
+      "name": "無所属",
+      "male": 0,
+      "female": 0,
+      "total": 25,
+      "isRulingParty": false,
+      "color": "#808080"
+    },
+    "欠員": {
+      "name": "欠員",
+      "male": 0,
+      "female": 0,
+      "total": 4,
+      "isRulingParty": false,
+      "color": "#06b6d4"
+    },
+    "国民民主党": {
+      "name": "国民民主党",
+      "male": 0,
+      "female": 0,
+      "total": 14,
+      "isRulingParty": false,
+      "color": "#F8BC00"
+    },
+    "市民ネットワーク": {
+      "name": "市民ネットワーク",
+      "male": 0,
+      "female": 0,
+      "total": 1,
+      "isRulingParty": false,
+      "color": "#8b5cf6"
+    },
+    "都民ファーストの会": {
+      "name": "都民ファーストの会",
+      "male": 0,
+      "female": 0,
+      "total": 31,
+      "isRulingParty": false,
+      "color": "#10b981"
+    },
+    "東京都議会自由民主党": {
+      "name": "東京都議会自由民主党",
+      "male": 0,
+      "female": 0,
+      "total": 22,
+      "isRulingParty": true,
+      "color": "#06b6d4"
+    },
+    "立憲民主党": {
+      "name": "立憲民主党",
+      "male": 0,
+      "female": 0,
+      "total": 69,
+      "isRulingParty": false,
+      "color": "#004098"
+    },
+    "東京都議会参政党": {
+      "name": "東京都議会参政党",
+      "male": 0,
+      "female": 0,
+      "total": 3,
+      "isRulingParty": false,
+      "color": "#4f46e5"
+    },
+    "地域政党 自由を守る会": {
+      "name": "地域政党 自由を守る会",
+      "male": 0,
+      "female": 0,
+      "total": 2,
+      "isRulingParty": false,
+      "color": "#06b6d4"
+    },
+    "埼玉県議会自由民主党議員団": {
+      "name": "埼玉県議会自由民主党議員団",
+      "male": 0,
+      "female": 0,
+      "total": 52,
+      "isRulingParty": true,
+      "color": "#4f46e5"
+    },
+    "埼玉県市民ネットワーク": {
+      "name": "埼玉県市民ネットワーク",
+      "male": 0,
+      "female": 0,
+      "total": 1,
+      "isRulingParty": false,
+      "color": "#06b6d4"
+    },
+    "かながわ未来": {
+      "name": "かながわ未来",
+      "male": 0,
+      "female": 0,
+      "total": 10,
+      "isRulingParty": false,
+      "color": "#ef4444"
+    },
+    "中原・高津の会": {
+      "name": "中原・高津の会",
+      "male": 0,
+      "female": 0,
+      "total": 2,
+      "isRulingParty": false,
+      "color": "#06b6d4"
+    },
+    "わが町": {
+      "name": "わが町",
+      "male": 0,
+      "female": 0,
+      "total": 1,
+      "isRulingParty": false,
+      "color": "#ef4444"
+    },
+    "神奈川を変える港南の会": {
+      "name": "神奈川を変える港南の会",
+      "male": 0,
+      "female": 0,
+      "total": 1,
+      "isRulingParty": false,
+      "color": "#f59e0b"
+    },
+    "創和会": {
+      "name": "創和会",
+      "male": 0,
+      "female": 0,
+      "total": 1,
+      "isRulingParty": false,
+      "color": "#10b981"
+    },
+    "翼の会": {
+      "name": "翼の会",
+      "male": 0,
+      "female": 0,
+      "total": 1,
+      "isRulingParty": false,
+      "color": "#8b5cf6"
+    },
+    "厚木愛川清川の会": {
+      "name": "厚木愛川清川の会",
+      "male": 0,
+      "female": 0,
+      "total": 1,
+      "isRulingParty": false,
+      "color": "#4f46e5"
+    },
+    "自由民主党千葉県議会議員会": {
+      "name": "自由民主党千葉県議会議員会",
+      "male": 0,
+      "female": 0,
+      "total": 49,
+      "isRulingParty": true,
+      "color": "#4f46e5"
+    },
+    "千葉新政策議員団": {
+      "name": "千葉新政策議員団",
+      "male": 0,
+      "female": 0,
+      "total": 5,
+      "isRulingParty": false,
+      "color": "#f59e0b"
+    },
+    "平和の党": {
+      "name": "平和の党",
+      "male": 0,
+      "female": 0,
+      "total": 1,
+      "isRulingParty": false,
+      "color": "#8b5cf6"
+    },
+    "千葉県民の声": {
+      "name": "千葉県民の声",
+      "male": 0,
+      "female": 0,
+      "total": 1,
+      "isRulingParty": false,
+      "color": "#06b6d4"
+    },
+    "リベラル民主": {
+      "name": "リベラル民主",
+      "male": 0,
+      "female": 0,
+      "total": 1,
+      "isRulingParty": false,
+      "color": "#ef4444"
+    },
+    "市民力": {
+      "name": "市民力",
+      "male": 0,
+      "female": 0,
+      "total": 1,
+      "isRulingParty": false,
+      "color": "#f59e0b"
+    },
+    "有志の会": {
+      "name": "有志の会",
+      "male": 0,
+      "female": 0,
+      "total": 1,
+      "isRulingParty": false,
+      "color": "#10b981"
+    },
+    "野田民主の会": {
+      "name": "野田民主の会",
+      "male": 0,
+      "female": 0,
+      "total": 1,
+      "isRulingParty": false,
+      "color": "#8b5cf6"
+    },
+    "未来ちば": {
+      "name": "未来ちば",
+      "male": 0,
+      "female": 0,
+      "total": 1,
+      "isRulingParty": false,
+      "color": "#4f46e5"
+    }
+  },
+  "prefectures": [
+    {
+      "name": "栃木県",
+      "totalSeats": 50,
+      "sourceUrl": null,
+      "seatingChartUrl": "https://www.pref.tochigi.lg.jp/kengikai/index.html",
+      "officialElectionUrl": "https://www.pref.tochigi.lg.jp/kensei/senkyo/index.html",
+      "senkyoComUrl": "https://go2senkyo.com/local/senkyo/41662",
+      "parties": [
+        {
+          "name": "日本維新の会",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#00b300"
+        },
+        {
+          "name": "日本共産党栃木県議団",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#7957DA"
+        },
+        {
+          "name": "県民クラブ",
+          "male": 0,
+          "female": 0,
+          "total": 3,
+          "isRulingParty": false,
+          "color": "#f59e0b"
+        },
+        {
+          "name": "夢と希望あふれる栃木を創る会",
+          "male": 0,
+          "female": 0,
+          "total": 3,
+          "isRulingParty": false,
+          "color": "#10b981"
+        },
+        {
+          "name": "民主市民クラブ",
+          "male": 0,
+          "female": 0,
+          "total": 5,
+          "isRulingParty": false,
+          "color": "#06b6d4"
+        },
+        {
+          "name": "公明党栃木県議会議員会",
+          "male": 0,
+          "female": 0,
+          "total": 3,
+          "isRulingParty": true,
+          "color": "#F55881"
+        },
+        {
+          "name": "とちぎ自民党議員会",
+          "male": 0,
+          "female": 0,
+          "total": 29,
+          "isRulingParty": true,
+          "color": "#D7033A"
+        }
+      ]
+    },
+    {
+      "name": "群馬県",
+      "totalSeats": 50,
+      "sourceUrl": null,
+      "seatingChartUrl": "https://www.pref.gunma.jp/site/gikai/25734.html",
+      "officialElectionUrl": "https://www.pref.gunma.jp/site/senkyo/",
+      "senkyoComUrl": "https://go2senkyo.com/local/senkyo/21435",
+      "parties": [
+        {
+          "name": "群馬維新の会",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#00b300"
+        },
+        {
+          "name": "無所属",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#808080"
+        },
+        {
+          "name": "日本共産党",
+          "male": 0,
+          "female": 0,
+          "total": 2,
+          "isRulingParty": false,
+          "color": "#7957DA"
+        },
+        {
+          "name": "リベラル群馬",
+          "male": 0,
+          "female": 0,
+          "total": 4,
+          "isRulingParty": false,
+          "color": "#ef4444"
+        },
+        {
+          "name": "欠員",
+          "male": 0,
+          "female": 0,
+          "total": 4,
+          "isRulingParty": false,
+          "color": "#06b6d4"
+        },
+        {
+          "name": "つる舞う",
+          "male": 0,
+          "female": 0,
+          "total": 5,
+          "isRulingParty": false,
+          "color": "#06b6d4"
+        },
+        {
+          "name": "公明党",
+          "male": 0,
+          "female": 0,
+          "total": 3,
+          "isRulingParty": true,
+          "color": "#F55881"
+        },
+        {
+          "name": "自由民主党",
+          "male": 0,
+          "female": 0,
+          "total": 30,
+          "isRulingParty": true,
+          "color": "#D7033A"
+        }
+      ]
+    },
+    {
+      "name": "茨城県",
+      "totalSeats": 62,
+      "sourceUrl": null,
+      "seatingChartUrl": "https://www.pref.ibaraki.jp/gikai/meibo/index.htm",
+      "officialElectionUrl": "https://www.pref.ibaraki.jp/gikai/",
+      "senkyoComUrl": "https://go2senkyo.com/local/senkyo/19904",
+      "parties": [
+        {
+          "name": "日本共産党",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#7957DA"
+        },
+        {
+          "name": "市民ネットワーク",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#8b5cf6"
+        },
+        {
+          "name": "日本維新の会",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#00b300"
+        },
+        {
+          "name": "国民民主党",
+          "male": 0,
+          "female": 0,
+          "total": 4,
+          "isRulingParty": false,
+          "color": "#F8BC00"
+        },
+        {
+          "name": "茨城無所属・政策の会",
+          "male": 0,
+          "female": 0,
+          "total": 4,
+          "isRulingParty": false,
+          "color": "#808080"
+        },
+        {
+          "name": "無所属",
+          "male": 0,
+          "female": 0,
+          "total": 4,
+          "isRulingParty": false,
+          "color": "#808080"
+        },
+        {
+          "name": "公明党",
+          "male": 0,
+          "female": 0,
+          "total": 4,
+          "isRulingParty": true,
+          "color": "#F55881"
+        },
+        {
+          "name": "いばらき自民党",
+          "male": 0,
+          "female": 0,
+          "total": 43,
+          "isRulingParty": true,
+          "color": "#D7033A"
+        }
+      ]
+    },
+    {
+      "name": "東京都",
+      "totalSeats": 124,
+      "sourceUrl": null,
+      "seatingChartUrl": "https://www.gikai.metro.tokyo.lg.jp/membership/",
+      "officialElectionUrl": "https://www.senkyo.metro.tokyo.lg.jp/",
+      "senkyoComUrl": "https://go2senkyo.com/local/senkyo/23019",
+      "parties": [
+        {
+          "name": "無所属（やちよの会）",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#808080"
+        },
+        {
+          "name": "無所属（東京・品川からやさしい未来を）",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#808080"
+        },
+        {
+          "name": "無所属（新時代の八王子）",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#808080"
+        },
+        {
+          "name": "無所属（グリーンな東京）",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#808080"
+        },
+        {
+          "name": "地域政党 自由を守る会",
+          "male": 0,
+          "female": 0,
+          "total": 2,
+          "isRulingParty": false,
+          "color": "#06b6d4"
+        },
+        {
+          "name": "東京都議会参政党",
+          "male": 0,
+          "female": 0,
+          "total": 3,
+          "isRulingParty": false,
+          "color": "#4f46e5"
+        },
+        {
+          "name": "国民民主党東京都議団",
+          "male": 0,
+          "female": 0,
+          "total": 9,
+          "isRulingParty": false,
+          "color": "#F8BC00"
+        },
+        {
+          "name": "日本共産党東京都議会議員団",
+          "male": 0,
+          "female": 0,
+          "total": 14,
+          "isRulingParty": false,
+          "color": "#7957DA"
+        },
+        {
+          "name": "東京都議会立憲民主党・ミライ会議・生活者ネットワーク・無所属の会",
+          "male": 0,
+          "female": 0,
+          "total": 20,
+          "isRulingParty": false,
+          "color": "#004098"
+        },
+        {
+          "name": "都民ファーストの会 東京都議団",
+          "male": 0,
+          "female": 0,
+          "total": 31,
+          "isRulingParty": false,
+          "color": "#10b981"
+        },
+        {
+          "name": "都議会公明党",
+          "male": 0,
+          "female": 0,
+          "total": 19,
+          "isRulingParty": true,
+          "color": "#F55881"
+        },
+        {
+          "name": "東京都議会自由民主党",
+          "male": 0,
+          "female": 0,
+          "total": 22,
+          "isRulingParty": true,
+          "color": "#06b6d4"
+        }
+      ]
+    },
+    {
+      "name": "埼玉県",
+      "totalSeats": 93,
+      "sourceUrl": null,
+      "seatingChartUrl": "https://www.pref.saitama.lg.jp/e1601/gikai-member-kaiha.html",
+      "officialElectionUrl": "https://www.pref.saitama.lg.jp/s-gikai/",
+      "senkyoComUrl": "https://go2senkyo.com/local/senkyo/24430",
+      "parties": [
+        {
+          "name": "無所属改革の会",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#808080"
+        },
+        {
+          "name": "無所属保守さくらの会",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#808080"
+        },
+        {
+          "name": "埼玉県市民ネットワーク",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#06b6d4"
+        },
+        {
+          "name": "日本共産党埼玉県議会議員団",
+          "male": 0,
+          "female": 0,
+          "total": 3,
+          "isRulingParty": false,
+          "color": "#7957DA"
+        },
+        {
+          "name": "無所属",
+          "male": 0,
+          "female": 0,
+          "total": 3,
+          "isRulingParty": false,
+          "color": "#808080"
+        },
+        {
+          "name": "無所属県民会議",
+          "male": 0,
+          "female": 0,
+          "total": 5,
+          "isRulingParty": false,
+          "color": "#808080"
+        },
+        {
+          "name": "埼玉民主フォーラム",
+          "male": 0,
+          "female": 0,
+          "total": 11,
+          "isRulingParty": false,
+          "color": "#004098"
+        },
+        {
+          "name": "埼玉県議会公明党議員団",
+          "male": 0,
+          "female": 0,
+          "total": 9,
+          "isRulingParty": true,
+          "color": "#F55881"
+        },
+        {
+          "name": "埼玉県議会自由民主党議員団",
+          "male": 0,
+          "female": 0,
+          "total": 52,
+          "isRulingParty": true,
+          "color": "#4f46e5"
+        }
+      ]
+    },
+    {
+      "name": "神奈川県",
+      "totalSeats": 105,
+      "sourceUrl": null,
+      "seatingChartUrl": "https://www.pref.kanagawa.jp/gikai/p844152.html",
+      "officialElectionUrl": "https://www.pref.kanagawa.jp/gikai/p80267.html",
+      "senkyoComUrl": "https://go2senkyo.com/local/senkyo/26651",
+      "parties": [
+        {
+          "name": "わが町",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#ef4444"
+        },
+        {
+          "name": "神奈川を変える港南の会",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#f59e0b"
+        },
+        {
+          "name": "創和会",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#10b981"
+        },
+        {
+          "name": "翼の会",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#8b5cf6"
+        },
+        {
+          "name": "厚木愛川清川の会",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#4f46e5"
+        },
+        {
+          "name": "日本共産党",
+          "male": 0,
+          "female": 0,
+          "total": 2,
+          "isRulingParty": false,
+          "color": "#7957DA"
+        },
+        {
+          "name": "日本維新の会",
+          "male": 0,
+          "female": 0,
+          "total": 2,
+          "isRulingParty": false,
+          "color": "#00b300"
+        },
+        {
+          "name": "中原・高津の会",
+          "male": 0,
+          "female": 0,
+          "total": 2,
+          "isRulingParty": false,
+          "color": "#06b6d4"
+        },
+        {
+          "name": "県政会・立憲民主神奈川ネット",
+          "male": 0,
+          "female": 0,
+          "total": 4,
+          "isRulingParty": false,
+          "color": "#004098"
+        },
+        {
+          "name": "かながわ未来",
+          "male": 0,
+          "female": 0,
+          "total": 10,
+          "isRulingParty": false,
+          "color": "#ef4444"
+        },
+        {
+          "name": "立憲民主党・かながわクラブ",
+          "male": 0,
+          "female": 0,
+          "total": 21,
+          "isRulingParty": false,
+          "color": "#004098"
+        },
+        {
+          "name": "公明党",
+          "male": 0,
+          "female": 0,
+          "total": 8,
+          "isRulingParty": true,
+          "color": "#F55881"
+        },
+        {
+          "name": "自由民主党",
+          "male": 0,
+          "female": 0,
+          "total": 45,
+          "isRulingParty": true,
+          "color": "#D7033A"
+        }
+      ]
+    },
+    {
+      "name": "千葉県",
+      "totalSeats": 95,
+      "sourceUrl": null,
+      "seatingChartUrl": "https://www.pref.chiba.lg.jp/gikai/giin/index.html",
+      "officialElectionUrl": "https://www.pref.chiba.lg.jp/senkan/index.html",
+      "senkyoComUrl": "https://go2senkyo.com/local/senkyo/20857",
+      "parties": [
+        {
+          "name": "平和の党",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#8b5cf6"
+        },
+        {
+          "name": "国民民主党千葉県議会議員会",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#F8BC00"
+        },
+        {
+          "name": "千葉県民の声",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#06b6d4"
+        },
+        {
+          "name": "リベラル民主",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#ef4444"
+        },
+        {
+          "name": "市民力",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#f59e0b"
+        },
+        {
+          "name": "有志の会",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#10b981"
+        },
+        {
+          "name": "野田民主の会",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#8b5cf6"
+        },
+        {
+          "name": "未来ちば",
+          "male": 0,
+          "female": 0,
+          "total": 1,
+          "isRulingParty": false,
+          "color": "#4f46e5"
+        },
+        {
+          "name": "無所属",
+          "male": 0,
+          "female": 0,
+          "total": 2,
+          "isRulingParty": false,
+          "color": "#808080"
+        },
+        {
+          "name": "日本共産党千葉県議会議員団",
+          "male": 0,
+          "female": 0,
+          "total": 4,
+          "isRulingParty": false,
+          "color": "#7957DA"
+        },
+        {
+          "name": "千葉新政策議員団",
+          "male": 0,
+          "female": 0,
+          "total": 5,
+          "isRulingParty": false,
+          "color": "#f59e0b"
+        },
+        {
+          "name": "立憲民主党千葉県議会議員会",
+          "male": 0,
+          "female": 0,
+          "total": 13,
+          "isRulingParty": false,
+          "color": "#004098"
+        },
+        {
+          "name": "公明党千葉県議会議員団",
+          "male": 0,
+          "female": 0,
+          "total": 8,
+          "isRulingParty": true,
+          "color": "#F55881"
+        },
+        {
+          "name": "自由民主党千葉県議会議員会",
+          "male": 0,
+          "female": 0,
+          "total": 49,
+          "isRulingParty": true,
+          "color": "#4f46e5"
+        }
+      ]
+    }
+  ]
+}
