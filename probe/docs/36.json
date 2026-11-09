@@ -1,0 +1,19 @@
+{
+"pref": "徳島県",
+"docs": [
+{
+"url": "https://www.pref.tokushima.lg.jp/gikai/giin/",
+"lines": [
+"文字サイズ",
+"小 標準 大",
+"議員紹介"
+],
+"tables": [],
+"links": []
+},
+{
+"url": "https://www.pref.tokushima.lg.jp/gikai/giin/kaiha/",
+"error": true
+}
+]
+}
