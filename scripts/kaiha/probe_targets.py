@@ -34,7 +34,7 @@ def run(pref: str, urls: list[str]) -> dict:
     docs = []
     seen = set()
     queue = [(u, 0) for u in urls]
-    while queue and len(docs) < 14:
+    while queue and len(docs) < 16:
         url, depth = queue.pop(0)
         if url in seen:
             continue
@@ -47,9 +47,13 @@ def run(pref: str, urls: list[str]) -> dict:
         docs.append(slim(doc))
         if depth == 0:
             for h, a in doc.get("links", []):
-                if not h or not (re.search(r"会派|党派", a or "") or "kaiha" in h.lower()):
+                if not h:
                     continue
                 u = urllib.parse.urljoin(doc["url"], h.strip()).split("#")[0]
+                same_dir = u.startswith(doc["url"].rsplit("/", 1)[0] + "/") and u != doc["url"]
+                if not (re.search(r"会派|党派|名簿", a or "") or "kaiha" in h.lower()
+                        or (same_dir and re.search(r"党|会|クラブ|連合|無所属", a or ""))):
+                    continue
                 if u not in seen and urllib.parse.urlparse(u).netloc:
                     queue.append((u, 1))
     print(f"{pref}: {sum(1 for d in docs if not d.get('error'))}/{len(docs)}", file=sys.stderr)
