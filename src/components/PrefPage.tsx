@@ -1,0 +1,139 @@
+import { dataset, partyColor, partyEntries, pct, regionOf, sumBodies } from '../data';
+import type { Body, Prefecture } from '../types';
+import Hemicycle from './Hemicycle';
+import PartyBar from './PartyBar';
+
+export default function PrefPage({ pref }: { pref: Prefecture }) {
+  const national = sumBodies(dataset.prefectures.map((p) => p.assembly));
+  const a = pref.assembly;
+  const idx = dataset.prefectures.indexOf(pref);
+  const prev = dataset.prefectures[idx - 1];
+  const next = dataset.prefectures[idx + 1];
+
+  return (
+    <>
+      <nav className="crumbs">
+        <a href="#/">← 全国</a>
+        <span className="muted">{regionOf(pref.code)}</span>
+      </nav>
+      <h2 className="pref-title">{pref.name}議会</h2>
+
+      <section className="card">
+        <Hemicycle body={a} detailed label={`${pref.name}議会の議席 ${a.total[2]}人（定数${a.fixed}）`} />
+        <PartyBar body={a} />
+        <p className="muted small">
+          定数 {a.fixed}・現員 {a.total[2]}・欠員 {a.vacant}　白抜きの席は欠員です。席にマウスを重ねると党派が表示されます。
+        </p>
+      </section>
+
+      <section className="card">
+        <h3>党派別の内訳</h3>
+        <PartyTable body={a} national={national} />
+        <p className="muted small">
+          ※ 議会内の「会派」ではなく、議員が届け出ている国政政党などの所属党派です。地域政党は「諸派」に含まれます。
+        </p>
+      </section>
+
+      <div className="two-col">
+        {pref.governor !== undefined && (
+          <section className="card">
+            <h3>知事</h3>
+            <p className="big">
+              {pref.governor ? (
+                <>
+                  <i className="dot" style={{ background: partyColor(pref.governor.party) }} />
+                  {pref.governor.party}
+                  {pref.governor.female && <span className="tag">女性</span>}
+                </>
+              ) : (
+                '欠員'
+              )}
+            </p>
+            <p className="muted small">選挙管理委員会への届出上の所属党派。政党の推薦・支持は含みません。</p>
+          </section>
+        )}
+        {pref.cityAssembly && <SubBody title="県内の市区議会（合計）" body={pref.cityAssembly} />}
+        {pref.townAssembly && <SubBody title="県内の町村議会（合計）" body={pref.townAssembly} />}
+      </div>
+
+      <section className="card links">
+        <h3>関連リンク</h3>
+        <ul>
+          <li>
+            <a href={`https://ja.wikipedia.org/wiki/${encodeURIComponent(pref.name + '議会')}`} target="_blank" rel="noopener noreferrer">
+              Wikipedia「{pref.name}議会」
+            </a>
+          </li>
+          <li>
+            <a
+              href={`https://www.google.com/search?q=${encodeURIComponent(pref.name + '議会 会派別 議員名簿')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {pref.name}議会の会派・議員名簿を検索
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <nav className="pager">
+        {prev ? <a href={`#/pref/${encodeURIComponent(prev.name)}`}>← {prev.name}</a> : <span />}
+        {next ? <a href={`#/pref/${encodeURIComponent(next.name)}`}>{next.name} →</a> : <span />}
+      </nav>
+    </>
+  );
+}
+
+function PartyTable({ body, national }: { body: Body; national: Body }) {
+  const t = body.total[2];
+  return (
+    <div className="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>党派</th>
+            <th className="num">議席</th>
+            <th className="num">割合</th>
+            <th className="num">うち女性</th>
+            <th className="num">全国の割合</th>
+          </tr>
+        </thead>
+        <tbody>
+          {partyEntries(body).map(([p, c]) => (
+            <tr key={p}>
+              <td>
+                <i className="dot" style={{ background: partyColor(p) }} />
+                {p}
+              </td>
+              <td className="num">{c[2]}</td>
+              <td className="num">{pct(c[2], t)}</td>
+              <td className="num">{c[1]}</td>
+              <td className="num muted">{pct(national.parties[p]?.[2] ?? 0, national.total[2])}</td>
+            </tr>
+          ))}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>合計</td>
+            <td className="num">{t}</td>
+            <td className="num">100%</td>
+            <td className="num">{body.total[1]}</td>
+            <td />
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  );
+}
+
+function SubBody({ title, body }: { title: string; body: Body }) {
+  return (
+    <section className="card">
+      <h3>{title}</h3>
+      <p className="muted small">
+        議員 {body.total[2].toLocaleString()} 人（女性 {pct(body.total[1], body.total[2])}）
+      </p>
+      <PartyBar body={body} />
+    </section>
+  );
+}

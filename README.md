@@ -1,46 +1,71 @@
-# Getting Started with Create React App
+# 都道府県議会の党派構成
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+全国 47 都道府県の議会・知事・市区町村議会の所属党派別の構成を、総務省の公式統計から可視化するサイトです。
+**データの取得から公開まで全自動で、人の手による保守は不要**です。
 
-## Available Scripts
+## 仕組み
 
-In the project directory, you can run:
+```
+総務省「地方公共団体の議会の議員及び長の所属党派別人員調等」（毎年12月31日現在、翌3月ごろ公表）
+        │  毎週月曜に GitHub Actions が自動で確認（.github/workflows/update-data.yml）
+        ▼
+scripts/update_data.py
+  1. 総務省サイトを巡回して最新の Excel を自動で探す（URL の決め打ちなし）
+  2. 表の見出しから政党名を読み取る（新党が増えても自動で追従）
+  3. 47都道府県が揃っているか・政党別の和＝合計か・合計＋欠員＝定数か を検証
+  4. 新しい年次なら src/data/latest.json を更新して main にコミット
+        │
+        ▼
+Cloudflare Pages が main へのプッシュを検知して自動ビルド・公開
+```
 
-### `yarn start`
+### 壊れないための工夫
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+| 想定されるトラブル | 対策 |
+| --- | --- |
+| 総務省のページ構成や Excel の URL が変わる | 選挙関連資料のページを巡回して xlsx を探すので、URL を決め打ちしていない |
+| 新しい政党ができる・政党名が変わる | 列を決め打ちせず見出しから読む。色は既知の政党以外は名前から自動で割り当て |
+| 表の形式が大きく変わって読めない | 検証に通らなければ既存データは一切変更しない。サイトは前回のデータで動き続け、GitHub から失敗通知メールが届く |
+| 古い年次のデータで上書きしてしまう | 既存データより古い基準日では更新しない |
+| 長期間コミットが無いと GitHub が定期実行を止める | ワークフローが毎回自分自身を再有効化する |
+| 依存ライブラリの更新で壊れる | 依存は React と Vite のみ。`package-lock.json` と `.nvmrc` でバージョンを固定 |
+| 各県議会サイトのリンク切れ | 県ごとの URL を持たない（Wikipedia と検索へのリンクのみ） |
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+> **注意**: 表示しているのは議員が選挙管理委員会に届け出ている「所属党派」で、議会内の「会派」とは異なります。
+> 会派は県ごとに名称も公開形式もバラバラで自動取得が安定しないため、扱っていません。
 
-### `yarn test`
+## 開発
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm install
+npm run dev          # http://localhost:5173
+npm run build        # build/ に出力（Cloudflare Pages の出力先）
 
-### `yarn build`
+pip install -r scripts/requirements.txt
+npm run update-data  # 総務省から最新データを取得
+npm run test:data    # データ解析のテスト
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+手元の Excel から生成する場合:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+python3 scripts/update_data.py --file 手元の.xlsx --as-of 2025-12-31 --source-url https://www.soumu.go.jp/main_content/xxxx.xlsx
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Cloudflare Pages の設定
 
-### `yarn eject`
+| 項目 | 値 |
+| --- | --- |
+| ビルドコマンド | `npm run build` |
+| 出力ディレクトリ | `build` |
+| 本番ブランチ | `main` |
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Node のバージョンは `.nvmrc` から自動で読まれます。
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ファイル構成
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- `scripts/update_data.py` … 総務省データの取得・解析・検証
+- `tests/` … 解析ロジックのテスト（実際の総務省の Excel を使用）
+- `src/data/latest.json` … サイトが表示するデータ（自動生成）
+- `data/raw/` … 取り込んだ総務省の Excel の原本（記録用）
+- `src/` … フロントエンド（React + Vite）

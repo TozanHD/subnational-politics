@@ -1,0 +1,74 @@
+name: データ自動更新
+
+# 総務省「所属党派別人員調」を毎週確認し、新しい年次が公表されていれば
+# src/data/latest.json を更新して main に直接コミットする。
+# → Cloudflare Pages が main へのプッシュを検知して自動デプロイする。
+#
+# 失敗した場合（総務省サイトの構成変更・表形式の変更など）は既存データは一切変更されず、
+# GitHub からリポジトリ所有者へ失敗通知メールが届く。サイトは前回のデータのまま動き続ける。
+
+on:
+  schedule:
+    # 毎週月曜 09:17 JST（公表時期の 3〜4 月以外も念のため通年で確認）
+    - cron: "17 0 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - run: pip install -r scripts/requirements.txt
+
+      - name: 解析ロジックのテスト
+        run: python -m unittest discover -s tests
+
+      - name: 総務省サイトから最新データを取得
+        run: python scripts/update_data.py
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: 新しいデータでサイトがビルドできるか確認
+        run: |
+          npm ci
+          npm run build
+
+      - name: 変更があればコミット
+        run: |
+          if git diff --quiet -- src/data && [ -z "$(git ls-files --others --exclude-standard data/raw)" ]; then
+            echo "変更なし"
+            exit 0
+          fi
+          AS_OF=$(python -c "import json;print(json.load(open('src/data/latest.json'))['asOf'])")
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data data/raw
+          git commit -m "データ更新: 総務省 所属党派別人員調 (${AS_OF} 現在)"
+          git push
+
+      # GitHub は 60 日間リポジトリに動きがないと定期実行を自動停止する。
+      # 毎回ワークフローを「有効化」し直すことで停止を防ぐ。
+      - name: 定期実行の自動停止を防ぐ
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/update-data.yml/enable" || true
