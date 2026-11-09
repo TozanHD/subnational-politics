@@ -1,0 +1,32 @@
+name: 会派ページ調査（開発用）
+
+# 読み取り設定を作るための一時的な調査。各県のサイトを巡回して結果を probe/ にコミットする。
+on:
+  workflow_dispatch:
+  push:
+    branches: ["ccr-*"]
+    paths: ["scripts/kaiha/probe.py", ".github/workflows/probe-kaiha.yml", "probe/REQUEST"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: probe-${{ github.ref }}
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/kaiha/probe.py $(cat probe/REQUEST 2>/dev/null || true)
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add probe
+          git commit -m "調査結果を保存" || exit 0
+          git pull --rebase
+          git push
