@@ -25,8 +25,14 @@ from pathlib import Path
 from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from crawl import PREFS, crawl, fetch_doc  # noqa: E402
-from readers import READERS  # noqa: E402
+import re
+import urllib.parse
+
+from crawl import PREFS, crawl, fetch_doc, find_link  # noqa: E402
+from readers import KAIHA_HINT, READERS, clean_name  # noqa: E402
+
+# 設定なしの自動探索で使う方式（誤読しにくいものだけ）
+SAFE_READERS = ["table", "paren", "text", "roster", "columns"]
 
 ROOT = Path(__file__).resolve().parents[2]
 SITES = Path(__file__).resolve().parent / "sites.json"
@@ -56,70 +62,107 @@ def validate(counts: dict[str, int], fixed: int) -> str | None:
         return f"会派の合計 {total} が定数 {fixed} に比べて少なすぎます"
     if max(counts.values()) > fixed * 0.9:
         return "1 会派が 9 割を超えています（読み取り誤りの可能性）"
+    hinted = sum(v for k, v in counts.items() if KAIHA_HINT.search(k))
+    if hinted < total * 0.5:
+        return "会派名らしくない名前が多すぎます（読み取り誤りの可能性）"
     return None
 
 
+def run_reader(doc: dict, reader: str, args: dict | None) -> dict[str, int]:
+    try:
+        return READERS[reader](doc, **(args or {}))
+    except Exception as e:  # noqa: BLE001 - 想定外のページ構造
+        print(f"    reader {reader} error: {e}", file=sys.stderr)
+        return {}
+
+
 def try_read(doc: dict, reader: str | None, args: dict | None) -> list[tuple[str, dict, dict[str, int]]]:
-    """(方式, 引数, 結果) の候補を返す。方式未指定なら全方式を試す。"""
-    out = []
-    names = [reader] if reader else list(READERS)
-    for name in names:
-        a = dict(args or {}) if reader else {}
-        try:
-            res = READERS[name](doc, **a)
-        except Exception as e:  # noqa: BLE001 - 想定外のページ構造
-            print(f"    reader {name} error: {e}", file=sys.stderr)
-            continue
-        out.append((name, a, res))
+    """(方式, 引数, 結果) の候補を返す。方式未指定なら安全な方式を全部試す。"""
+    if reader:
+        return [(reader, args or {}, run_reader(doc, reader, args))]
+    return [(name, {}, run_reader(doc, name, None)) for name in SAFE_READERS]
+
+
+def apply_aliases(counts: dict[str, int], aliases: dict[str, str] | None) -> dict[str, int]:
+    if not aliases:
+        return counts
+    out: dict[str, int] = {}
+    for k, v in counts.items():
+        k2 = aliases.get(k, k)
+        out[k2] = out.get(k2, 0) + v
     return out
 
 
-def best_candidate(url: str, doc: dict, reader: str | None, args: dict | None, fixed: int):
+def read_source(src: dict, fixed: int) -> tuple[dict | None, str]:
+    """設定 1 件を実行する。(結果, ログ) を返す。"""
+    url = src["url"]
+    doc = fetch_doc(url)
+    if doc is None:
+        return None, f"取得できません: {url}"
+    if src.get("link"):
+        target = find_link(doc, src["link"])
+        if not target:
+            return None, f"リンク /{src['link']}/ が見つかりません: {url}"
+        url = target
+        doc = fetch_doc(url)
+        if doc is None:
+            return None, f"取得できません: {url}"
+    if src.get("subpages"):
+        rx = re.compile(src["subpages"])
+        urls = []
+        for href, _ in doc.get("links", []):
+            u = urllib.parse.urljoin(doc["url"], (href or "").strip()).split("#")[0]
+            if href and rx.search(u) and u not in urls:
+                urls.append(u)
+        counts: dict[str, int] = {}
+        for u in urls[:30]:
+            sub = fetch_doc(u)
+            time.sleep(0.3)
+            if sub is None:
+                return None, f"取得できません: {u}"
+            for k, v in run_reader(sub, src["reader"], src.get("args")).items():
+                counts[k] = counts.get(k, 0) + v
+    else:
+        counts = run_reader(doc, src["reader"], src.get("args"))
+    counts = apply_aliases(counts, src.get("aliases"))
+    err = validate(counts, fixed)
+    if err:
+        return None, f"検証に失敗 ({err}): {url} [{src['reader']}] {counts}"
+    return {"url": url if not src.get("subpages") else src["url"], "reader": src["reader"], "counts": counts}, ""
+
+
+def best_candidate(url: str, doc: dict, fixed: int):
     cands = []
-    for name, a, counts in try_read(doc, reader, args):
-        err = validate(counts, fixed)
-        if err is None:
-            # 合計が定数に近いほど、表の方式ほど優先
-            cands.append((sum(counts.values()), name == "table", name, a, counts))
+    for name, a, counts in try_read(doc, None, None):
+        if validate(counts, fixed) is None:
+            cands.append((sum(counts.values()), name == "table", name, counts))
     if not cands:
         return None
     cands.sort(key=lambda c: (c[0], c[1]), reverse=True)
-    _, _, name, a, counts = cands[0]
-    return {"url": url, "reader": name, "args": a, "counts": counts}
+    _, _, name, counts = cands[0]
+    return {"url": url, "reader": name, "counts": counts}
 
 
 def scrape(pref: str, romaji: str, site: dict, prev: dict | None, fixed: int) -> tuple[dict | None, list[str]]:
     log: list[str] = []
-    tried: set[str] = set()
-    attempts: list[tuple[str, str | None, dict | None]] = []
-    if prev and prev.get("url"):
-        attempts.append((prev["url"], prev.get("reader"), prev.get("args")))
-    for u in site.get("urls", []):
-        attempts.append((u, site.get("reader"), site.get("args")))
-    for url, reader, args in attempts:
-        key = f"{url}|{reader}|{json.dumps(args, sort_keys=True)}"
-        if key in tried:
-            continue
-        tried.add(key)
-        doc = fetch_doc(url)
-        if doc is None:
-            log.append(f"取得できません: {url}")
-            continue
-        found = best_candidate(url, doc, reader, args, fixed)
+    for src in site.get("sources", []):
+        found, msg = read_source(src, fixed)
         if found:
             return found, log
-        log.append(f"読み取り/検証に失敗: {url} ({reader or '自動'})")
+        log.append(msg)
 
-    # 巡回して探し直す
+    # 設定どおりに読めない（ページの移転・改装）→ 議会サイトを巡回して探し直す
     log.append("議会サイトを巡回して探し直します")
-    pages = crawl(romaji, extra_seeds=site.get("seeds", []), max_pages=60)
+    seeds = [s["url"] for s in site.get("sources", [])]
+    if prev and prev.get("url"):
+        seeds.insert(0, prev["url"])
+    pages = crawl(romaji, extra_seeds=seeds, max_pages=50)
     pages.sort(key=lambda p: -p["score"])
     for p in pages[:12]:
-        found = best_candidate(p["url"], p["doc"], site.get("reader"), site.get("args"), fixed)
-        if found is None and site.get("reader"):
-            found = best_candidate(p["url"], p["doc"], None, None, fixed)
+        found = best_candidate(p["url"], p["doc"], fixed)
         if found:
-            log.append(f"新しいページを発見: {p['url']}")
+            log.append(f"代わりのページで読み取りました（設定の見直しを推奨）: {p['url']}")
+            found["auto"] = True
             return found, log
     return None, log
 
@@ -157,7 +200,10 @@ def main(argv: list[str]) -> int:
                 new_all[pref] = {**prev, "stale": True}
             continue
         kaiha = [{"name": k, "seats": v} for k, v in sorted(found["counts"].items(), key=lambda kv: -kv[1])]
-        entry = {"url": found["url"], "reader": found["reader"], "args": found["args"], "kaiha": kaiha}
+        entry = {"url": found["url"], "kaiha": kaiha}
+        if found.get("auto"):
+            entry["auto"] = True
+            failures.append((pref, log, prev))  # 読めたが設定の見直しが必要なので報告する
         if prev and {k: prev.get(k) for k in entry} == entry and not prev.get("stale"):
             continue  # 変化なし（取得日も変えない）
         entry["fetchedAt"] = today

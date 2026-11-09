@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   push:
     branches: ["ccr-*"]
-    paths: ["scripts/kaiha/probe_targets.py", "probe/targets.json"]
+    paths: ["scripts/kaiha/probe_targets.py", "probe/targets.json", "scripts/kaiha/sites.json", "probe/RUN"]
 
 permissions:
   contents: write
@@ -24,6 +24,12 @@ jobs:
           python-version: "3.12"
       - run: pip install -r scripts/requirements.txt
       - run: python scripts/kaiha/probe_targets.py
+        if: hashFiles('probe/targets.json') != ''
+      - name: 本番と同じ会派取得を試す
+        run: |
+          python scripts/kaiha/update_kaiha.py 2>&1 | tee probe/update_kaiha.log
+          cp kaiha-report.md probe/ 2>/dev/null || rm -f probe/kaiha-report.md
+          cp src/data/kaiha.json probe/kaiha.json
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

@@ -20,7 +20,7 @@ from collections import Counter
 
 TOTAL_WORDS = ("合計", "計", "総数", "議員定数", "定数", "現員", "総計", "小計", "人数", "会派名", "会派", "氏名")
 # 会派名ではありえない語（選挙区別・委員会別の表を誤って読まないため）
-NOT_KAIHA = re.compile(r"(選挙区|委員会|[市郡町村区]$|地域$|^\d|議席|ページ|定数|現在|令和|平成|年|月|日$)")
+NOT_KAIHA = re.compile(r"(選挙区|委員会|[市郡町村区]$|地域$|^\d|議席|ページ|定数|現在|令和|平成|年|月|日$|期$|^(会長|副会長|幹事長|副幹事長|会員|相談役|顧問|代表|団長|副団長|議長|副議長|委員長|副委員長|所属議員|政審会長|政調会長)$)")
 KAIHA_HINT = re.compile(r"(党|会|団|クラブ|倶楽部|ネット|派|議員|無所属|連合|フォーラム|の声|みらい|未来|改革|維新|県政|民主|自民|公明|共産|社民|参政|新政|チーム)")
 JP_NAME = re.compile(r"^[぀-ヿ㐀-鿿豈-﫿々〆ヶ\U00020000-\U0002ffff]{1,6}[ 　][぀-ヿ㐀-鿿豈-﫿々〆ヶ\U00020000-\U0002ffffー]{1,7}$")
 CJK = r"[぀-ヿ㐀-鿿豈-﫿々〆ヶー・]"
@@ -49,8 +49,9 @@ def clean_name(name: str) -> str:
     name = re.sub(r"^[○〇●◎■□◆◇・※\-\s]+", "", name)
     # 末尾の略称「(自民)」は外す（ただし無所属(○○) のように中身が本体の場合は残す）
     m = re.match(r"^(.{5,}?)\s*[\(（]([^()（）]{1,8})[\)）]$", name)
-    if m and not m.group(1).startswith("無所属"):
+    if m and (not m.group(1).startswith("無所属") or set(m.group(2)) <= set(m.group(1))):
         name = m.group(1)
+    name = re.sub(r"・\s+", "・", name)
     return name.strip(" ・:：|")
 
 
@@ -60,7 +61,7 @@ def is_total(name: str) -> bool:
 
 
 def valid_kaiha_name(name: str) -> bool:
-    if not name or len(name) > 60 or is_total(name):
+    if not name or len(name) < 2 or len(name) > 60 or is_total(name):
         return False
     if re.fullmatch(r"[\d\s\-.,()（）人名計]+", name):
         return False
@@ -131,7 +132,7 @@ def _find_header(rows: list[list[str]]) -> tuple[int, int | None, int | None]:
         nc = next((j for j, c in enumerate(rr) if "会派" in c and len(c) < 15), None)
         if nc is None:
             continue
-        cc = next((j for j, c in enumerate(rr) if j != nc and re.search(r"(人数|議員数|所属議員|人員|^数$|^人$)", c) and len(c) < 12), None)
+        cc = next((j for j, c in enumerate(rr) if j != nc and re.search(r"(人数|議員数|所属議員|人員|総数|議席数|現員|^数$|^人$|^計$)", c) and len(c) < 12), None)
         if cc is not None:
             return i, nc, cc
     return 0, None, None
@@ -164,12 +165,21 @@ def roster_counts(doc: dict, table: int | None = None, col: int | None = None, h
 PAREN = re.compile(r"^(?P<name>[^|()（）【】]{2,50}?)\s*(?:[\(（]\s*(?P<n1>\d{1,3})\s*(?:人|名)?\s*[\)）]|【\s*(?P<n2>\d{1,3})\s*(?:人|名)\s*】)")
 
 
+LONE_COUNT = re.compile(r"^(?:[\(（]\s*(\d{1,3})\s*(?:人|名)\s*[\)）]|【\s*(\d{1,3})\s*(?:人|名)\s*】)$")
+
+
 def paren_counts(doc: dict, start: str | None = None, end: str | None = None) -> dict[str, int]:
     out: dict[str, int] = {}
+    prev = ""
     for part in _parts(doc, start, end):
-        m = PAREN.match(part)
-        if m:
-            _add(out, m.group("name"), int(m.group("n1") or m.group("n2")))
+        lone = LONE_COUNT.match(part)
+        if lone and prev:
+            _add(out, prev, int(lone.group(1) or lone.group(2)))
+        else:
+            m = PAREN.match(part)
+            if m:
+                _add(out, m.group("name"), int(m.group("n1") or m.group("n2")))
+        prev = part
     return out
 
 
@@ -190,7 +200,7 @@ def _parts(doc: dict, start: str | None, end: str | None) -> list[str]:
 
 # --- text: 「自由民主党 29人」 -----------------------------------------------------
 
-LINE_RE = re.compile(r"^(?P<name>[^\d|]{2,50}?)\s*[:：]?\s*(?P<n>\d{1,3})\s*(人|名)$")
+LINE_RE = re.compile(r"^(?P<name>[^\d|]{2,50}?)\s*[:：]?\s*[\(（【]?\s*(?P<n>\d{1,3})\s*(人|名)\s*[\)）】]?(?:\s*[\(（][^)）]{1,20}[\)）])?$")
 
 
 def text_counts(doc: dict, start: str | None = None, end: str | None = None) -> dict[str, int]:
@@ -270,7 +280,51 @@ def columns_counts(doc: dict, table: int | None = None, count_row: str = r"^(計
     return best
 
 
+# --- page_members: 1 ページ = 1 会派（会派名の後に議員名が並ぶ） ----------------
+
+def page_members(doc: dict, start: str = "ここから本文です", end: str | None = None) -> dict[str, int]:
+    parts = _parts(doc, start, end)
+    name = next((p for p in parts if valid_kaiha_name(clean_name(p)) and not is_person(p)), None)
+    if not name:
+        return {}
+    n = sum(1 for p in parts if is_person(p))
+    out: dict[str, int] = {}
+    _add(out, name, n)
+    return out
+
+
+# --- regex: 「氏名(会派名)(9期)」のように会派名が議員ごとに書かれている -----------
+
+def regex_counts(doc: dict, pattern: str, start: str | None = None, end: str | None = None) -> dict[str, int]:
+    rx = re.compile(pattern)
+    counter: Counter[str] = Counter()
+    for part in _parts(doc, start, end):
+        for m in rx.finditer(part):
+            name = clean_name(m.group(1))
+            if valid_kaiha_name(name):
+                counter[name] += 1
+    return dict(counter)
+
+
+# --- table_rows: 会派ごとに表が分かれていて、表の行数 = 人数 ------------------------
+
+def table_rows(doc: dict, heading: str | None = None) -> dict[str, int]:
+    out: dict[str, int] = {}
+    for t in doc["tables"]:
+        name = t["heading"]
+        rows = t["rows"]
+        if heading and heading not in name:
+            continue
+        n = sum(1 for r in rows if any(is_person(c) for c in r))
+        if name and n:
+            _add(out, name, n)
+    return out
+
+
 READERS = {
+    "page_members": page_members,
+    "regex": regex_counts,
+    "table_rows": table_rows,
     "table": table_counts,
     "roster": roster_counts,
     "paren": paren_counts,
