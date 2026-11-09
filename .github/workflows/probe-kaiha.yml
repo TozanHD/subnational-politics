@@ -1,11 +1,10 @@
 name: 会派ページ調査（開発用）
 
-# 読み取り設定を作るための一時的な調査。各県のサイトを巡回して結果を probe/ にコミットする。
+# 【開発用】読み取り設定 (scripts/kaiha/sites.json) を作る・直すための調査。結果を probe/ にコミットする。
+# 県のサイトが大きく変わり sites.json を直す必要があるときに、Actions タブから手動で実行する。
+# probe/targets.json に {都道府県: [URL, ...]} を置いておくと、そのページと会派関連リンク先を保存する。
 on:
   workflow_dispatch:
-  push:
-    branches: ["ccr-*"]
-    paths: ["scripts/kaiha/probe_targets.py", "probe/targets.json", "scripts/kaiha/sites.json", "probe/RUN"]
 
 permissions:
   contents: write
@@ -18,8 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - run: pip install -r scripts/requirements.txt
@@ -27,7 +26,9 @@ jobs:
         if: hashFiles('probe/targets.json') != ''
       - name: 本番と同じ会派取得を試す
         run: |
+          mkdir -p probe
           python scripts/kaiha/update_kaiha.py 2>&1 | tee probe/update_kaiha.log
+          mkdir -p probe
           cp kaiha-report.md probe/ 2>/dev/null || rm -f probe/kaiha-report.md
           cp src/data/kaiha.json probe/kaiha.json
           git checkout -- src
