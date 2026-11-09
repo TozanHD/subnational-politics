@@ -36,6 +36,7 @@ export default function PrefPage({ pref }: { pref: Prefecture }) {
         <Hemicycle
           segments={segments}
           fixed={a.fixed}
+          emptyLabel={view === 'kaiha' && kaiha ? '欠員・会派なし等' : '欠員'}
           detailed
           label={`${pref.name}議会の${view === 'kaiha' ? '会派' : '所属党派'}別議席（定数${a.fixed}）`}
         />
@@ -54,7 +55,7 @@ export default function PrefPage({ pref }: { pref: Prefecture }) {
               出典：総務省（{formatDate(dataset.asOf)}現在）。定数 {a.fixed}・現員 {a.total[2]}・欠員 {a.vacant}。
             </>
           )}{' '}
-          白抜きの席は欠員です。
+          {view === 'kaiha' && kaiha ? '白抜きの席は、欠員または名簿で会派を確認できなかった議席です。' : '白抜きの席は欠員です。'}
         </p>
       </section>
 

@@ -39,14 +39,16 @@ function layout(n: number): { seats: Seat[]; r: number } {
 
 interface Props {
   segments: Segment[];
-  /** 定数（現員との差を欠員として白抜きで描く） */
+  /** 定数（合計との差を白抜きで描く） */
   fixed: number;
+  /** 白抜きの席の説明（ツールチップ） */
+  emptyLabel?: string;
   /** 席のツールチップを出すか（一覧の小さい図では省略） */
   detailed?: boolean;
   label: string;
 }
 
-export default function Hemicycle({ segments, fixed, detailed = false, label }: Props) {
+export default function Hemicycle({ segments, fixed, detailed = false, label, emptyLabel = '欠員' }: Props) {
   const total = segments.reduce((a, s) => a + s.count, 0);
   const fills = useMemo(() => {
     const list: { party: string | null; color: string }[] = [];
@@ -76,7 +78,7 @@ export default function Hemicycle({ segments, fixed, detailed = false, label }: 
             className={f.party ? undefined : 'seat-vacant'}
             strokeWidth={f.party ? 0 : r * 0.25}
           >
-            {detailed && <title>{f.party ?? '欠員'}</title>}
+            {detailed && <title>{f.party ?? emptyLabel}</title>}
           </circle>
         );
       })}

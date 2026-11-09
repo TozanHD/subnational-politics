@@ -30,6 +30,7 @@ jobs:
           python scripts/kaiha/update_kaiha.py 2>&1 | tee probe/update_kaiha.log
           cp kaiha-report.md probe/ 2>/dev/null || rm -f probe/kaiha-report.md
           cp src/data/kaiha.json probe/kaiha.json
+          git checkout -- src
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
