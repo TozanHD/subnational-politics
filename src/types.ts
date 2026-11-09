@@ -28,3 +28,16 @@ export interface Dataset {
   parties: string[];
   prefectures: Prefecture[];
 }
+
+export interface KaihaEntry {
+  url: string;
+  /** 取得（内容が変わった）日 */
+  fetchedAt: string;
+  /** 最新の取得に失敗し、前回のデータを表示している */
+  stale?: boolean;
+  kaiha: { name: string; seats: number }[];
+}
+
+export interface KaihaData {
+  prefectures: Record<string, KaihaEntry>;
+}

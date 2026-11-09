@@ -143,3 +143,23 @@ def decode(body: bytes, content_type: str = "") -> str:
         except (LookupError, UnicodeDecodeError):
             continue
     return body.decode("utf-8", errors="replace")
+
+
+def extract_pdf(body: bytes) -> dict:
+    """PDF から本文の行と表を取り出す（HTML と同じ形にする）。"""
+    import io
+
+    import pdfplumber  # 遅延 import（HTML だけなら不要）
+
+    lines: list[str] = []
+    tables: list[dict] = []
+    with pdfplumber.open(io.BytesIO(body)) as pdf:
+        for page in pdf.pages[:30]:
+            text = page.extract_text() or ""
+            lines += [clean(l) for l in text.splitlines() if clean(l)]
+            for t in page.extract_tables() or []:
+                rows = [[clean(c or "") for c in r] for r in t]
+                rows = [r for r in rows if any(r)]
+                if rows:
+                    tables.append({"heading": "", "rows": rows})
+    return {"lines": lines, "tables": tables, "links": []}

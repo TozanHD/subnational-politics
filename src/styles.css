@@ -429,3 +429,7 @@ tfoot td {
     justify-content: space-between;
   }
 }
+
+.tabs {
+  margin-bottom: 8px;
+}

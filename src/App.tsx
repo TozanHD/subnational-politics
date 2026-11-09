@@ -46,7 +46,7 @@ export default function App() {
             <a href="#/">全国の一覧へ</a>
           </section>
         ) : pref ? (
-          <PrefPage pref={pref} />
+          <PrefPage key={pref.name} pref={pref} />
         ) : (
           <Home />
         )}

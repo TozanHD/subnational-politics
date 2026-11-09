@@ -8,3 +8,4 @@ __pycache__/
 .env*
 npm-debug.log*
 data/raw/_download.xlsx
+kaiha-report.md

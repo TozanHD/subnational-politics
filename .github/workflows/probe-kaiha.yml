@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   push:
     branches: ["ccr-*"]
-    paths: ["scripts/kaiha/probe.py", ".github/workflows/probe-kaiha.yml", "probe/REQUEST"]
+    paths: ["scripts/kaiha/probe_targets.py", "probe/targets.json"]
 
 permissions:
   contents: write
@@ -22,7 +22,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python scripts/kaiha/probe.py $(cat probe/REQUEST 2>/dev/null || true)
+      - run: pip install -r scripts/requirements.txt
+      - run: python scripts/kaiha/probe_targets.py
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

@@ -1,4 +1,5 @@
-import { dataset, partyColor, partyEntries, pct, regionOf, sumBodies } from '../data';
+import { useState } from 'react';
+import { bodySegments, dataset, formatDate, kaihaOf, kaihaSegments, partyColor, partyEntries, pct, regionOf, sumBodies } from '../data';
 import type { Body, Prefecture } from '../types';
 import Hemicycle from './Hemicycle';
 import PartyBar from './PartyBar';
@@ -9,6 +10,9 @@ export default function PrefPage({ pref }: { pref: Prefecture }) {
   const idx = dataset.prefectures.indexOf(pref);
   const prev = dataset.prefectures[idx - 1];
   const next = dataset.prefectures[idx + 1];
+  const kaiha = kaihaOf(pref.name);
+  const [view, setView] = useState<'kaiha' | 'party'>(kaiha ? 'kaiha' : 'party');
+  const segments = view === 'kaiha' && kaiha ? kaihaSegments(kaiha) : bodySegments(a);
 
   return (
     <>
@@ -19,18 +23,46 @@ export default function PrefPage({ pref }: { pref: Prefecture }) {
       <h2 className="pref-title">{pref.name}議会</h2>
 
       <section className="card">
-        <Hemicycle body={a} detailed label={`${pref.name}議会の議席 ${a.total[2]}人（定数${a.fixed}）`} />
-        <PartyBar body={a} />
+        {kaiha && (
+          <div className="chips tabs" role="tablist" aria-label="表示の切り替え">
+            <button role="tab" aria-selected={view === 'kaiha'} className={view === 'kaiha' ? 'chip on' : 'chip'} onClick={() => setView('kaiha')}>
+              会派別
+            </button>
+            <button role="tab" aria-selected={view === 'party'} className={view === 'party' ? 'chip on' : 'chip'} onClick={() => setView('party')}>
+              所属党派別
+            </button>
+          </div>
+        )}
+        <Hemicycle
+          segments={segments}
+          fixed={a.fixed}
+          detailed
+          label={`${pref.name}議会の${view === 'kaiha' ? '会派' : '所属党派'}別議席（定数${a.fixed}）`}
+        />
+        <PartyBar segments={segments} />
         <p className="muted small">
-          定数 {a.fixed}・現員 {a.total[2]}・欠員 {a.vacant}　白抜きの席は欠員です。席にマウスを重ねると党派が表示されます。
+          {view === 'kaiha' && kaiha ? (
+            <>
+              出典：
+              <a href={kaiha.url} target="_blank" rel="noopener noreferrer">
+                {pref.name}議会の公式サイト
+              </a>
+              （{formatDate(kaiha.fetchedAt)}取得{kaiha.stale ? '・最新の取得に失敗したため前回のデータです' : ''}）。定数 {a.fixed} は総務省のデータです。
+            </>
+          ) : (
+            <>
+              出典：総務省（{formatDate(dataset.asOf)}現在）。定数 {a.fixed}・現員 {a.total[2]}・欠員 {a.vacant}。
+            </>
+          )}{' '}
+          白抜きの席は欠員です。
         </p>
       </section>
 
       <section className="card">
-        <h3>党派別の内訳</h3>
+        <h3>所属党派別の内訳（総務省）</h3>
         <PartyTable body={a} national={national} />
         <p className="muted small">
-          ※ 議会内の「会派」ではなく、議員が届け出ている国政政党などの所属党派です。地域政党は「諸派」に含まれます。
+          ※ 議員が選挙管理委員会に届け出ている所属党派です。議会内の「会派」とは一致しないことがあります。地域政党は「諸派」に含まれます。
         </p>
       </section>
 
@@ -133,7 +165,7 @@ function SubBody({ title, body }: { title: string; body: Body }) {
       <p className="muted small">
         議員 {body.total[2].toLocaleString()} 人（女性 {pct(body.total[1], body.total[2])}）
       </p>
-      <PartyBar body={body} />
+      <PartyBar segments={bodySegments(body)} />
     </section>
   );
 }

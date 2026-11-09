@@ -1,7 +1,59 @@
 import raw from './data/latest.json';
-import type { Body, Count, Dataset, Prefecture } from './types';
+import kaihaRaw from './data/kaiha.json';
+import type { Body, Count, Dataset, KaihaData, KaihaEntry, Prefecture } from './types';
 
 export const dataset = raw as unknown as Dataset;
+export const kaihaData = kaihaRaw as unknown as KaihaData;
+
+export const kaihaOf = (pref: string): KaihaEntry | undefined => kaihaData.prefectures[pref];
+
+/** 図やグラフに渡す 1 区分。 */
+export interface Segment {
+  name: string;
+  short: string;
+  count: number;
+  color: string;
+}
+
+export const bodySegments = (body: Body): Segment[] =>
+  partyEntries(body).map(([p, c]) => ({ name: p, short: shortName(p), count: c[2], color: partyColor(p) }));
+
+/** 会派名から近い国政政党を推定する（色分けと並び順にだけ使う）。 */
+const KAIHA_RULES: [RegExp, string][] = [
+  [/国民民主/, '国民民主党'],
+  [/自民|自由民主/, '自由民主党'],
+  [/公明/, '公明党'],
+  [/立憲/, '立憲民主党'],
+  [/維新/, '日本維新の会'],
+  [/共産/, '日本共産党'],
+  [/れいわ/, 'れいわ新選組'],
+  [/参政/, '参政党'],
+  [/社民|社会民主/, '社会民主党'],
+  [/保守党/, '日本保守党'],
+  [/^無所属$|^無会派$|会派に属さない|無所属議員/, '無所属'],
+];
+
+export function kaihaParty(name: string): string | null {
+  for (const [re, p] of KAIHA_RULES) if (re.test(name)) return p;
+  return null;
+}
+
+export function kaihaSegments(entry: KaihaEntry): Segment[] {
+  const order = dataset.parties;
+  return entry.kaiha
+    .map((k) => {
+      const p = kaihaParty(k.name);
+      return {
+        name: k.name,
+        short: k.name.length > 10 ? k.name.slice(0, 10) + '…' : k.name,
+        count: k.seats,
+        color: p ? partyColor(p) : partyColor(k.name),
+        rank: p ? (p === '無所属' ? order.length + 1 : idx(order, p)) : order.length,
+      };
+    })
+    .sort((a, b) => a.rank - b.rank || b.count - a.count)
+    .map(({ rank: _rank, ...s }) => s);
+}
 
 export const SOUMU_INDEX_URL = 'https://www.soumu.go.jp/senkyo/senkyo_s/data/';
 

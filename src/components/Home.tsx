@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { REGIONS, dataset, largestParty, pct, regionOf, shortName, partyColor, sumBodies } from '../data';
+import { REGIONS, bodySegments, dataset, largestParty, pct, regionOf, shortName, partyColor, sumBodies } from '../data';
 import Hemicycle from './Hemicycle';
 import PartyBar from './PartyBar';
 
@@ -49,7 +49,7 @@ export default function Home() {
             hidden={!dataset.prefectures[0].governor}
           />
         </div>
-        <PartyBar body={national} />
+        <PartyBar segments={bodySegments(national)} />
       </section>
 
       <section>
@@ -82,8 +82,8 @@ export default function Home() {
                   <h3>{p.name}</h3>
                   <span className="muted">{regionOf(p.code)}</span>
                 </div>
-                <Hemicycle body={p.assembly} label={`${p.name}議会 ${p.assembly.total[2]}人`} />
-                <PartyBar body={p.assembly} showLegend={false} />
+                <Hemicycle segments={bodySegments(p.assembly)} fixed={p.assembly.fixed} label={`${p.name}議会 ${p.assembly.total[2]}人`} />
+                <PartyBar segments={bodySegments(p.assembly)} showLegend={false} />
                 <dl className="facts">
                   <div>
                     <dt>最大</dt>

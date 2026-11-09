@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
-import { partyColor, partyEntries } from '../data';
-import type { Body } from '../types';
+import type { Segment } from '../data';
 
 interface Seat {
   x: number;
@@ -39,19 +38,22 @@ function layout(n: number): { seats: Seat[]; r: number } {
 }
 
 interface Props {
-  body: Body;
+  segments: Segment[];
+  /** 定数（現員との差を欠員として白抜きで描く） */
+  fixed: number;
   /** 席のツールチップを出すか（一覧の小さい図では省略） */
   detailed?: boolean;
   label: string;
 }
 
-export default function Hemicycle({ body, detailed = false, label }: Props) {
+export default function Hemicycle({ segments, fixed, detailed = false, label }: Props) {
+  const total = segments.reduce((a, s) => a + s.count, 0);
   const fills = useMemo(() => {
     const list: { party: string | null; color: string }[] = [];
-    for (const [p, c] of partyEntries(body)) for (let i = 0; i < c[2]; i++) list.push({ party: p, color: partyColor(p) });
-    for (let i = 0; i < body.vacant; i++) list.push({ party: null, color: 'none' });
+    for (const s of segments) for (let i = 0; i < s.count; i++) list.push({ party: s.name, color: s.color });
+    for (let i = total; i < fixed; i++) list.push({ party: null, color: 'none' });
     return list;
-  }, [body]);
+  }, [segments, fixed, total]);
   const { seats, r } = useMemo(() => layout(fills.length), [fills.length]);
 
   const pad = r + 0.02;
@@ -79,10 +81,10 @@ export default function Hemicycle({ body, detailed = false, label }: Props) {
         );
       })}
       <text x="0" y={-0.09} textAnchor="middle" fontSize={0.22} className="hemicycle-total">
-        {body.total[2]}
+        {total}
       </text>
       <text x="0" y={0.0} textAnchor="middle" fontSize={0.075} className="hemicycle-sub">
-        定数 {body.fixed}
+        定数 {fixed}
       </text>
     </svg>
   );

@@ -1,21 +1,25 @@
 name: データ自動更新
 
-# 総務省「所属党派別人員調」を毎週確認し、新しい年次が公表されていれば
-# src/data/latest.json を更新して main に直接コミットする。
-# → Cloudflare Pages が main へのプッシュを検知して自動デプロイする。
+# 毎週、次の 2 つを確認して変更があれば main に直接コミットする。
+#   1. 総務省「所属党派別人員調」（年 1 回公表）→ src/data/latest.json
+#   2. 各都道府県議会の公式サイトの会派構成       → src/data/kaiha.json
+# main へのプッシュを検知して Cloudflare Pages が自動デプロイする。
 #
-# 失敗した場合（総務省サイトの構成変更・表形式の変更など）は既存データは一切変更されず、
-# GitHub からリポジトリ所有者へ失敗通知メールが届く。サイトは前回のデータのまま動き続ける。
+# 読み取れなかった場合は既存データを変更しない（サイトは前回のデータのまま動き続ける）。
+#   - 総務省データの失敗 → ワークフローが失敗し、GitHub から所有者に通知メールが届く
+#   - 一部の県の会派取得の失敗 → 「会派データ取得エラー」Issue を作成・更新して知らせる
+#     （全県取得できるようになると Issue は自動で閉じる）
 
 on:
   schedule:
-    # 毎週月曜 09:17 JST（公表時期の 3〜4 月以外も念のため通年で確認）
+    # 毎週月曜 09:17 JST
     - cron: "17 0 * * 1"
   workflow_dispatch:
 
 permissions:
   contents: write
   actions: write
+  issues: write
 
 concurrency:
   group: update-data
@@ -24,7 +28,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
 
@@ -40,19 +44,30 @@ jobs:
         run: python -m unittest discover -s tests
 
       - name: 総務省サイトから最新データを取得
+        id: soumu
         run: python scripts/update_data.py
 
+      - name: 各県議会サイトから会派構成を取得
+        id: kaiha
+        if: always()
+        run: python scripts/kaiha/update_kaiha.py
+
       - uses: actions/setup-node@v4
+        if: always()
         with:
           node-version-file: .nvmrc
           cache: npm
 
       - name: 新しいデータでサイトがビルドできるか確認
+        id: build
+        if: always()
         run: |
           npm ci
           npm run build
 
+      # 総務省データの取得に失敗しても、会派データの更新はコミットする（ビルドが通る場合のみ）
       - name: 変更があればコミット
+        if: always() && steps.build.outcome == 'success'
         run: |
           if git diff --quiet -- src/data && [ -z "$(git ls-files --others --exclude-standard data/raw)" ]; then
             echo "変更なし"
@@ -62,8 +77,26 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add src/data data/raw
-          git commit -m "データ更新: 総務省 所属党派別人員調 (${AS_OF} 現在)"
+          git commit -m "データ自動更新（総務省 ${AS_OF} 現在 / 会派構成）"
           git push
+
+      - name: 会派取得エラーを Issue で知らせる
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="会派データ取得エラー"
+          NUM=$(gh issue list --state open --search "in:title $TITLE" --json number,title \
+            --jq ".[] | select(.title == \"$TITLE\") | .number" | head -1)
+          if [ -f kaiha-report.md ]; then
+            if [ -n "$NUM" ]; then
+              gh issue edit "$NUM" --body-file kaiha-report.md
+            else
+              gh issue create --title "$TITLE" --body-file kaiha-report.md
+            fi
+          elif [ -n "$NUM" ]; then
+            gh issue close "$NUM" --comment "全都道府県の会派データを取得できるようになったため自動で閉じました。"
+          fi
 
       # GitHub は 60 日間リポジトリに動きがないと定期実行を自動停止する。
       # 毎回ワークフローを「有効化」し直すことで停止を防ぐ。
