@@ -1,0 +1,344 @@
+{
+ "北海道": {
+  "pages": [
+   "http://www.gikai.pref.hokkaido.lg.jp/kengaku/shinchousha.htm",
+   "https://www.nihonsekkei.co.jp/projects/14447/",
+   "https://www.axona-aichi.com/projects/archives/154"
+  ],
+  "queries": {
+   "bing": [
+    "北海道議会 議場",
+    "北海道議会 本会議場 議席 全景"
+   ],
+   "ddg": [
+    "北海道議会 議場"
+   ],
+   "commons": [
+    "北海道議会 議場",
+    "Hokkaido Prefectural Assembly chamber"
+   ],
+   "youtube": [
+    "北海道議会 本会議 議場"
+   ]
+  }
+ },
+ "青森県": {
+  "pages": [
+   "https://www.pref.aomori.lg.jp/soshiki/gikai/files/30gaiyou_zentai.pdf",
+   "https://www.pref.aomori.lg.jp/soshiki/gikai/files/r6gaikyou_okutsuke.pdf"
+  ],
+  "queries": {
+   "bing": [
+    "青森県議会 議場",
+    "青森県議会 本会議場 議席 全景"
+   ],
+   "ddg": [
+    "青森県議会 議場"
+   ],
+   "commons": [
+    "青森県議会 議場",
+    "Aomori Prefectural Assembly chamber"
+   ],
+   "youtube": [
+    "青森県議会 本会議 議場"
+   ]
+  }
+ },
+ "愛知県": {
+  "pages": [
+   "https://www.pref.aichi.jp/site/gikai/gijido-annai.html",
+   "https://gikai-kids.pref.aichi.jp/about/expedition/",
+   "https://www.pref.aichi.jp/soshiki/zaisan/gijidokaisetu.html"
+  ],
+  "queries": {
+   "bing": [
+    "愛知県議会 議場",
+    "愛知県議会 本会議場 議席 全景"
+   ],
+   "ddg": [
+    "愛知県議会 議場"
+   ],
+   "commons": [
+    "愛知県議会 議場",
+    "Aichi Prefectural Assembly chamber"
+   ],
+   "youtube": [
+    "愛知県議会 本会議 議場"
+   ]
+  }
+ },
+ "兵庫県": {
+  "pages": [
+   "https://web.pref.hyogo.lg.jp/gikai/goannai/kids/oshiete.html",
+   "https://web.pref.hyogo.lg.jp/gikai/goannai/kids/shiritai.html",
+   "https://web.pref.hyogo.lg.jp/gikai/goannai/bocho.html",
+   "https://www.kobe-np.co.jp/news/sougou/202304/0016264683.shtml"
+  ],
+  "queries": {
+   "bing": [
+    "兵庫県議会 議場",
+    "兵庫県議会 本会議場 議席 全景"
+   ],
+   "ddg": [
+    "兵庫県議会 議場"
+   ],
+   "commons": [
+    "兵庫県議会 議場",
+    "Hyogo Prefectural Assembly chamber"
+   ],
+   "youtube": [
+    "兵庫県議会 本会議 議場"
+   ]
+  }
+ },
+ "和歌山県": {
+  "pages": [
+   "https://www.pref.wakayama.lg.jp/prefg/200100/cms/d00200006.html",
+   "https://www.pref.wakayama.lg.jp/prefg/200100/cms/d00200002.html"
+  ],
+  "queries": {
+   "bing": [
+    "和歌山県議会 議場",
+    "和歌山県議会 本会議場 議席 全景"
+   ],
+   "ddg": [
+    "和歌山県議会 議場"
+   ],
+   "commons": [
+    "和歌山県議会 議場",
+    "Wakayama Prefectural Assembly chamber"
+   ],
+   "youtube": [
+    "和歌山県議会 本会議 議場"
+   ]
+  }
+ },
+ "徳島県": {
+  "pages": [
+   "https://www.pref.tokushima.lg.jp/gikai/gikaigaiyou/aramasi/sikumi/",
+   "https://www.pref.tokushima.lg.jp/gikai/gikaigaiyou/gikaifaq/00022347"
+  ],
+  "queries": {
+   "bing": [
+    "徳島県議会 議場",
+    "徳島県議会 本会議場 議席 全景"
+   ],
+   "ddg": [
+    "徳島県議会 議場"
+   ],
+   "commons": [
+    "徳島県議会 議場",
+    "Tokushima Prefectural Assembly chamber"
+   ],
+   "youtube": [
+    "徳島県議会 本会議 議場"
+   ]
+  }
+ },
+ "香川県": {
+  "pages": [
+   "https://www.pref.kagawa.lg.jp/gikai/annai/3_2.html",
+   "https://www.pref.kagawa.lg.jp/gikai/aramashi/2_3.html",
+   "https://bb-building.net/city/info/2007.html"
+  ],
+  "queries": {
+   "bing": [
+    "香川県議会 議場",
+    "香川県議会 本会議場 議席 全景"
+   ],
+   "ddg": [
+    "香川県議会 議場"
+   ],
+   "commons": [
+    "香川県議会 議場",
+    "Kagawa Prefectural Assembly chamber"
+   ],
+   "youtube": [
+    "香川県議会 本会議 議場"
+   ]
+  }
+ },
+ "愛媛県": {
+  "pages": [
+   "https://www.pref.ehime.jp/uploaded/attachment/86012.pdf",
+   "https://odekakei-yo.lifeart21.com/ehimekengikai/",
+   "https://bb-building.net/city/info/1678.html",
+   "https://www.pref.ehime.jp/gikai/aramashi/unei.html"
+  ],
+  "queries": {
+   "bing": [
+    "愛媛県議会 議場",
+    "愛媛県議会 本会議場 議席 全景"
+   ],
+   "ddg": [
+    "愛媛県議会 議場"
+   ],
+   "commons": [
+    "愛媛県議会 議場",
+    "Ehime Prefectural Assembly chamber"
+   ],
+   "youtube": [
+    "愛媛県議会 本会議 議場"
+   ]
+  }
+ },
+ "佐賀県": {
+  "pages": [
+   "https://www.saga-s.co.jp/subcategory/%E4%BD%90%E8%B3%80%E7%9C%8C%E8%AD%B0%E4%BC%9A",
+   "https://www.pref.saga.lg.jp/gikai/kiji00385247/3_85247_260520_up_bccwviav.pdf"
+  ],
+  "queries": {
+   "bing": [
+    "佐賀県議会 議場",
+    "佐賀県議会 本会議場 議席 全景"
+   ],
+   "ddg": [
+    "佐賀県議会 議場"
+   ],
+   "commons": [
+    "佐賀県議会 議場",
+    "Saga Prefectural Assembly chamber"
+   ],
+   "youtube": [
+    "佐賀県議会 本会議 議場"
+   ]
+  }
+ },
+ "山形県": {
+  "pages": [],
+  "queries": {
+   "bing": [
+    "山形県議会 議場",
+    "山形県議会 本会議場 議席 全景"
+   ],
+   "ddg": [
+    "山形県議会 議場"
+   ],
+   "commons": [
+    "山形県議会 議場",
+    "Yamagata Prefectural Assembly chamber"
+   ],
+   "youtube": [
+    "山形県議会 本会議 議場"
+   ]
+  }
+ },
+ "三重県": {
+  "pages": [
+   "https://www.pref.mie.lg.jp/KENGIKAI/index.htm"
+  ],
+  "queries": {
+   "bing": [
+    "三重県議会 議場",
+    "三重県議会 本会議場 議席 全景"
+   ],
+   "ddg": [
+    "三重県議会 議場"
+   ],
+   "commons": [
+    "三重県議会 議場",
+    "Mie Prefectural Assembly chamber"
+   ],
+   "youtube": [
+    "三重県議会 本会議 議場"
+   ]
+  }
+ },
+ "宮崎県": {
+  "pages": [],
+  "queries": {
+   "bing": [
+    "宮崎県議会 議場",
+    "宮崎県議会 本会議場 議席 全景"
+   ],
+   "ddg": [
+    "宮崎県議会 議場"
+   ],
+   "commons": [
+    "宮崎県議会 議場",
+    "Miyazaki Prefectural Assembly chamber"
+   ],
+   "youtube": [
+    "宮崎県議会 本会議 議場"
+   ]
+  }
+ },
+ "長野県": {
+  "pages": [
+   "https://www.pref.nagano.lg.jp/gikai/chosa/gaiyo/gijido-2.html"
+  ],
+  "queries": {
+   "bing": [
+    "長野県議会 議場",
+    "長野県議会 本会議場 議席 全景"
+   ],
+   "ddg": [
+    "長野県議会 議場"
+   ],
+   "commons": [
+    "長野県議会 議場",
+    "Nagano Prefectural Assembly chamber"
+   ],
+   "youtube": [
+    "長野県議会 本会議 議場"
+   ]
+  }
+ },
+ "鳥取県": {
+  "pages": [],
+  "queries": {
+   "bing": [
+    "鳥取県議会 議場",
+    "鳥取県議会 本会議場 議席 全景"
+   ],
+   "ddg": [
+    "鳥取県議会 議場"
+   ],
+   "commons": [
+    "鳥取県議会 議場",
+    "Tottori Prefectural Assembly chamber"
+   ],
+   "youtube": [
+    "鳥取県議会 本会議 議場"
+   ]
+  }
+ },
+ "新潟県": {
+  "pages": [],
+  "queries": {
+   "bing": [
+    "新潟県議会 議場",
+    "新潟県議会 本会議場 議席 全景"
+   ],
+   "ddg": [
+    "新潟県議会 議場"
+   ],
+   "commons": [
+    "新潟県議会 議場",
+    "Niigata Prefectural Assembly chamber"
+   ],
+   "youtube": [
+    "新潟県議会 本会議 議場"
+   ]
+  }
+ },
+ "山梨県": {
+  "pages": [],
+  "queries": {
+   "bing": [
+    "山梨県議会 議場",
+    "山梨県議会 本会議場 議席 全景"
+   ],
+   "ddg": [
+    "山梨県議会 議場"
+   ],
+   "commons": [
+    "山梨県議会 議場",
+    "Yamanashi Prefectural Assembly chamber"
+   ],
+   "youtube": [
+    "山梨県議会 本会議 議場"
+   ]
+  }
+ }
+}
