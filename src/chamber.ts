@@ -104,8 +104,12 @@ function arcs(n: number, spanDeg: number, leg: number, rowsOpt?: number): Chambe
   return {
     seats: pts,
     r: Math.min(0.08, spacing * 0.42),
-    podium: { x: 0, y: -leg - 0.08 },
-    label: { x: 0, y: 0.2, place: 'center' },
+    // 議長席は最も上の席のすぐ上に置く。人数は、中央に空きがある半円形・馬蹄形では中央、細い扇形では図の下
+    podium: { x: 0, y: Math.min(...pts.map((p) => p.y)) - 0.12 },
+    label:
+      spanDeg >= 170
+        ? { x: 0, y: 0.2, place: 'center' }
+        : { x: 0, y: Math.max(...pts.map((p) => p.y)) + 0.12, place: 'below' },
   };
 }
 
