@@ -65,6 +65,13 @@ class Elections(unittest.TestCase):
         # 候補者表の党派欄の注記（{{Efn2|...推薦}}）から推薦を読む
         self.assertEqual(g.endorsements(FX["tokushima_election"], "飯泉嘉門", "飯泉嘉門"), "自由民主党徳島県連推薦")
 
+    def test_table_end_not_in_cell(self):
+        cells = g.split_cells("|A||無所属{{Efn2|支援：B党}}\n|}")
+        self.assertEqual(cells[-1], "無所属{{Efn2|支援：B党}}")
+
+    def test_career_no_blank(self):
+        self.assertEqual(g.strip_markup("\n"), "")
+
     def test_tidy(self):
         self.assertEqual(g.tidy_support("（推薦）自由民主党・公明党"), "推薦：自由民主党・公明党")
 

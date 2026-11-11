@@ -112,7 +112,7 @@ def strip_markup(s: str) -> str:
     s = re.sub(r"（\s*", "（", s)
     s = re.sub(r"\s*）", "）", s)
     s = re.sub(r"\(\s*", "(", s)
-    return s.strip(" ・|")
+    return s.strip().strip(" ・|")
 
 
 def template_params(text: str, name: str) -> dict[str, str] | None:
@@ -177,7 +177,7 @@ def split_cells(row: str) -> list[str]:
             body = line[1:]
             parts = re.split(r"\|\||!!", body)
             cells.extend(parts)
-        elif cells:
+        elif cells and not line.startswith("|}"):
             cells[-1] += "\n" + line
     out = []
     for c in cells:
