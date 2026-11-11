@@ -54,7 +54,10 @@ export interface ChamberLayout {
 
 const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v));
 
-/** 同心の弧に席を並べる（半円形・扇形・馬蹄形の共通処理）。leg は弧の両端から下へ伸ばす直線部分の長さ。 */
+/**
+ * 同心の弧に席を並べる（半円形・扇形・馬蹄形の共通処理）。
+ * 議長席は図の上側（弧の中心）に置き、席がそちらを向く。leg は弧の両端から議長席の側（上）へ伸ばす直線部分の長さ。
+ */
 function arcs(n: number, spanDeg: number, leg: number, rowsOpt?: number): ChamberLayout {
   const span = (clamp(spanDeg, 40, 180) * Math.PI) / 180;
   const density = 3.2 * (span / Math.PI) + leg * 2.2;
@@ -84,14 +87,14 @@ function arcs(n: number, spanDeg: number, leg: number, rowsOpt?: number): Chambe
       let x: number, y: number;
       if (s < leg) {
         x = rad * Math.cos(a0);
-        y = -rad * Math.sin(a0) + (leg - s);
+        y = rad * Math.sin(a0) - (leg - s);
       } else if (s <= leg + rad * span) {
         const a = a0 - (s - leg) / rad;
         x = rad * Math.cos(a);
-        y = -rad * Math.sin(a);
+        y = rad * Math.sin(a);
       } else {
         x = rad * Math.cos(a0 - span);
-        y = -rad * Math.sin(a0 - span) + (s - leg - rad * span);
+        y = rad * Math.sin(a0 - span) - (s - leg - rad * span);
       }
       pts.push({ x, y, t: s / len, rad });
     }
@@ -101,7 +104,8 @@ function arcs(n: number, spanDeg: number, leg: number, rowsOpt?: number): Chambe
   return {
     seats: pts,
     r: Math.min(0.08, spacing * 0.42),
-    label: { x: 0, y: leg > 0 ? leg * 0.5 : Math.min(-0.09, -inner * Math.cos(span / 2) + 0.27 * Math.sin(span / 2)), place: 'center' },
+    podium: { x: 0, y: -leg - 0.08 },
+    label: { x: 0, y: 0.2, place: 'center' },
   };
 }
 
