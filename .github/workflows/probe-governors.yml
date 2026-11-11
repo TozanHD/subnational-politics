@@ -2,7 +2,7 @@ name: 知事情報の調査（開発用・一時的）
 on:
   push:
     branches: ["ccr-*"]
-    paths: ["scripts/governors/update_governors.py"]
+    paths: ["scripts/governors/update_governors.py", "scripts/governors/probe.py"]
 permissions:
   contents: write
 concurrency:
@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - run: mkdir -p probe && python scripts/governors/update_governors.py 2>&1 | tee probe/governors_update.log
+      - run: mkdir -p probe && python scripts/governors/probe.py 2>&1 | tee probe/governors_probe.log
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
