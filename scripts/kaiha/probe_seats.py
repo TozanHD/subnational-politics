@@ -21,7 +21,7 @@ OUT = ROOT / "probe" / "seats"
 KEY = re.compile(r"議席|議場|座席|giseki|gijo|gijyo|gizyo|seat|zaseki|haichi|layout", re.I)
 JUNK = re.compile(r"logo|icon|banner|bnr|btn|button|header|footer|spacer|arrow|\.gif|\.svg|qr|sns|twitter|facebook|line_|youtube|search|menu|pagetop|adobe|get_", re.I)
 KW = [("議席", 15), ("議場", 14), ("座席", 10), ("配置", 6), ("見学", 6), ("キッズ", 6), ("こども", 6), ("子ども", 6),
-      ("しくみ", 4), ("概要", 4), ("あらまし", 4), ("案内", 3), ("議員名簿", 5), ("議員紹介", 5), ("議員の紹介", 5),
+      ("しくみ", 4), ("概要", 5), ("あらまし", 5), ("パンフレット", 5), ("ガイド", 3), ("議事堂", 8), ("案内", 3), ("議員名簿", 5), ("議員紹介", 5), ("議員の紹介", 5),
       ("議員一覧", 5), ("議会", 2)]
 KWU = [("giseki", 12), ("gijo", 12), ("gijyo", 12), ("seat", 8), ("kids", 5), ("gaiyo", 3), ("shikumi", 3), ("meibo", 3)]
 NEG = ["会議録", "中継", "請願", "予算", "入札", "採用", "日程", "議案", "政務活動", "条例", "質問", "録画", "報道", "定例会",
@@ -64,11 +64,24 @@ def save_image(data: bytes, path: Path) -> tuple[int, int] | None:
     return im.size
 
 
-def save_pdf(data: bytes, path: Path) -> tuple[int, int] | None:
+PAGE_KW = [("議席表", 10), ("議席図", 10), ("議席配置", 10), ("議場配置", 10), ("議場図", 10), ("議場案内", 6), ("配席", 8),
+           ("座席表", 8), ("議長席", 5), ("演壇", 5), ("傍聴席", 3), ("議場", 2), ("議席", 2)]
+
+
+def save_pdf(data: bytes, path: Path, need_score: bool = False) -> tuple[int, int] | None:
     import pdfplumber
     try:
         with pdfplumber.open(io.BytesIO(data)) as pdf:
-            img = pdf.pages[0].to_image(resolution=80).original
+            best, best_i = 0, 0
+            if len(pdf.pages) > 1:
+                for i, pg in enumerate(pdf.pages[:60]):
+                    t = (pg.extract_text() or "").replace(" ", "")
+                    sc = sum(w for k, w in PAGE_KW if k in t)
+                    if sc > best:
+                        best, best_i = sc, i
+            if need_score and best < 10:
+                return None
+            img = pdf.pages[best_i].to_image(resolution=85).original
             buf = io.BytesIO()
             img.convert("RGB").save(buf, "PNG")
         return save_image(buf.getvalue(), path)
@@ -77,7 +90,7 @@ def save_pdf(data: bytes, path: Path) -> tuple[int, int] | None:
         return None
 
 
-def run(code: int, pref: str, romaji: str, seed_urls: list[str]) -> None:
+def run(code: int, pref: str, romaji: str, seed_urls: list[str], direct: list[str]) -> None:
     t0 = time.time()
     hosts = {urllib.parse.urlparse(u).netloc for u in seed_urls}
     pq: list = []
@@ -95,8 +108,8 @@ def run(code: int, pref: str, romaji: str, seed_urls: list[str]) -> None:
         n += 1
     seen: set[str] = set()
     cands = []
-    assets: list[tuple[int, str, str, str]] = []  # (優先度, url, 説明, 元ページ)
-    while pq and len(seen) < 45 and time.time() - t0 < 420:
+    assets: list[tuple[int, str, str, str]] = [(100, u, "指定", "") for u in direct]  # (優先度, url, 説明, 元ページ)
+    while pq and len(seen) < 110 and time.time() - t0 < 600:
         prio, _, url, via = heapq.heappop(pq)
         if url in seen:
             continue
@@ -125,6 +138,8 @@ def run(code: int, pref: str, romaji: str, seed_urls: list[str]) -> None:
             if re.search(r"\.(pdf|jpe?g|png)$", p.path, re.I):
                 if KEY.search(anchor) or KEY.search(p.path):
                     assets.append((60 + (20 if "議席" in anchor else 0), u, anchor, final))
+                elif p.path.lower().endswith(".pdf") and re.search(r"概要|あらまし|パンフレット|しおり|ガイド|ハンドブック|わたしたちの|私たちの|みんなの|見学", anchor):
+                    assets.append((30, u, "?" + anchor, final))
                 continue
             if re.search(r"\.(xlsx?|docx?|csv|zip|mp4|gif)$", p.path, re.I):
                 continue
@@ -164,7 +179,7 @@ def run(code: int, pref: str, romaji: str, seed_urls: list[str]) -> None:
             continue
         data = got[0]
         name = f"{code:02d}_{len(saved) + 1}.jpg"
-        size = save_pdf(data, OUT / name) if data[:5] == b"%PDF-" else save_image(data, OUT / name)
+        size = save_pdf(data, OUT / name, desc.startswith("?")) if data[:5] == b"%PDF-" else save_image(data, OUT / name)
         if size:
             saved.append({"file": name, "url": u, "desc": desc, "page": src, "prio": prio, "size": size})
     (OUT / f"{code:02d}.json").write_text(json.dumps(
@@ -180,12 +195,13 @@ def main():
     if tp.exists():
         extra = json.loads(tp.read_text(encoding="utf-8"))
     only = set(extra) if extra.get("_only") else None
+    direct = extra.get("_assets", {})
     jobs = []
     for i, (pref, romaji) in enumerate(PREFS, start=1):
         if only is not None and pref not in only:
             continue
         s = list(extra.get(pref, [])) + [x["url"] for x in sites[pref]["sources"]]
-        jobs.append((i, pref, romaji, list(dict.fromkeys(s))))
+        jobs.append((i, pref, romaji, list(dict.fromkeys(s)), direct.get(pref, [])))
     with ThreadPoolExecutor(max_workers=12) as ex:
         list(ex.map(lambda j: run(*j), jobs))
 
