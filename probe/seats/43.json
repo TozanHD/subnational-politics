@@ -1,6 +1,42 @@
 {
 "pref": "熊本県",
-"visited": 45,
-"images": [],
-"pages": []
+"visited": 82,
+"images": [
+{
+"file": "43_1.jpg",
+"url": "https://www.pref.kumamoto.jp/uploaded/life/187319_466596_misc.pdf",
+"desc": "13 座席表 (PDFファイル:202KB)",
+"page": "https://www.pref.kumamoto.jp/site/gikai/187319.html",
+"prio": 60,
+"size": [
+1000,
+708
+]
+},
+{
+"file": "43_2.jpg",
+"url": "https://www.pref.kumamoto.jp/uploaded/life/247452_732868_misc.pdf",
+"desc": "?令和7年度議会の概要 (PDFファイル:7.16MB)",
+"page": "https://www.pref.kumamoto.jp/site/gikai/199822.html",
+"prio": 30,
+"size": [
+703,
+994
+]
+}
+],
+"pages": [
+{
+"url": "https://www.pref.kumamoto.jp/site/gikai/187319.html",
+"via": "議会の活動(4年間の歩み)",
+"score": 40,
+"lines": [
+"12 図書室の状況 (PDFファイル:70KB)",
+"13 座席表 (PDFファイル:202KB)",
+"<外部リンク>",
+"PDF形式のファイルをご覧いただく場合には、Adobe社が提供するAdobe Readerが必要です。"
+],
+"tables": []
+}
+]
 }

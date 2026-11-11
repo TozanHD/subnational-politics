@@ -1,6 +1,6 @@
 {
 "pref": "石川県",
-"visited": 45,
+"visited": 110,
 "images": [
 {
 "file": "17_1.jpg",
@@ -9,8 +9,8 @@
 "page": "https://www.pref.ishikawa.lg.jp/kodomoseisaku/shingikai/shingikai.html",
 "prio": 60,
 "size": [
-662,
-936
+703,
+994
 ]
 },
 {
@@ -20,8 +20,8 @@
 "page": "https://www.pref.ishikawa.lg.jp/kodomoseisaku/shingikai/shingikai.html",
 "prio": 60,
 "size": [
-662,
-936
+703,
+994
 ]
 },
 {
@@ -31,8 +31,19 @@
 "page": "https://www.pref.ishikawa.lg.jp/kodomoseisaku/shingikai/shingikai.html",
 "prio": 60,
 "size": [
-690,
-975
+890,
+1259
+]
+},
+{
+"file": "17_4.jpg",
+"url": "https://www.pref.ishikawa.lg.jp/gikai/documents/gikainoshiori2025.pdf",
+"desc": "?議会のしおり<本冊>(PDF:1,681KB)",
+"page": "https://www.pref.ishikawa.lg.jp/gikai/kouhou.html",
+"prio": 30,
+"size": [
+496,
+703
 ]
 }
 ],

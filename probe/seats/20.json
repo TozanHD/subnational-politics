@@ -1,20 +1,9 @@
 {
 "pref": "長野県",
-"visited": 45,
+"visited": 110,
 "images": [
 {
 "file": "20_1.jpg",
-"url": "https://www.pref.nagano.lg.jp/gikai/chosa/kodomo/images/gijou2025.jpg",
-"desc": " gijou2025",
-"page": "https://www.pref.nagano.lg.jp/gikai/chosa/kodomo/kengikai.html",
-"prio": 55,
-"size": [
-290,
-194
-]
-},
-{
-"file": "20_2.jpg",
 "url": "https://www.pref.nagano.lg.jp/gikai/chosa/gaiyo/enkaku/images/gizyou.jpg",
 "desc": "",
 "page": "https://www.pref.nagano.lg.jp/gikai/chosa/gaiyo/enkaku/index.html",
@@ -22,6 +11,17 @@
 "size": [
 438,
 313
+]
+},
+{
+"file": "20_2.jpg",
+"url": "https://www.pref.nagano.lg.jp/gikai/chosa/kodomo/images/gijou2025.jpg",
+"desc": " gijou2025",
+"page": "https://www.pref.nagano.lg.jp/gikai/chosa/kodomo/kengikai.html",
+"prio": 55,
+"size": [
+290,
+194
 ]
 },
 {
@@ -113,7 +113,7 @@
 },
 {
 "url": "https://www.pref.nagano.lg.jp/gikai/chosa/gaiyo/gijido-2.html",
-"via": "[議場議員配席図]",
+"via": "",
 "score": 45,
 "lines": [
 "2F",

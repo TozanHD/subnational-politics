@@ -1,6 +1,6 @@
 {
 "pref": "宮崎県",
-"visited": 45,
+"visited": 110,
 "images": [
 {
 "file": "45_1.jpg",
@@ -15,6 +15,39 @@
 },
 {
 "file": "45_2.jpg",
+"url": "http://www.pref.miyazaki.lg.jp/images/5122/5122_20170313134647-1.jpg",
+"desc": "県議会議場見学の様子",
+"page": "http://www.pref.miyazaki.lg.jp/kohosenryaku/kense/koho/kengaku.html",
+"prio": 54,
+"size": [
+660,
+463
+]
+},
+{
+"file": "45_3.jpg",
+"url": "https://www.pref.miyazaki.lg.jp/documents/82540/82540_20260604093921-1.pdf",
+"desc": "?パンフレット「ようこそ県議会へ」令和8年度版(PDF:953KB)",
+"page": "https://www.pref.miyazaki.lg.jp/gikai/pr/welcome/index.html",
+"prio": 30,
+"size": [
+703,
+994
+]
+},
+{
+"file": "45_4.jpg",
+"url": "http://www.pref.miyazaki.lg.jp/documents/82540/82540_20260604093921-1.pdf",
+"desc": "?パンフレット「ようこそ県議会へ」令和8年度版(PDF:953KB)",
+"page": "http://www.pref.miyazaki.lg.jp/gikai/pr/welcome/index.html",
+"prio": 30,
+"size": [
+703,
+994
+]
+},
+{
+"file": "45_5.jpg",
 "url": "https://www.pref.miyazaki.lg.jp/images/5122/5122_20191017094606-1.png",
 "desc": "県庁本館写真",
 "page": "https://www.pref.miyazaki.lg.jp/kohosenryaku/kense/koho/kengaku.html",
@@ -25,7 +58,7 @@
 ]
 },
 {
-"file": "45_3.jpg",
+"file": "45_6.jpg",
 "url": "https://www.pref.miyazaki.lg.jp/images/5122/5122_20170313132732-1.jpg",
 "desc": "県政に関する写真を貼った掲示板前で説明",
 "page": "https://www.pref.miyazaki.lg.jp/kohosenryaku/kense/koho/kengaku.html",
@@ -39,6 +72,20 @@
 "pages": [
 {
 "url": "https://www.pref.miyazaki.lg.jp/kohosenryaku/kense/koho/kengaku.html",
+"via": "小中学校向けの県庁見学(議場見学も含む)",
+"score": 44,
+"lines": [
+"(3)見学場所",
+"県庁本館のほか、防災庁舎・5号館、災害対策本部総合対策部室(防災庁舎3階)、県議会本会議場から2~4か所程度",
+"標準的な見学コース",
+"県庁本館(20分)→県議会本会議場(20分)→防災庁舎・5号館(20分)→災害対策本部総合対策部室(20分)",
+"(4)見学時間",
+"1時間30分程度"
+],
+"tables": []
+},
+{
+"url": "http://www.pref.miyazaki.lg.jp/kohosenryaku/kense/koho/kengaku.html",
 "via": "小中学校向けの県庁見学(議場見学も含む)",
 "score": 44,
 "lines": [

@@ -1,6 +1,119 @@
 {
 "pref": "岩手県",
-"visited": 45,
-"images": [],
-"pages": []
+"visited": 110,
+"images": [
+{
+"file": "03_1.jpg",
+"url": "https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/035/831/gizyou11121.jpg",
+"desc": "写真：議場",
+"page": "https://www.pref.iwate.jp/gikai/bocho/1035831.html",
+"prio": 56,
+"size": [
+283,
+212
+]
+},
+{
+"file": "03_2.jpg",
+"url": "https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/061/046/r5konnichiwa.pdf",
+"desc": "?印刷用パンフレットのダウンロード (PDF 1.9MB)",
+"page": "https://www.pref.iwate.jp/gikai/gaiyou/1061046.html",
+"prio": 30,
+"size": [
+994,
+703
+]
+},
+{
+"file": "03_3.jpg",
+"url": "https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/035/804/r7konnichiwa.pdf",
+"desc": "?(一般向け)わたしたちの県議会 (PDF 873.7KB)",
+"page": "https://www.pref.iwate.jp/gikai/gaiyou/1035804.html",
+"prio": 30,
+"size": [
+994,
+703
+]
+},
+{
+"file": "03_4.jpg",
+"url": "https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/035/831/robi-11131111.jpg",
+"desc": "写真：ロビー",
+"page": "https://www.pref.iwate.jp/gikai/bocho/1035831.html",
+"prio": 21,
+"size": [
+310,
+205
+]
+},
+{
+"file": "03_5.jpg",
+"url": "https://www.pref.iwate.jp/_res/projects/default_project/_page_/001/035/831/gaikann111111.jpg",
+"desc": "写真：議会棟外観",
+"page": "https://www.pref.iwate.jp/gikai/bocho/1035831.html",
+"prio": 21,
+"size": [
+320,
+204
+]
+}
+],
+"pages": [
+{
+"url": "https://www.pref.iwate.jp/gikai/bocho/1035831.html",
+"via": "議場見学案内",
+"score": 60,
+"lines": [
+"アクセシビリティ閲覧支援ツール",
+"現在の位置: トップページ > 傍聴・議場見学 > 議場見学案内",
+"ここから本文です。",
+"議場見学案内",
+"ページ番号1035831 更新日 令和3年2月8日",
+"印刷大きな文字で印刷",
+"岩手県議会では、開かれた議会を目指し、議場の見学を受け付けています。",
+"この議場見学では、議会事務局職員が、議会運営の概要や議場内の施設を説明します。",
+"学校の社会見学、町内会の生涯学習行事など、お気軽にお越しください。",
+"ご希望の方は岩手県議会事務局へご相談ください。",
+"見学の流れ",
+"2階の本会議場で議会に関する説明と質疑応答",
+"2階の特別委員会室の見学",
+"希望される方は記念撮影(カメラはご持参ください)",
+"県庁舎の見学について",
+"議場の見学に併せて県庁舎の見学をご希望の方は下記にお問い合わせください。",
+"岩手県広聴広報課 広聴広報担当",
+"電話番号:019-629-5281",
+"岩手県議会",
+"傍聴・議場見学",
+"本会議の傍聴",
+"委員会の傍聴",
+"字幕表示タブレット端末(UDトーク)及び赤外線補聴システム",
+"議場見学案内",
+"議会図書室のご案内",
+"前のページへ戻る"
+],
+"tables": []
+},
+{
+"url": "https://www.pref.iwate.jp/gikai/bocho/index.html",
+"via": "傍聴・議場見学",
+"score": 48,
+"lines": [
+"アクセシビリティ閲覧支援ツール",
+"現在の位置: トップページ > 傍聴・議場見学",
+"ここから本文です。",
+"傍聴・議場見学",
+"ページ番号1035827",
+"印刷大きな文字で印刷",
+"字幕表示タブレット端末(UDトーク)及び赤外線補聴システム",
+"議場見学案内",
+"議会図書室のご案内",
+"岩手県議会",
+"会議録等",
+"傍聴・議場見学",
+"請願・陳情",
+"県議会の活動"
+],
+"tables": []
+}
+]
 }

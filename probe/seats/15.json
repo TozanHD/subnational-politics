@@ -1,7 +1,30 @@
 {
 "pref": "新潟県",
-"visited": 45,
-"images": [],
+"visited": 110,
+"images": [
+{
+"file": "15_1.jpg",
+"url": "https://www.pref.niigata.lg.jp/uploaded/attachment/387578.pdf",
+"desc": "?みんなの県議会パンフレット [PDFファイル/1.11MB]",
+"page": "https://www.pref.niigata.lg.jp/site/gikai/1267394514413.html",
+"prio": 30,
+"size": [
+993,
+702
+]
+},
+{
+"file": "15_2.jpg",
+"url": "https://www.pref.niigata.lg.jp/uploaded/attachment/485445.pdf",
+"desc": "?自由見学(庁舎)の資料 [PDFファイル/952KB]",
+"page": "https://www.pref.niigata.lg.jp/sec/kouhou/1200416476113.html",
+"prio": 30,
+"size": [
+921,
+638
+]
+}
+],
 "pages": [
 {
 "url": "https://www.pref.niigata.lg.jp/site/gikai/1208883673178.html",

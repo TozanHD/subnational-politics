@@ -1,6 +1,6 @@
 {
 "pref": "三重県",
-"visited": 45,
+"visited": 110,
 "images": [
 {
 "file": "24_1.jpg",
@@ -9,14 +9,26 @@
 "page": "https://www.pref.mie.lg.jp/KENGIKAI/07686011829.htm",
 "prio": 60,
 "size": [
-662,
-936
+703,
+995
 ]
 }
 ],
 "pages": [
 {
 "url": "https://www.pref.mie.lg.jp/KIDS/000181412.htm",
+"via": "本会議場(ほんかいぎじょう)のようすって、どんな感じ?",
+"score": 42,
+"lines": [
+"キッズサイト >",
+"本会議場(ほんかいぎじょう)のようすって、どんな感じ?",
+"担当所属:",
+"県庁の組織一覧 >"
+],
+"tables": []
+},
+{
+"url": "http://www.pref.mie.lg.jp/KIDS/000181412.htm",
 "via": "本会議場(ほんかいぎじょう)のようすって、どんな感じ?",
 "score": 42,
 "lines": [
