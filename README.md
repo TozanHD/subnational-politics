@@ -1,46 +1,127 @@
-# Getting Started with Create React App
+# 都道府県議会の党派構成
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+全国 47 都道府県議会の**会派構成**（各県議会の公式サイトから取得）と、議会・知事・市区町村議会の**所属党派別の構成**（総務省の公式統計）を可視化するサイトです。
+**データの取得から公開まで全自動**で、通常は人の手による保守は不要です。
 
-## Available Scripts
+## 仕組み
 
-In the project directory, you can run:
+### 会派構成（各県議会の公式サイト・毎週）
 
-### `yarn start`
+```
+scripts/kaiha/sites.json … 47 都道府県それぞれの会派ページと読み取り方式
+        │  毎週月曜に GitHub Actions が実行（.github/workflows/update-data.yml）
+        ▼
+scripts/kaiha/update_kaiha.py
+  1. 各県の会派ページ（HTML / PDF）を取得。日付入りの PDF はページ内のリンクから最新を探す
+  2. 県ごとの方式で会派と人数を読み取る（scripts/kaiha/readers.py）
+  3. 「会派の合計 ≦ 定数」「欠員が多すぎない」「会派名らしい名前か」を検証
+  4. 設定どおり読めない県は、議会サイトを巡回して代わりのページを自動で探す
+  5. 変化があれば src/data/kaiha.json を更新して main にコミット
+  6. 読めなかった県は前回のデータを表示し続け、「会派データ取得エラー」Issue で知らせる
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+| 読み取り方式 | ページの形 | 例 |
+| --- | --- | --- |
+| `table` | 「会派名｜人数」の表 | 東京・神奈川・京都 |
+| `roster` | 議員名簿の「会派」列を数える | 茨城・岐阜・福岡 |
+| `paren` | 「自由民主党(30名)」 | 長崎・長野・群馬 |
+| `text` | 「自由民主党 29人」 | 埼玉・広島 |
+| `grouped` | 会派名の下に議員名が並ぶ | 岩手・石川・滋賀 |
+| `columns` | 会派名の行と人数の行が横に並ぶ表（PDF） | 北海道・山梨 |
+| `table_rows` | 会派ごとに分かれた表の行数 | 栃木・鳥取 |
+| `page_members` | 会派ごとの個別ページの議員数 | 宮崎 |
+| `regex` | 議員ごとに「(会派名)」が付く | 佐賀 |
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Issue が届いたら**：県のサイトが大きく改装された可能性があります。`sites.json` の該当県の URL や方式を直してください。
+Actions の「会派ページ調査（開発用）」を手動実行すると、現在の取得結果とログが `probe/` に保存されます。
 
-### `yarn test`
+### 議場の形（`src/data/chambers.json`）
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+議席図は県ごとに議場の形に合わせて描きます。各県議会の公式サイトにある議席図・議場写真のほか、地方紙の写真や議会中継の映像を見て、47 都道府県すべての形を設定済みです（根拠を `basis`、参照したページを `source` に記録。県別ページにも表示）。形は自動では判別できないため手で設定する項目ですが、議場は建て替えでもない限り変わらないので、一度設定すれば保守は不要です。書いていない県は `default` の形になります。
 
-### `yarn build`
+```json
+"prefectures": {
+  "静岡県": { "type": "fan", "span": 130, "rows": 5 },
+  "福井県": { "type": "classroom", "rows": 4, "blocks": [3, 5, 3] }
+}
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| `type` | 形 | 調整できる値 |
+| --- | --- | --- |
+| `hemicycle` | 半円形（標準） | `rows` 列の数 |
+| `fan` | 扇形 | `span` 開き角度（度）、`rows` |
+| `classroom` | 教室型（議長席に向かって横並び） | `blocks` 通路で区切った各ブロックの横の席数、`rows` |
+| `facing` | 対面型（通路をはさんで向かい合う） | `rows` 片側の奥行き |
+| `horseshoe` | 馬蹄形（U字） | `rows` |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+席数は定数から自動で決まるので、定数が変わっても直す必要はありません。図は形を表す模式図で、実際の席順ではありません。
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 所属党派（総務省・年 1 回）
 
-### `yarn eject`
+```
+総務省「地方公共団体の議会の議員及び長の所属党派別人員調等」（毎年12月31日現在、翌3月ごろ公表）
+        │  毎週月曜に GitHub Actions が自動で確認（.github/workflows/update-data.yml）
+        ▼
+scripts/update_data.py
+  1. 総務省サイトを巡回して最新の Excel を自動で探す（URL の決め打ちなし）
+  2. 表の見出しから政党名を読み取る（新党が増えても自動で追従）
+  3. 47都道府県が揃っているか・政党別の和＝合計か・合計＋欠員＝定数か を検証
+  4. 新しい年次なら src/data/latest.json を更新して main にコミット
+        │
+        ▼
+Cloudflare Pages が main へのプッシュを検知して自動ビルド・公開
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 壊れないための工夫
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| 想定されるトラブル | 対策 |
+| --- | --- |
+| 総務省のページ構成や Excel の URL が変わる | 選挙関連資料のページを巡回して xlsx を探すので、URL を決め打ちしていない |
+| 新しい政党ができる・政党名が変わる | 列を決め打ちせず見出しから読む。色は既知の政党以外は名前から自動で割り当て |
+| 表の形式が大きく変わって読めない | 検証に通らなければ既存データは一切変更しない。サイトは前回のデータで動き続け、GitHub から失敗通知メールが届く |
+| 古い年次のデータで上書きしてしまう | 既存データより古い基準日では更新しない |
+| 長期間コミットが無いと GitHub が定期実行を止める | ワークフローが毎回自分自身を再有効化する |
+| 依存ライブラリの更新で壊れる | 依存は React と Vite のみ。`package-lock.json` と `.nvmrc` でバージョンを固定 |
+| 県議会サイトの URL が変わる | 日付入りの PDF はリンクから探す。設定の URL で読めなければサイトを巡回して探し直す |
+| 県議会サイトの表を読み違える | 選挙区名・委員会名などは会派名として認めず、合計と定数を照合する。おかしければ採用しない |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+> 所属党派（総務省）は議員が選挙管理委員会に届け出ている党派、会派は議会内のグループで、両者は一致しないことがあります。
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 開発
 
-## Learn More
+```bash
+npm install
+npm run dev          # http://localhost:5173
+npm run build        # build/ に出力（Cloudflare Pages の出力先）
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+pip install -r scripts/requirements.txt
+npm run update-data  # 総務省から最新データを取得
+npm run test:data    # データ解析のテスト
+python3 scripts/kaiha/update_kaiha.py 群馬県   # 会派データを取得（県名を省略すると全県）
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+手元の Excel から生成する場合:
+
+```bash
+python3 scripts/update_data.py --file 手元の.xlsx --as-of 2025-12-31 --source-url https://www.soumu.go.jp/main_content/xxxx.xlsx
+```
+
+## Cloudflare Pages の設定
+
+| 項目 | 値 |
+| --- | --- |
+| ビルドコマンド | `npm run build` |
+| 出力ディレクトリ | `build` |
+| 本番ブランチ | `main` |
+
+Node のバージョンは `.nvmrc` から自動で読まれます。
+
+## ファイル構成
+
+- `scripts/update_data.py` … 総務省データの取得・解析・検証
+- `scripts/kaiha/` … 会派データの取得（`sites.json` 設定 / `readers.py` 読み取り方式 / `update_kaiha.py` 本体 / `crawl.py` 巡回 / `extract.py` HTML・PDF の正規化）
+- `tests/` … テスト（実際の総務省の Excel・県議会サイトの文書を使用）
+- `src/data/latest.json` / `src/data/kaiha.json` … サイトが表示するデータ（自動生成）
+- `data/raw/` … 取り込んだ総務省の Excel の原本（記録用）
+- `src/data/chambers.json` … 県ごとの議場の形（手で設定）
+- `src/` … フロントエンド（React + Vite）
