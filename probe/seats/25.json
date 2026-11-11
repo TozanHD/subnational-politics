@@ -1,7 +1,30 @@
 {
 "pref": "滋賀県",
 "visited": 110,
-"images": [],
+"images": [
+{
+"file": "25_1.jpg",
+"url": "https://www.pref.shiga.lg.jp/documents/20847/20261014145748.pdf",
+"desc": "?R8「わたしたちの滋賀県」(1~12ページ)(PDF:3,698KB)",
+"page": "https://www.pref.shiga.lg.jp/kodomo_hiroba/20847.html",
+"prio": 30,
+"size": [
+703,
+994
+]
+},
+{
+"file": "25_2.jpg",
+"url": "https://www.pref.shiga.lg.jp/documents/20847/20261014141345.pdf",
+"desc": "?見学コースのご案内(2~3ページ)(PDF:680KB)",
+"page": "https://www.pref.shiga.lg.jp/kodomo_hiroba/20847.html",
+"prio": 30,
+"size": [
+703,
+994
+]
+}
+],
 "pages": [
 {
 "url": "https://www.shigaken-gikai.jp/g07_Video_Search.asp",
@@ -20,5 +43,132 @@
 ],
 "tables": []
 }
+],
+"assets": [
+[
+30,
+"https://www.pref.shiga.lg.jp/documents/5021/5620670.pdf",
+"?幼保連携型認定こども園審議会会議概要(PDF:67KB)"
+],
+[
+30,
+"https://www.pref.shiga.lg.jp/documents/5130/5488913.pdf",
+"?10_【参考資料】子ども・若者アンケート結果概要(PDF:342KB)"
+],
+[
+30,
+"https://www.pref.shiga.lg.jp/documents/5130/5497171.pdf",
+"?02_【資料1】淡海子ども・若者プラン(答申案)(概要版)(PDF:430KB"
+],
+[
+30,
+"https://www.pref.shiga.lg.jp/documents/5131/5532213.pdf",
+"?【令和6年5月23日(木曜日)開催】第1回_議事概要(PDF:170KB)"
+],
+[
+30,
+"https://www.pref.shiga.lg.jp/documents/5131/5532216.pdf",
+"?【令和6年6月13日(木曜日)開催】第2回_議事概要(PDF:151KB)"
+],
+[
+30,
+"https://www.pref.shiga.lg.jp/documents/5131/5532215.pdf",
+"?【令和6年7月12日(金曜日)開催】第3回_議事概要(PDF:172KB)"
+],
+[
+30,
+"https://www.pref.shiga.lg.jp/documents/20846/5616926.pdf",
+"?令和8年度県庁見学講座一覧【令和8年6月10日時点】(PDF:433KB)"
+],
+[
+30,
+"https://www.shigaken-gikai.jp/pdf/wakamonoikenkoukan02_01gaiyou.pdf",
+"?滋賀県議会ナビ(甲西高校)の概要(PDF 725KB)"
+],
+[
+30,
+"https://www.shigaken-gikai.jp/pdf/wakamonoikenkoukan02_02gaiyou.pdf",
+"?滋賀県議会ナビ(東大津高校)の概要(PDF 323KB)"
+],
+[
+30,
+"https://www.shigaken-gikai.jp/pdf/wakamonoikenkoukan02_03gaiyou.pdf",
+"?滋賀県議会ナビ(北大津高等養護学校)の概要(PDF 211KB)"
+],
+[
+30,
+"https://www.pref.shiga.lg.jp/documents/190/5109540_1.pdf",
+"?見学申込書(PDF:69KB)"
+],
+[
+30,
+"https://www.pref.shiga.lg.jp/documents/190/32025_1.pdf",
+"?危機管理センター施設見学講座一覧(PDF:67KB)"
+],
+[
+30,
+"https://www.pref.shiga.lg.jp/documents/190/5104332_1.pdf",
+"?見学申込書(PDF:69KB)"
+],
+[
+30,
+"https://www.pref.shiga.lg.jp/documents/15214/5576772.pdf",
+"?選定結果概要および審査基準(PDF:343KB)"
+],
+[
+30,
+"https://www.pref.shiga.lg.jp/documents/5013/20261106080133.pdf",
+"?【更新】調査票(活動等の概要)(PDF:660KB)"
+],
+[
+30,
+"https://www.pref.shiga.lg.jp/documents/4970/5471169_1.pdf",
+"?こどもSWセンター事業概要(PDF:432KB)"
+],
+[
+30,
+"https://www.pref.shiga.lg.jp/documents/4970/5425469_1.pdf",
+"?芹川の河童(事業概要)(PDF:1,398KB)"
+],
+[
+30,
+"https://www.pref.shiga.lg.jp/documents/4970/5481838_1.pdf",
+"?甲南会せせらぎ苑(事業概要)(PDF:11,524KB)"
+],
+[
+30,
+"https://www.pref.shiga.lg.jp/documents/4970/5353118_1.pdf",
+"?実態調査結果(概要)(PDF:385KB)"
+],
+[
+30,
+"https://www.pref.shiga.lg.jp/documents/5078/61146_1.pdf",
+"?認定基準概要(PDF:20KB)"
+],
+[
+30,
+"https://www.pref.shiga.lg.jp/documents/22962/5628635.pdf",
+"?義務事業者用準備ガイド(ver.1.0)(PDF:2,441KB)"
+],
+[
+30,
+"https://www.pref.shiga.lg.jp/documents/22962/5628636.pdf",
+"?義務事業者用準備ガイド(参考資料)(PDF:4,486KB)"
+],
+[
+30,
+"https://www.pref.shiga.lg.jp/documents/5025/5609216.pdf",
+"?滋賀県版赤ちゃんの安全な寝かせ方ガイド(PDF:1,194KB)"
+],
+[
+30,
+"https://www.pref.shiga.lg.jp/documents/4949/20261022114009.pdf",
+"?業務概要(PDF:1,203KB)"
+],
+[
+30,
+"https://www.pref.shiga.lg.jp/documents/4949/5593076.pdf",
+"?業務概要(PDF:1,157KB)"
+]
 ]
 }

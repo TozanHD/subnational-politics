@@ -1,6 +1,122 @@
 {
 "pref": "高知県",
 "visited": 51,
-"images": [],
-"pages": []
+"images": [
+{
+"file": "39_1.jpg",
+"url": "https://gikai.pref.kochi.lg.jp/_files/00157728/pamphlet1.pdf",
+"desc": "?小・中学生向けパンフレット「県議会って何だろう?」[PDF:3.11MB]",
+"page": "https://gikai.pref.kochi.lg.jp/kids/",
+"prio": 30,
+"size": [
+1000,
+713
+]
+},
+{
+"file": "39_2.jpg",
+"url": "https://gikai.pref.kochi.lg.jp/_files/00157605/R81_.pdf",
+"desc": "?令和8年度高知県議会の概要 一括[PDF:4.42MB]",
+"page": "https://gikai.pref.kochi.lg.jp/publicity/gaiyou.html",
+"prio": 30,
+"size": [
+703,
+995
+]
+},
+{
+"file": "39_3.jpg",
+"url": "https://gikai.pref.kochi.lg.jp/_files/00157629/R8gikai.pdf",
+"desc": "?議会の概要(分割)[PDF:2.03MB]",
+"page": "https://gikai.pref.kochi.lg.jp/publicity/gaiyou.html",
+"prio": 30,
+"size": [
+703,
+995
+]
+}
+],
+"pages": [],
+"assets": [
+[
+30,
+"https://gikai.pref.kochi.lg.jp/_files/00157728/pamphlet1.pdf",
+"?小・中学生向けパンフレット「県議会って何だろう?」[PDF:3.11MB]"
+],
+[
+30,
+"https://gikai.pref.kochi.lg.jp/_files/00157698/pamphlet2.pdf",
+"?高校生向けパンフレット「こんにちは県議会」[PDF:14.1MB]"
+],
+[
+30,
+"https://gikai.pref.kochi.lg.jp/_files/00157605/R81_.pdf",
+"?令和8年度高知県議会の概要 一括[PDF:4.42MB]"
+],
+[
+30,
+"https://gikai.pref.kochi.lg.jp/_files/00157629/R8gikai.pdf",
+"?議会の概要(分割)[PDF:2.03MB]"
+],
+[
+30,
+"https://gikai.pref.kochi.lg.jp/_files/00157636/R8ken.pdf",
+"?県の概要(分割)[PDF:944KB]"
+],
+[
+30,
+"https://gikai.pref.kochi.lg.jp/_files/00157643/R8kensei.pdf",
+"?県政の概要(分割)[PDF:1.25MB]"
+],
+[
+30,
+"https://gikai.pref.kochi.lg.jp/_files/00153065/R080521.pdf",
+"?県議会のしおり[PDF:5.42MB]"
+],
+[
+30,
+"https://www.pref.kochi.lg.jp/doc/2025082200153/file_contents/2-hinkonkeikakugaiyou-r2.pdf",
+"?第2期高知家の子どもの貧困対策推進計画(概要版)[PDF:2MB]"
+],
+[
+30,
+"https://www.pref.kochi.lg.jp/doc/2025082200153/file_contents/keikakugaiyou.pdf",
+"?高知家の子どもの貧困対策推進計画(概要版)[PDF:1MB]"
+],
+[
+30,
+"https://www.pref.kochi.lg.jp/doc/2025082200153/file_contents/file_20263194165343_1.pdf",
+"?高知県子どもの生活実態調査結果【概要】[PDF:564KB]"
+],
+[
+30,
+"https://www.pref.kochi.lg.jp/doc/2025082200153/file_contents/31-3-jittaityousa-gaiyou.pdf",
+"?高知県子どもの生活実態調査 報告書(概要版)(H31.3月作成)[PDF:2M"
+],
+[
+30,
+"https://www.pref.kochi.lg.jp/doc/2025082200153/file_contents/28jittaityousa-gaiyou.pdf",
+"?高知県子どもの生活実態調査 調査結果(概要)[PDF:1MB]"
+],
+[
+30,
+"https://www.pref.kochi.lg.jp/doc/2017042000170/file_contents/mimamori-puran-gaiyou.pdf",
+"?高知家の子ども見守りプラン概要版[PDF:1MB]"
+],
+[
+30,
+"https://www.pref.kochi.lg.jp/doc/koueikigyou-chiiki-kengaku/file_contents/moushikomi_2024.pdf",
+"?施設見学申込書(様式)[PDF:120KB]"
+],
+[
+30,
+"https://www.pref.kochi.lg.jp/doc/jidougyakutai-gaidorain/file_contents/file_2025711591552_1.pdf",
+"?【統合版】被措置児童等虐待対応ガイドライン[PDF:580KB]"
+],
+[
+30,
+"https://www.pref.kochi.lg.jp/doc/2025072300290/file_contents/file_202642493438_1.pdf",
+"?令和8年度中央東福祉保健所ガイド[PDF:1.07MB]"
+]
+]
 }

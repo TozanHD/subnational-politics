@@ -4,17 +4,6 @@
 "images": [
 {
 "file": "28_1.jpg",
-"url": "https://web.pref.hyogo.lg.jp/gikai/gaiyo/koho/documents/071016.pdf",
-"desc": "指定",
-"page": "",
-"prio": 100,
-"size": [
-703,
-994
-]
-},
-{
-"file": "28_2.jpg",
 "url": "https://web.pref.hyogo.lg.jp/gikai/gaiyo/koho/documents/080116.pdf",
 "desc": "議場コンサート入場者募集のお知らせ(PDF:181KB)",
 "page": "https://web.pref.hyogo.lg.jp/gikai/gaiyo/koho/kishahappyou.html",
@@ -25,5 +14,22 @@
 ]
 }
 ],
-"pages": []
+"pages": [],
+"assets": [
+[
+60,
+"https://web.pref.hyogo.lg.jp/gikai/gaiyo/koho/documents/080116.pdf",
+"議場コンサート入場者募集のお知らせ(PDF:181KB)"
+],
+[
+30,
+"https://web.pref.hyogo.lg.jp/gikai/gaiyo/koho/documents/080731_bessi.pdf",
+"?開催概要(PDF:93KB)"
+],
+[
+30,
+"https://web.pref.hyogo.lg.jp/gikai/gaiyo/koho/documents/070731-2.pdf",
+"?開催概要(PDF:75KB)"
+]
+]
 }

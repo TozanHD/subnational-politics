@@ -1,6 +1,25 @@
 {
 "pref": "島根県",
 "visited": 77,
-"images": [],
-"pages": []
+"images": [
+{
+"file": "32_1.jpg",
+"url": "https://www.pref.shimane.lg.jp/gikai/gaido/shiori.data/R8_shiori.pdf",
+"desc": "?令和8年度県議会のしおり(PDF:7.3MB)",
+"page": "https://www.pref.shimane.lg.jp/gikai/gaido/shiori.html",
+"prio": 30,
+"size": [
+703,
+994
+]
+}
+],
+"pages": [],
+"assets": [
+[
+30,
+"https://www.pref.shimane.lg.jp/gikai/gaido/shiori.data/R8_shiori.pdf",
+"?令和8年度県議会のしおり(PDF:7.3MB)"
+]
+]
 }
