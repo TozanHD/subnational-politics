@@ -1,0 +1,269 @@
+{
+"pref": "青森県",
+"images": [
+{
+"file": "02_01.jpg",
+"kind": "pdf",
+"src": "https://www.pref.aomori.lg.jp/soshiki/gikai/files/r6gaikyou_gijidou.pdf",
+"page": "https://www.pref.aomori.lg.jp/soshiki/gikai/files/r6gaikyou_gijidou.pdf",
+"title": "p3 score3",
+"size": [
+496,
+703
+]
+},
+{
+"file": "02_02.jpg",
+"kind": "pdf",
+"src": "https://www.pref.aomori.lg.jp/soshiki/gikai/files/r6gaikyou_gijidou.pdf",
+"page": "https://www.pref.aomori.lg.jp/soshiki/gikai/files/r6gaikyou_gijidou.pdf",
+"title": "p2 score2",
+"size": [
+496,
+703
+]
+},
+{
+"file": "02_03.jpg",
+"kind": "page",
+"src": "https://www.pref.aomori.lg.jp/images/relay_service2.png",
+"page": "https://www.pref.aomori.lg.jp/soshiki/gikai/bocho.html",
+"title": "電話リレーサービス",
+"size": [
+900,
+254
+]
+},
+{
+"file": "02_04.jpg",
+"kind": "pdf",
+"src": "https://www.pref.aomori.lg.jp/soshiki/gikai/files/aomorikengikaiboutyoukisoku.pdf",
+"page": "https://www.pref.aomori.lg.jp/soshiki/gikai/bocho.html",
+"title": "link p2 score5",
+"size": [
+703,
+994
+]
+},
+{
+"file": "02_05.jpg",
+"kind": "pdf",
+"src": "https://www.pref.aomori.lg.jp/soshiki/gikai/files/aomorkengikaiiinkaiboutyoukitei.pdf",
+"page": "https://www.pref.aomori.lg.jp/soshiki/gikai/bocho.html",
+"title": "link p1 score3",
+"size": [
+703,
+994
+]
+},
+{
+"file": "02_06.jpg",
+"kind": "page",
+"src": "https://www.pref.aomori.lg.jp/images/relay_service2.png",
+"page": "https://www.pref.aomori.lg.jp/soshiki/gikai/home.html",
+"title": "電話リレーサービス",
+"size": [
+900,
+254
+]
+},
+{
+"file": "02_07.jpg",
+"kind": "page",
+"src": "https://www.pref.aomori.lg.jp/images/relay_service2.png",
+"page": "https://www.pref.aomori.lg.jp/kensei/gikai/",
+"title": "電話リレーサービス",
+"size": [
+900,
+254
+]
+},
+{
+"file": "02_08.jpg",
+"kind": "page",
+"src": "https://www.pref.aomori.lg.jp/images/relay_service2.png",
+"page": "https://www.pref.aomori.lg.jp/soshiki/gikai/giin-iinkai_somukikaku.html",
+"title": "電話リレーサービス",
+"size": [
+900,
+254
+]
+},
+{
+"file": "02_09.jpg",
+"kind": "page",
+"src": "https://aomori-pref.stream.jfit.co.jp/image/top_image2.jpg",
+"page": "https://aomori-pref.stream.jfit.co.jp/",
+"title": "議場",
+"size": [
+320,
+240
+]
+},
+{
+"file": "02_10.jpg",
+"kind": "page",
+"src": "https://www.pref.aomori.lg.jp/images/relay_service2.png",
+"page": "https://www.pref.aomori.lg.jp/soshiki/senkan/senkyo_shikumi.html",
+"title": "電話リレーサービス",
+"size": [
+900,
+254
+]
+},
+{
+"file": "02_11.jpg",
+"kind": "bing",
+"src": "https://img.cf.47news.jp/public/photo/c0270581715a48ba8de4aef55029bfcf/photo.jpg",
+"page": "https://www.47news.jp/12209163.html",
+"title": "タブレット端末 青森県議会利用OK|47NEWS（よんななニュース）",
+"size": [
+900,
+616
+]
+},
+{
+"file": "02_12.jpg",
+"kind": "bing",
+"src": "https://ts2.mm.bing.net/th?id=OIP.KRgHMpVGcA9uViyz7QrOlgHaFj&pid=15.1",
+"page": "https://www.facebook.com/imototakayukikouenkai/photos/1120-青森県議会第324回定例会が開催されました日間で行われる本定例会では補正予算条例新設改定報告で件について最終日に審議が行われます私も123に質疑を行う/807704075599005/",
+"title": "井本たかゆき後援会 - 11/20 青森県議会第324回定例会が開催されました！ 日間で行われる本定例会では補正予算、条例新設・改定、報告で ...",
+"size": [
+474,
+355
+]
+},
+{
+"file": "02_13.jpg",
+"kind": "bing",
+"src": "https://www.town.aomori-nanbu.lg.jp/uploaded/image/1358.JPG",
+"page": "https://www.town.aomori-nanbu.lg.jp/site/gikai/1225.html",
+"title": "傍聴のご案内 - 南部町議会 - 青森県南部町ホームページ",
+"size": [
+900,
+600
+]
+},
+{
+"file": "02_14.jpg",
+"kind": "bing",
+"src": "https://www.pref.aomori.lg.jp/soshiki/gikai/img/R011122_02.JPG",
+"page": "https://www.pref.aomori.lg.jp/soshiki/gikai/topics_31.html",
+"title": "県議会トピックス （令和元年度詳細） - 青森県庁ホームページ",
+"size": [
+320,
+213
+]
+},
+{
+"file": "02_15.jpg",
+"kind": "bing",
+"src": "https://aomori-pref.stream.jfit.co.jp/image/top_image2.jpg",
+"page": "https://aomori-pref.stream.jfit.co.jp/",
+"title": "青森県議会 インターネット中継",
+"size": [
+320,
+240
+]
+},
+{
+"file": "02_16.jpg",
+"kind": "bing",
+"src": "https://img.cf.47news.jp/public/photo/893e9cb52f0f7f587a6afa2e44ed3634/photo.jpg",
+"page": "https://www.47news.jp/12208001.html",
+"title": "遅ればせながらペーパーレス化 青森県議会、タブレット端末導入|47NEWS（よんななニュース）",
+"size": [
+900,
+626
+]
+},
+{
+"file": "02_17.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/pwcaIc6yyXM/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=pwcaIc6yyXM",
+"title": "令和3年9月29日　令和3年第8回定例会　本会議4日目",
+"size": [
+900,
+506
+]
+},
+{
+"file": "02_18.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/u9GZKcdAUxo/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=u9GZKcdAUxo",
+"title": "【青森市】　市議会定例会　開会　冒頭に市長は「本市の除排雪能力を上回る降雪が続き・・・」　一部市議が「百条委員会」設置提案へ（2026年2月20日放送）",
+"size": [
+900,
+506
+]
+},
+{
+"file": "02_19.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/DCpee_aR9G0/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=DCpee_aR9G0",
+"title": "【青森県議会】令和8年9月第327回定例会 家族に介護が必要な方に関係する質問",
+"size": [
+900,
+506
+]
+},
+{
+"file": "02_20.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/IdhbU7v8pCs/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=IdhbU7v8pCs",
+"title": "青森市議会 傍聴のすゝめ　～議場へ行こう！～【AomoLIVE】",
+"size": [
+900,
+506
+]
+},
+{
+"file": "02_21.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/IdhbU7v8pCs/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=IdhbU7v8pCs",
+"title": "青森市議会 傍聴のすゝめ　～議場へ行こう！～【AomoLIVE】",
+"size": [
+900,
+506
+]
+},
+{
+"file": "02_22.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/0sjt-4evqCY/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=0sjt-4evqCY",
+"title": "青森県議会、節目の300回祝い演奏会",
+"size": [
+900,
+506
+]
+},
+{
+"file": "02_23.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/yNz4LvqZ9WA/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=yNz4LvqZ9WA",
+"title": "【青森県議会】教育に関係する質問は20件：9月の議会の一般質問",
+"size": [
+900,
+506
+]
+},
+{
+"file": "02_24.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/DXm-zsUHvfo/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=DXm-zsUHvfo",
+"title": "青森県宮下知事　就任後初めての県議会が閉会「今は安全運転」　みちのく有料道路の料金変更など可決",
+"size": [
+900,
+506
+]
+}
+]
+}
