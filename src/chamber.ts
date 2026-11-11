@@ -95,7 +95,7 @@ function arcs(n: number, spanDeg: number, leg: number, rowsOpt?: number): Chambe
   return {
     seats: pts,
     r: Math.min(0.08, spacing * 0.42),
-    label: { x: 0, y: leg > 0 ? leg * 0.5 : -0.09, place: 'center' },
+    label: { x: 0, y: leg > 0 ? leg * 0.5 : Math.min(-0.09, -inner * Math.cos(span / 2) + 0.27 * Math.sin(span / 2)), place: 'center' },
   };
 }
 
