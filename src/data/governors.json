@@ -1,1 +1,907 @@
-{"source": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E3%81%AE%E9%83%BD%E9%81%93%E5%BA%9C%E7%9C%8C%E7%9F%A5%E4%BA%8B%E4%B8%80%E8%A6%A7", "prefectures": {}}
+{
+ "source": "https://ja.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E3%81%AE%E9%83%BD%E9%81%93%E5%BA%9C%E7%9C%8C%E7%9F%A5%E4%BA%8B%E4%B8%80%E8%A6%A7",
+ "prefectures": {
+  "北海道": {
+   "name": "鈴木直道",
+   "url": "https://ja.wikipedia.org/wiki/%E9%88%B4%E6%9C%A8%E7%9B%B4%E9%81%93",
+   "since": "2019-04-23",
+   "term": 2,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "東京都職員",
+    "夕張市長"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2023年北海道知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2023%E5%B9%B4%E5%8C%97%E6%B5%B7%E9%81%93%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2023-04-09",
+    "support": "自由民主党・公明党・新党大地推薦"
+   }
+  },
+  "青森県": {
+   "name": "宮下宗一郎",
+   "url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%E4%B8%8B%E5%AE%97%E4%B8%80%E9%83%8E",
+   "since": "2023-06-29",
+   "term": 1,
+   "party": "無所属",
+   "career": [
+    "\n国土交通省職員",
+    "むつ市長"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2023年青森県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2023%E5%B9%B4%E9%9D%92%E6%A3%AE%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2023-06-04",
+    "support": null
+   }
+  },
+  "岩手県": {
+   "name": "達増拓也",
+   "url": "https://ja.wikipedia.org/wiki/%E9%81%94%E5%A2%97%E6%8B%93%E4%B9%9F",
+   "since": "2007-04-30",
+   "term": 5,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "外務省職員",
+    "衆議院議員"
+   ],
+   "partyHistory": "新進党 → 自由党 → 民主党 → 無所属",
+   "election": {
+    "title": "2023年岩手県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2023%E5%B9%B4%E5%B2%A9%E6%89%8B%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2023-09-03",
+    "support": null
+   }
+  },
+  "宮城県": {
+   "name": "村井嘉浩",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9D%91%E4%BA%95%E5%98%89%E6%B5%A9",
+   "since": "2005-11-21",
+   "term": 6,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "陸上自衛官",
+    "宮城県議会議員"
+   ],
+   "partyHistory": "自由民主党 → 無所属",
+   "election": {
+    "title": "2025年宮城県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2025%E5%B9%B4%E5%AE%AE%E5%9F%8E%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2025-10-26",
+    "support": null
+   }
+  },
+  "秋田県": {
+   "name": "鈴木健太",
+   "url": "https://ja.wikipedia.org/wiki/%E9%88%B4%E6%9C%A8%E5%81%A5%E5%A4%AA%20%28%E6%94%BF%E6%B2%BB%E5%AE%B6%29",
+   "since": "2025-04-20",
+   "term": 1,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "陸上自衛官",
+    "司法書士",
+    "秋田県議会議員",
+    "秋田県議会副議長"
+   ],
+   "partyHistory": "自由民主党 → 無所属",
+   "election": {
+    "title": "2025年秋田県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2025%E5%B9%B4%E7%A7%8B%E7%94%B0%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2025-04-06",
+    "support": "日本維新の会が自主的に支持"
+   }
+  },
+  "山形県": {
+   "name": "吉村美栄子",
+   "url": "https://ja.wikipedia.org/wiki/%E5%90%89%E6%9D%91%E7%BE%8E%E6%A0%84%E5%AD%90",
+   "since": "2009-02-14",
+   "term": 5,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "リクルート従業員",
+    "行政書士"
+   ],
+   "partyHistory": "無所属"
+  },
+  "福島県": {
+   "name": "内堀雅雄",
+   "url": "https://ja.wikipedia.org/wiki/%E5%86%85%E5%A0%80%E9%9B%85%E9%9B%84",
+   "since": "2014-11-12",
+   "term": 4,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "総務省自治財政局地方債課理事官",
+    "福島県副知事"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2026年福島県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2026%E5%B9%B4%E7%A6%8F%E5%B3%B6%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2026-10-25",
+    "support": null
+   }
+  },
+  "茨城県": {
+   "name": "大井川和彦",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E4%BA%95%E5%B7%9D%E5%92%8C%E5%BD%A6",
+   "since": "2017-09-26",
+   "term": 3,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "経済産業省商務流通政策グループ政策調整官補佐",
+    "シスコシステムズ専務",
+    "ドワンゴ取締役"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2025年茨城県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2025%E5%B9%B4%E8%8C%A8%E5%9F%8E%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2025-09-07",
+    "support": "自由民主党・公明党・国民民主党・日本維新の会茨城県総支部推薦"
+   }
+  },
+  "栃木県": {
+   "name": "福田富一",
+   "url": "https://ja.wikipedia.org/wiki/%E7%A6%8F%E7%94%B0%E5%AF%8C%E4%B8%80",
+   "since": "2004-12-09",
+   "term": 6,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "栃木県職員",
+    "宇都宮市長"
+   ],
+   "partyHistory": "自由民主党",
+   "election": {
+    "title": "2024年栃木県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2024%E5%B9%B4%E6%A0%83%E6%9C%A8%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2024-11-17",
+    "support": "自由民主党栃木県連・公明党栃木県本部"
+   }
+  },
+  "群馬県": {
+   "name": "山本一太",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E6%9C%AC%E4%B8%80%E5%A4%AA",
+   "since": "2019-07-28",
+   "term": 2,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "内閣府特命担当大臣",
+    "参議院議員"
+   ],
+   "partyHistory": "自由民主党（町村派 → 無派閥） → 無所属",
+   "election": {
+    "title": "2023年群馬県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2023%E5%B9%B4%E7%BE%A4%E9%A6%AC%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2023-07-23",
+    "support": "自由民主党・公明党 推薦"
+   }
+  },
+  "埼玉県": {
+   "name": "大野元裕",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E9%87%8E%E5%85%83%E8%A3%95",
+   "since": "2019-08-31",
+   "term": 2,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "日本テレビ・ニッポン放送コメンテーター",
+    "参議院議員",
+    "防衛大臣政務官",
+    "外交官"
+   ],
+   "partyHistory": "民主党 → （民進党（長島G） → ） 国民民主党 → 無所属",
+   "election": {
+    "title": "2023年埼玉県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2023%E5%B9%B4%E5%9F%BC%E7%8E%89%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2023-08-06",
+    "support": "自由民主党埼玉県連・立憲民主党埼玉県連・日本維新の会埼玉県総支部・公明党埼玉県本部・国民民主党埼玉県連支持"
+   }
+  },
+  "千葉県": {
+   "name": "熊谷俊人",
+   "url": "https://ja.wikipedia.org/wiki/%E7%86%8A%E8%B0%B7%E4%BF%8A%E4%BA%BA",
+   "since": "2021-04-05",
+   "term": 2,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "千葉市議会議員",
+    "千葉市長"
+   ],
+   "partyHistory": "民主党 → 無所属",
+   "election": {
+    "title": "2025年千葉県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2025%E5%B9%B4%E5%8D%83%E8%91%89%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2025-03-16",
+    "support": "自由民主党千葉県連・立憲民主党千葉県連・公明党千葉県本部・国民民主党千葉県連・市民ネットワーク千葉県支持"
+   }
+  },
+  "東京都": {
+   "name": "小池百合子",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E6%B1%A0%E7%99%BE%E5%90%88%E5%AD%90",
+   "since": "2016-08-02",
+   "term": 3,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "ニュースキャスター",
+    "参議院議員",
+    "衆議院議員",
+    "環境大臣",
+    "防衛大臣"
+   ],
+   "partyHistory": "日本新党 → 新進党 → 自由党 → 保守党 → 保守クラブ → 自由民主党〈清和会 → 無派閥〉 → 都民ファーストの会 → 希望の党／都民ファーストの会 → 都民ファーストの会",
+   "election": {
+    "title": "2024年東京都知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2024%E5%B9%B4%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2024-07-07",
+    "support": "自由民主党・公明党・国民民主党東京都連・都民ファーストの会支援"
+   }
+  },
+  "神奈川県": {
+   "name": "黒岩祐治",
+   "url": "https://ja.wikipedia.org/wiki/%E9%BB%92%E5%B2%A9%E7%A5%90%E6%B2%BB",
+   "since": "2011-04-23",
+   "term": 4,
+   "party": "無所属",
+   "career": [
+    "\nフジテレビジョン従業員"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2023年神奈川県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2023%E5%B9%B4%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2023-04-09",
+    "support": "自由民主党神奈川県連・公明党神奈川県本部・国民民主党神奈川県連推薦"
+   }
+  },
+  "新潟県": {
+   "name": "花角英世",
+   "url": "https://ja.wikipedia.org/wiki/%E8%8A%B1%E8%A7%92%E8%8B%B1%E4%B8%96",
+   "since": "2018-06-12",
+   "term": 3,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "国土交通省職員",
+    "新潟県副知事",
+    "海上保安庁次長"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2026年新潟県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2026%E5%B9%B4%E6%96%B0%E6%BD%9F%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2026-05-31",
+    "support": "支持：自由民主党・日本維新の会県総支部・公明党・国民民主党新潟県連"
+   }
+  },
+  "富山県": {
+   "name": "新田八朗",
+   "url": "https://ja.wikipedia.org/wiki/%E6%96%B0%E7%94%B0%E5%85%AB%E6%9C%97",
+   "since": "2020-11-09",
+   "term": 2,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "日本海ガス代表取締役社長",
+    "日本青年会議所会頭"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2024年富山県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2024%E5%B9%B4%E5%AF%8C%E5%B1%B1%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2024-10-27",
+    "support": "自由民主党・公明党・立憲民主党富山県連・国民民主党推薦"
+   }
+  },
+  "石川県": {
+   "name": "山野之義",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E9%87%8E%E4%B9%8B%E7%BE%A9",
+   "since": "2026-03-27",
+   "term": 1,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "ソフトバンク従業員",
+    "金沢市議会議員",
+    "金沢市長",
+    "金沢大学客員教授"
+   ],
+   "partyHistory": "自由民主党 → 無所属",
+   "election": {
+    "title": "2026年石川県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2026%E5%B9%B4%E7%9F%B3%E5%B7%9D%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2026-03-08",
+    "support": "支持：国民民主党石川県連"
+   }
+  },
+  "福井県": {
+   "name": "石田嵩人",
+   "url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E7%94%B0%E5%B5%A9%E4%BA%BA",
+   "since": "2026-01-28",
+   "term": 1,
+   "party": "無所属",
+   "career": [
+    "\n外務省職員"
+   ],
+   "partyHistory": "国民民主党 → 無所属（自民党党友）",
+   "election": {
+    "title": "2026年福井県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2026%E5%B9%B4%E7%A6%8F%E4%BA%95%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2026-01-25",
+    "support": null
+   }
+  },
+  "山梨県": {
+   "name": "長崎幸太郎",
+   "url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%B4%8E%E5%B9%B8%E5%A4%AA%E9%83%8E",
+   "since": "2019-02-17",
+   "term": 2,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "財務省職員",
+    "衆議院議員"
+   ],
+   "partyHistory": "自由民主党 → 無所属 → 自由民主党（二階派）",
+   "election": {
+    "title": "2023年山梨県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2023%E5%B9%B4%E5%B1%B1%E6%A2%A8%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2023-01-22",
+    "support": "推薦：自由民主党・公明党"
+   }
+  },
+  "長野県": {
+   "name": "阿部守一",
+   "url": "https://ja.wikipedia.org/wiki/%E9%98%BF%E9%83%A8%E5%AE%88%E4%B8%80",
+   "since": "2010-09-01",
+   "term": 5,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "自治省職員",
+    "内閣府行政刷新会議事務局次長",
+    "長野県副知事"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2026年長野県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2026%E5%B9%B4%E9%95%B7%E9%87%8E%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2026-08-09",
+    "support": null
+   }
+  },
+  "岐阜県": {
+   "name": "江崎禎英",
+   "url": "https://ja.wikipedia.org/wiki/%E6%B1%9F%E5%B4%8E%E7%A6%8E%E8%8B%B1",
+   "since": "2025-02-06",
+   "term": 1,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "通商産業省・経済産業省職員",
+    "岐阜県商工労働部長"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2025年岐阜県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2025%E5%B9%B4%E5%B2%90%E9%98%9C%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2025-01-26",
+    "support": "自由民主党・公明党・立憲民主党・国民民主党推薦"
+   }
+  },
+  "静岡県": {
+   "name": "鈴木康友",
+   "url": "https://ja.wikipedia.org/wiki/%E9%88%B4%E6%9C%A8%E5%BA%B7%E5%8F%8B%20%28%E6%94%BF%E6%B2%BB%E5%AE%B6%29",
+   "since": "2024-05-28",
+   "term": 1,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "浜松市長",
+    "衆議院議員"
+   ],
+   "partyHistory": "民主党 → 無所属",
+   "election": {
+    "title": "2024年静岡県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2024%E5%B9%B4%E9%9D%99%E5%B2%A1%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2024-05-26",
+    "support": "推薦：立憲民主党・国民民主党"
+   }
+  },
+  "愛知県": {
+   "name": "大村秀章",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%9D%91%E7%A7%80%E7%AB%A0",
+   "since": "2011-02-15",
+   "term": 4,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "農林水産省職員",
+    "衆議院議員",
+    "厚生労働副大臣",
+    "内閣府副大臣"
+   ],
+   "partyHistory": "自由民主党（額賀派） → 日本一愛知の会",
+   "election": {
+    "title": "2023年愛知県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2023%E5%B9%B4%E6%84%9B%E7%9F%A5%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2023-02-05",
+    "support": "自由民主党愛知県連・公明党・立憲民主党・国民民主党推薦"
+   }
+  },
+  "三重県": {
+   "name": "一見勝之",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%80%E8%A6%8B%E5%8B%9D%E4%B9%8B",
+   "since": "2021-09-14",
+   "term": 2,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "国土交通省自動車局長",
+    "内閣府総合海洋政策推進事務局長"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2025年三重県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2025%E5%B9%B4%E4%B8%89%E9%87%8D%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2025-09-07",
+    "support": "自由民主党・公明党・立憲民主党・国民民主党推薦"
+   }
+  },
+  "滋賀県": {
+   "name": "三日月大造",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E6%97%A5%E6%9C%88%E5%A4%A7%E9%80%A0",
+   "since": "2014-07-20",
+   "term": 4,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "西日本旅客鉄道従業員",
+    "衆議院議員",
+    "国土交通副大臣"
+   ],
+   "partyHistory": "民主党 → 無所属 → チームしが",
+   "election": {
+    "title": "2026年滋賀県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2026%E5%B9%B4%E6%BB%8B%E8%B3%80%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2026-07-05",
+    "support": null
+   }
+  },
+  "京都府": {
+   "name": "西脇隆俊",
+   "url": "https://ja.wikipedia.org/wiki/%E8%A5%BF%E8%84%87%E9%9A%86%E4%BF%8A",
+   "since": "2018-04-16",
+   "term": 3,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "国土交通省職員",
+    "復興庁事務次官"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2026年京都府知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2026%E5%B9%B4%E4%BA%AC%E9%83%BD%E5%BA%9C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2026-04-05",
+    "support": "自由民主党・国民民主党・中道改革連合・立憲民主党・公明党推薦"
+   }
+  },
+  "大阪府": {
+   "name": "吉村洋文",
+   "url": "https://ja.wikipedia.org/wiki/%E5%90%89%E6%9D%91%E6%B4%8B%E6%96%87",
+   "since": "2019-04-08",
+   "term": 3,
+   "party": "大阪維新の会",
+   "career": [
+    "\n",
+    "衆議院議員",
+    "大阪市長"
+   ],
+   "partyHistory": "大阪維新の会 → 大阪維新の会／維新の党 → 大阪維新の会／おおさか維新の会 → 大阪維新の会／日本維新の会",
+   "election": {
+    "title": "2026年大阪府知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2026%E5%B9%B4%E5%A4%A7%E9%98%AA%E5%BA%9C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2026-02-08",
+    "support": null
+   }
+  },
+  "兵庫県": {
+   "name": "斎藤元彦",
+   "url": "https://ja.wikipedia.org/wiki/%E6%96%8E%E8%97%A4%E5%85%83%E5%BD%A6",
+   "since": "2021-08-01",
+   "term": 2,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "総務省職員",
+    "大阪府財務部財政課長"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2024年兵庫県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2024%E5%B9%B4%E5%85%B5%E5%BA%AB%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2024-11-17",
+    "support": null
+   }
+  },
+  "奈良県": {
+   "name": "山下真",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E4%B8%8B%E7%9C%9F",
+   "since": "2023-05-03",
+   "term": 1,
+   "party": "日本維新の会",
+   "career": [
+    "\n",
+    "朝日新聞社従業員",
+    "弁護士",
+    "生駒市長"
+   ],
+   "partyHistory": "無所属 → 日本維新の会",
+   "election": {
+    "title": "2023年奈良県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2023%E5%B9%B4%E5%A5%88%E8%89%AF%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2023-04-09",
+    "support": null
+   }
+  },
+  "和歌山県": {
+   "name": "宮﨑泉",
+   "url": "https://ja.wikipedia.org/wiki/%E5%AE%AE%EF%A8%91%E6%B3%89",
+   "since": "2025-06-03",
+   "term": 1,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "和歌山県職員",
+    "和歌山県教育長",
+    "和歌山県副知事"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2025年和歌山県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2025%E5%B9%B4%E5%92%8C%E6%AD%8C%E5%B1%B1%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2025-06-01",
+    "support": "自由民主党・立憲民主党・公明党・国民民主党・社会民主党和歌山県連合推薦"
+   }
+  },
+  "鳥取県": {
+   "name": "平井伸治",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B9%B3%E4%BA%95%E4%BC%B8%E6%B2%BB",
+   "since": "2007-04-13",
+   "term": 5,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "総務省職員",
+    "鳥取県副知事"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2023年鳥取県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2023%E5%B9%B4%E9%B3%A5%E5%8F%96%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2023-04-09",
+    "support": "自由民主党鳥取県連・公明党鳥取県本部・立憲民主党推薦"
+   }
+  },
+  "島根県": {
+   "name": "丸山達也",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%B8%E5%B1%B1%E9%81%94%E4%B9%9F",
+   "since": "2019-04-30",
+   "term": 2,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "総務省職員",
+    "島根県政策企画局長"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2023年島根県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2023%E5%B9%B4%E5%B3%B6%E6%A0%B9%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2023-04-09",
+    "support": "自由民主党・公明党・立憲民主党・国民民主党推薦"
+   }
+  },
+  "岡山県": {
+   "name": "伊原木隆太",
+   "url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E5%8E%9F%E6%9C%A8%E9%9A%86%E5%A4%AA",
+   "since": "2012-11-12",
+   "term": 4,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "実業家",
+    "天満屋代表取締役社長"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2024年岡山県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2024%E5%B9%B4%E5%B2%A1%E5%B1%B1%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2024-10-27",
+    "support": "自由民主党岡山県連・公明党岡山県本部・立憲民主党・国民民主党推薦"
+   }
+  },
+  "広島県": {
+   "name": "横田美香",
+   "url": "https://ja.wikipedia.org/wiki/%E6%A8%AA%E7%94%B0%E7%BE%8E%E9%A6%99",
+   "since": "2025-11-29",
+   "term": 1,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "農林水産省職員",
+    "広島県副知事",
+    "富山県副知事"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2025年広島県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2025%E5%B9%B4%E5%BA%83%E5%B3%B6%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2025-11-09",
+    "support": "自由民主党・立憲民主党・国民民主党・公明党推薦"
+   }
+  },
+  "山口県": {
+   "name": "村岡嗣政",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9D%91%E5%B2%A1%E5%97%A3%E6%94%BF",
+   "since": "2014-02-25",
+   "term": 4,
+   "party": "無所属",
+   "career": [
+    "\n総務省職員"
+   ],
+   "partyHistory": "無所属 → 自由民主党",
+   "election": {
+    "title": "2026年山口県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2026%E5%B9%B4%E5%B1%B1%E5%8F%A3%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2026-02-08",
+    "support": "自由民主党山口県連・国民民主党・公明党山口県本部推薦"
+   }
+  },
+  "徳島県": {
+   "name": "後藤田正純",
+   "url": "https://ja.wikipedia.org/wiki/%E5%BE%8C%E8%97%A4%E7%94%B0%E6%AD%A3%E7%B4%94",
+   "since": "2023-05-18",
+   "term": 1,
+   "party": "無所属",
+   "career": [
+    "\n衆議院議員"
+   ],
+   "partyHistory": "自由民主党（津島派 → 無派閥 → 石破派 → 茂木派） → 無所属",
+   "election": {
+    "title": "2023年徳島県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2023%E5%B9%B4%E5%BE%B3%E5%B3%B6%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2023-04-09",
+    "support": null
+   }
+  },
+  "香川県": {
+   "name": "池田豊人",
+   "url": "https://ja.wikipedia.org/wiki/%E6%B1%A0%E7%94%B0%E8%B1%8A%E4%BA%BA",
+   "since": "2022-09-05",
+   "term": 2,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "建設省・国土交通省職員",
+    "国土交通省近畿地方整備局長",
+    "国土交通省道路局長"
+   ],
+   "partyHistory": null,
+   "election": {
+    "title": "2026年香川県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2026%E5%B9%B4%E9%A6%99%E5%B7%9D%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2026-08-30",
+    "support": "推薦：自由民主党・国民民主党・中道改革連合・立憲民主党・公明党"
+   }
+  },
+  "愛媛県": {
+   "name": "中村時広",
+   "url": "https://ja.wikipedia.org/wiki/%E4%B8%AD%E6%9D%91%E6%99%82%E5%BA%83",
+   "since": "2010-12-01",
+   "term": 4,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "三菱商事従業員",
+    "愛媛県議会議員",
+    "衆議院議員",
+    "松山市長"
+   ],
+   "partyHistory": "無所属 → 日本新党 → 新進党 → 無所属",
+   "election": {
+    "title": "2022年愛媛県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2022%E5%B9%B4%E6%84%9B%E5%AA%9B%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2022-11-20",
+    "support": "自由民主党愛媛県連・公明党愛媛県本部・国民民主党推薦"
+   }
+  },
+  "高知県": {
+   "name": "浜田省司",
+   "url": "https://ja.wikipedia.org/wiki/%E6%B5%9C%E7%94%B0%E7%9C%81%E5%8F%B8",
+   "since": "2019-12-07",
+   "term": 2,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "自治省職員",
+    "大阪府副知事",
+    "総務省大臣官房総括審議官"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2019年高知県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2019%E5%B9%B4%E9%AB%98%E7%9F%A5%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2019-11-24",
+    "support": "自由民主党・公明党"
+   }
+  },
+  "福岡県": {
+   "name": "服部誠太郎",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9C%8D%E9%83%A8%E8%AA%A0%E5%A4%AA%E9%83%8E",
+   "since": "2021-04-14",
+   "term": 2,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "福岡県職員",
+    "福岡県副知事"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2025年福岡県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2025%E5%B9%B4%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2025-03-23",
+    "support": "自由民主党・公明党・立憲民主党・国民民主党・社会民主党推薦"
+   }
+  },
+  "佐賀県": {
+   "name": "山口祥義",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B1%B1%E5%8F%A3%E7%A5%A5%E7%BE%A9",
+   "since": "2015-01-14",
+   "term": 3,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "総務省職員",
+    "東京大学大学院総合文化研究科教授"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2022年佐賀県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2022%E5%B9%B4%E4%BD%90%E8%B3%80%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2022-12-18",
+    "support": "自由民主党・公明党推薦"
+   }
+  },
+  "長崎県": {
+   "name": "平田研",
+   "url": "https://ja.wikipedia.org/wiki/%E5%B9%B3%E7%94%B0%E7%A0%94",
+   "since": "2026-03-02",
+   "term": 1,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "建設省・国土交通省職員",
+    "長崎県副知事",
+    "国土交通省大臣官房総括審議官"
+   ],
+   "partyHistory": "",
+   "election": {
+    "title": "2026年長崎県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2026%E5%B9%B4%E9%95%B7%E5%B4%8E%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2026-02-08",
+    "support": "自由民主党長崎県連・国民民主党長崎県連・立憲民主党長崎県連推薦、社会民主党長崎県連合支持"
+   }
+  },
+  "熊本県": {
+   "name": "木村敬",
+   "url": "https://ja.wikipedia.org/wiki/%E6%9C%A8%E6%9D%91%E6%95%AC",
+   "since": "2024-04-16",
+   "term": 1,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "自治省職員",
+    "熊本県副知事"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2024年熊本県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2024%E5%B9%B4%E7%86%8A%E6%9C%AC%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2024-03-24",
+    "support": "推薦：自由民主党・公明党"
+   }
+  },
+  "大分県": {
+   "name": "佐藤樹一郎",
+   "url": "https://ja.wikipedia.org/wiki/%E4%BD%90%E8%97%A4%E6%A8%B9%E4%B8%80%E9%83%8E",
+   "since": "2023-04-28",
+   "term": 1,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "経済産業省職員",
+    "大分市長"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2023年大分県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2023%E5%B9%B4%E5%A4%A7%E5%88%86%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2023-04-09",
+    "support": "自由民主党大分県連・公明党大分県本部推薦"
+   }
+  },
+  "宮崎県": {
+   "name": "河野俊嗣",
+   "url": "https://ja.wikipedia.org/wiki/%E6%B2%B3%E9%87%8E%E4%BF%8A%E5%97%A3",
+   "since": "2011-01-21",
+   "term": 4,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "自治省職員",
+    "宮崎県副知事"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2022年宮崎県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2022%E5%B9%B4%E5%AE%AE%E5%B4%8E%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2022-12-25",
+    "support": "自由民主党宮崎県連・立憲民主党宮崎県連・公明党・連合宮崎推薦、社会民主党支持"
+   }
+  },
+  "鹿児島県": {
+   "name": "塩田康一",
+   "url": "https://ja.wikipedia.org/wiki/%E5%A1%A9%E7%94%B0%E5%BA%B7%E4%B8%80",
+   "since": "2020-07-28",
+   "term": 2,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "経済産業省職員",
+    "九州経済産業局長"
+   ],
+   "partyHistory": "無所属",
+   "election": {
+    "title": "2020年鹿児島県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2020%E5%B9%B4%E9%B9%BF%E5%85%90%E5%B3%B6%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2020-07-12",
+    "support": null
+   }
+  },
+  "沖縄県": {
+   "name": "古謝玄太",
+   "url": "https://ja.wikipedia.org/wiki/%E5%8F%A4%E8%AC%9D%E7%8E%84%E5%A4%AA",
+   "since": "2026-09-30",
+   "term": 1,
+   "party": "無所属",
+   "career": [
+    "\n",
+    "総務省職員",
+    "那覇市副市長\n|}\n\n== 脚注 ==\n\n=== 注釈 ===\n\n=== 出典 ===\n\n\n== 外部リンク ==",
+    "知事ファイル - 全国知事会\n\n\n\n*"
+   ],
+   "partyHistory": "自由民主党 → 無所属",
+   "election": {
+    "title": "2026年沖縄県知事選挙",
+    "url": "https://ja.wikipedia.org/wiki/2026%E5%B9%B4%E6%B2%96%E7%B8%84%E7%9C%8C%E7%9F%A5%E4%BA%8B%E9%81%B8%E6%8C%99",
+    "date": "2026-09-13",
+    "support": "推薦：自由民主党・日本維新の会・国民民主党・参政党・公明党沖縄県本部・日本保守党"
+   }
+  }
+ }
+}
