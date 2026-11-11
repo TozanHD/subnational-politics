@@ -1,0 +1,203 @@
+{
+"pref": "愛知県",
+"images": [
+{
+"file": "23_01.jpg",
+"kind": "page",
+"src": "https://www.pref.aichi.jp/uploaded/image/313301.jpg",
+"page": "https://www.pref.aichi.jp/site/gikai/gijido-annai.html",
+"title": "議事堂外観の画像",
+"size": [
+400,
+267
+]
+},
+{
+"file": "23_02.jpg",
+"kind": "page",
+"src": "https://www.pref.aichi.jp/uploaded/image/313302.jpg",
+"page": "https://www.pref.aichi.jp/site/gikai/gijido-annai.html",
+"title": "正面玄関の画像",
+"size": [
+300,
+198
+]
+},
+{
+"file": "23_03.jpg",
+"kind": "page",
+"src": "https://www.pref.aichi.jp/uploaded/image/313304.jpg",
+"page": "https://www.pref.aichi.jp/site/gikai/gijido-annai.html",
+"title": "議場（全体）の画像",
+"size": [
+300,
+214
+]
+},
+{
+"file": "23_04.jpg",
+"kind": "page",
+"src": "https://www.pref.aichi.jp/uploaded/image/313308.jpg",
+"page": "https://www.pref.aichi.jp/site/gikai/gijido-annai.html",
+"title": "議長席の画像",
+"size": [
+300,
+198
+]
+},
+{
+"file": "23_05.jpg",
+"kind": "page",
+"src": "https://www.pref.aichi.jp/uploaded/image/313311.jpg",
+"page": "https://www.pref.aichi.jp/site/gikai/gijido-annai.html",
+"title": "演壇の画像",
+"size": [
+300,
+198
+]
+},
+{
+"file": "23_06.jpg",
+"kind": "page",
+"src": "https://www.pref.aichi.jp/uploaded/image/313313.jpg",
+"page": "https://www.pref.aichi.jp/site/gikai/gijido-annai.html",
+"title": "傍聴席の画像",
+"size": [
+300,
+198
+]
+},
+{
+"file": "23_07.jpg",
+"kind": "page",
+"src": "https://gikai-kids.pref.aichi.jp/assets/img/common/main.png",
+"page": "https://gikai-kids.pref.aichi.jp/about/expedition/",
+"title": "",
+"size": [
+900,
+141
+]
+},
+{
+"file": "23_08.jpg",
+"kind": "page",
+"src": "https://gikai-kids.pref.aichi.jp/assets/img/about/expedition/nav_ph001.jpg",
+"page": "https://gikai-kids.pref.aichi.jp/about/expedition/",
+"title": "",
+"size": [
+900,
+574
+]
+},
+{
+"file": "23_09.jpg",
+"kind": "page",
+"src": "https://gikai-kids.pref.aichi.jp/assets/img/about/expedition/sp/nav_ph001.jpg",
+"page": "https://gikai-kids.pref.aichi.jp/about/expedition/",
+"title": "",
+"size": [
+900,
+575
+]
+},
+{
+"file": "23_10.jpg",
+"kind": "page",
+"src": "https://gikai-kids.pref.aichi.jp/assets/img/about/expedition/pr_ph001.jpg",
+"page": "https://gikai-kids.pref.aichi.jp/about/expedition/",
+"title": "",
+"size": [
+360,
+270
+]
+},
+{
+"file": "23_11.jpg",
+"kind": "page",
+"src": "https://gikai-kids.pref.aichi.jp/assets/img/about/expedition/pr_ph002.jpg",
+"page": "https://gikai-kids.pref.aichi.jp/about/expedition/",
+"title": "",
+"size": [
+360,
+270
+]
+},
+{
+"file": "23_12.jpg",
+"kind": "page",
+"src": "https://gikai-kids.pref.aichi.jp/assets/img/about/expedition/pr_ph003.jpg",
+"page": "https://gikai-kids.pref.aichi.jp/about/expedition/",
+"title": "",
+"size": [
+360,
+270
+]
+},
+{
+"file": "23_13.jpg",
+"kind": "page",
+"src": "https://www.pref.aichi.jp/uploaded/image/200281.jpg",
+"page": "https://www.pref.aichi.jp/soshiki/zaisan/gijidokaisetu.html",
+"title": "議事堂南西写真",
+"size": [
+400,
+266
+]
+},
+{
+"file": "23_14.jpg",
+"kind": "page",
+"src": "https://www.pref.aichi.jp/uploaded/image/200282.jpg",
+"page": "https://www.pref.aichi.jp/soshiki/zaisan/gijidokaisetu.html",
+"title": "議事堂南東写真",
+"size": [
+400,
+266
+]
+},
+{
+"file": "23_15.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/JqhjORyUdlk/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=JqhjORyUdlk",
+"title": "愛知県議会の議場はこんな感じです",
+"size": [
+900,
+506
+]
+},
+{
+"file": "23_16.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/kr2aZTsMZzw/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=kr2aZTsMZzw",
+"title": "通行許可証持たずマイカーで強引に入場…愛知県議会の成田副議長がアジア大会会場での問題受け副議長を辞任",
+"size": [
+900,
+506
+]
+},
+{
+"file": "23_17.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/sexxOwfyboQ/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=sexxOwfyboQ",
+"title": "愛知県議会だより～令和８年２月定例議会から②～",
+"size": [
+900,
+506
+]
+},
+{
+"file": "23_18.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/tFIfwboIbhc/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=tFIfwboIbhc",
+"title": "愛知県議会だより～９月定例議会から②～",
+"size": [
+900,
+506
+]
+}
+]
+}

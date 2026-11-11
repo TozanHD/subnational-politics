@@ -1,0 +1,93 @@
+{
+"pref": "青森県",
+"images": [
+{
+"file": "02_01.jpg",
+"kind": "pdf",
+"src": "https://www.pref.aomori.lg.jp/soshiki/gikai/files/30gaiyou_zentai.pdf",
+"page": "https://www.pref.aomori.lg.jp/soshiki/gikai/files/30gaiyou_zentai.pdf",
+"title": "p31 score3",
+"size": [
+496,
+703
+]
+},
+{
+"file": "02_02.jpg",
+"kind": "pdf",
+"src": "https://www.pref.aomori.lg.jp/soshiki/gikai/files/30gaiyou_zentai.pdf",
+"page": "https://www.pref.aomori.lg.jp/soshiki/gikai/files/30gaiyou_zentai.pdf",
+"title": "p43 score3",
+"size": [
+496,
+703
+]
+},
+{
+"file": "02_03.jpg",
+"kind": "pdf",
+"src": "https://www.pref.aomori.lg.jp/soshiki/gikai/files/r6gaikyou_okutsuke.pdf",
+"page": "https://www.pref.aomori.lg.jp/soshiki/gikai/files/r6gaikyou_okutsuke.pdf",
+"title": "p1 score0",
+"size": [
+496,
+703
+]
+},
+{
+"file": "02_04.jpg",
+"kind": "pdf",
+"src": "https://www.pref.aomori.lg.jp/soshiki/gikai/files/r6gaikyou_okutsuke.pdf",
+"page": "https://www.pref.aomori.lg.jp/soshiki/gikai/files/r6gaikyou_okutsuke.pdf",
+"title": "p2 score0",
+"size": [
+496,
+703
+]
+},
+{
+"file": "02_05.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/IdhbU7v8pCs/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=IdhbU7v8pCs",
+"title": "青森市議会 傍聴のすゝめ　～議場へ行こう！～【AomoLIVE】",
+"size": [
+900,
+506
+]
+},
+{
+"file": "02_06.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/7PKZnU44nxg/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=7PKZnU44nxg",
+"title": "【17：30】恒例議会後のライブ配信！ ＃木村じゅんじ",
+"size": [
+900,
+506
+]
+},
+{
+"file": "02_07.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/jhYq2OOpLfY/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=jhYq2OOpLfY",
+"title": "「青森県の教育に関するアンケート結果」及び「２０２５年度アクションプラン点検・評価結果等」について令和7年度第３回青森県教育改革有識者会議1007",
+"size": [
+900,
+506
+]
+},
+{
+"file": "02_08.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/PDget9_6Sbk/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=PDget9_6Sbk",
+"title": "「青森県の教育に関するアンケート結果」及び「2026年度アクションプラン点検・評価報告書等」について（令和8年度第3回青森県教育改革有識者会議1006）",
+"size": [
+900,
+506
+]
+}
+]
+}

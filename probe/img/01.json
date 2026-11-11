@@ -1,0 +1,313 @@
+{
+"pref": "北海道",
+"images": [
+{
+"file": "01_01.jpg",
+"kind": "page",
+"src": "https://www.nihonsekkei.co.jp/wp-content/themes/nihonsekkei2020/images/nav/we-philosophy.png",
+"page": "https://www.nihonsekkei.co.jp/projects/14447/",
+"title": "",
+"size": [
+440,
+270
+]
+},
+{
+"file": "01_02.jpg",
+"kind": "page",
+"src": "https://www.nihonsekkei.co.jp/wp-content/themes/nihonsekkei2020/images/nav/we-video.png",
+"page": "https://www.nihonsekkei.co.jp/projects/14447/",
+"title": "",
+"size": [
+440,
+270
+]
+},
+{
+"file": "01_03.jpg",
+"kind": "page",
+"src": "https://www.nihonsekkei.co.jp/wp-content/themes/nihonsekkei2020/images/nav/we-message.png",
+"page": "https://www.nihonsekkei.co.jp/projects/14447/",
+"title": "",
+"size": [
+440,
+270
+]
+},
+{
+"file": "01_04.jpg",
+"kind": "page",
+"src": "https://www.nihonsekkei.co.jp/wp-content/themes/nihonsekkei2020/images/nav/we-journey.png",
+"page": "https://www.nihonsekkei.co.jp/projects/14447/",
+"title": "",
+"size": [
+440,
+270
+]
+},
+{
+"file": "01_05.jpg",
+"kind": "page",
+"src": "https://www.nihonsekkei.co.jp/wp-content/themes/nihonsekkei2020/images/nav/we-publishing.png",
+"page": "https://www.nihonsekkei.co.jp/projects/14447/",
+"title": "",
+"size": [
+440,
+270
+]
+},
+{
+"file": "01_06.jpg",
+"kind": "page",
+"src": "https://www.nihonsekkei.co.jp/wp-content/themes/nihonsekkei2020/images/nav/service-architecture_design.png",
+"page": "https://www.nihonsekkei.co.jp/projects/14447/",
+"title": "",
+"size": [
+440,
+270
+]
+},
+{
+"file": "01_07.jpg",
+"kind": "page",
+"src": "https://www.axona-aichi.com/files/blog/projects/blog_posts/2021/02/00000154_eye_catch.jpg?626424733",
+"page": "https://www.axona-aichi.com/projects/archives/154",
+"title": "og:image",
+"size": [
+650,
+380
+]
+},
+{
+"file": "01_08.jpg",
+"kind": "page",
+"src": "https://www.axona-aichi.com/img/pict-nav-about.jpg",
+"page": "https://www.axona-aichi.com/projects/archives/154",
+"title": "",
+"size": [
+800,
+480
+]
+},
+{
+"file": "01_09.jpg",
+"kind": "page",
+"src": "https://www.axona-aichi.com/img/pict-nav-products.jpg",
+"page": "https://www.axona-aichi.com/projects/archives/154",
+"title": "",
+"size": [
+800,
+480
+]
+},
+{
+"file": "01_10.jpg",
+"kind": "page",
+"src": "https://www.axona-aichi.com/img/pict-nav-publicity.jpg",
+"page": "https://www.axona-aichi.com/projects/archives/154",
+"title": "",
+"size": [
+800,
+480
+]
+},
+{
+"file": "01_11.jpg",
+"kind": "page",
+"src": "https://www.axona-aichi.com/img/pict-nav-all-products-chairs.jpg",
+"page": "https://www.axona-aichi.com/projects/archives/154",
+"title": "",
+"size": [
+530,
+360
+]
+},
+{
+"file": "01_12.jpg",
+"kind": "page",
+"src": "https://www.axona-aichi.com/img/pict-nav-all-products-tables.jpg",
+"page": "https://www.axona-aichi.com/projects/archives/154",
+"title": "",
+"size": [
+530,
+360
+]
+},
+{
+"file": "01_13.jpg",
+"kind": "bing",
+"src": "https://static.gltjp.com/glt/data/article/21000/20596/20240123_162518_90a6c45a_w1920.webp",
+"page": "https://www.gltjp.com/ja/article/item/20596/",
+"title": "四季折々の雄大な自然景観を満喫！北海道の絶景スポット19選 | GOOD LUCK TRIP",
+"size": [
+900,
+506
+]
+},
+{
+"file": "01_14.jpg",
+"kind": "bing",
+"src": "https://d1d37e9z843vy6.cloudfront.net/jp/images/3759166/700/41b97b04fa9303e384d54f9bf3180b9a340cb437.jpeg",
+"page": "https://www.travelbook.co.jp/topic/43391",
+"title": "北海道の大自然の中で車を走らせよう！ドライブで巡る人気の観光スポット13選！ - おすすめ旅行を探すならトラベルブック(TravelBook)",
+"size": [
+700,
+445
+]
+},
+{
+"file": "01_15.jpg",
+"kind": "bing",
+"src": "https://res.klook.com/image/upload/fl_lossy.progressive,q_85/c_fill,w_1000/v1654078944/blog/k7yn4os6sqfpuott0plx.jpg",
+"page": "https://www.klook.com/ja/blog/best-spots-in-summer-hokkaido/",
+"title": "北海道｜夏の観光スポット9選！家族連れやカップルにもオススメな絶景や名所を紹介 | Klookブログ",
+"size": [
+900,
+601
+]
+},
+{
+"file": "01_16.jpg",
+"kind": "bing",
+"src": "https://d1d37e9z843vy6.cloudfront.net/jp/images/3747906/11e48848b05476ea9299f922e186b94db3924491.jpeg",
+"page": "https://www.travelbook.co.jp/topic/42585",
+"title": "【北海道】美瑛の丘で春夏秋冬の絶景を堪能！おすすめ観光スポットとその楽しみ方 - おすすめ旅行を探すならトラベルブック(TravelBook)",
+"size": [
+900,
+600
+]
+},
+{
+"file": "01_17.jpg",
+"kind": "bing",
+"src": "https://www.visit-hokkaido.jp/lsc/upfile/top/visual/0000/0075/75_1_l.jpg",
+"page": "https://www.visit-hokkaido.jp/",
+"title": "【公式】北海道の観光・旅行情報サイト HOKKAIDO LOVE!",
+"size": [
+900,
+600
+]
+},
+{
+"file": "01_18.jpg",
+"kind": "bing",
+"src": "https://i.pinimg.com/originals/f2/32/58/f232586771a921f7c56ef034754365d8.png",
+"page": "https://www.pinterest.jp/pin/512917845040201730/",
+"title": "「北海道 地図 旅行」の検索結果 - Yahoo!検索(画像) | 北海道 地図, 観光マップ, 旅行",
+"size": [
+788,
+696
+]
+},
+{
+"file": "01_19.jpg",
+"kind": "bing",
+"src": "https://static.gltjp.com/glt/data/article/21000/20596/20240123_162518_90a6c45a_w1920.webp",
+"page": "https://www.gltjp.com/ja/article/item/20596/",
+"title": "四季折々の雄大な自然景観を満喫！北海道の絶景スポット19選 | GOOD LUCK TRIP",
+"size": [
+900,
+506
+]
+},
+{
+"file": "01_20.jpg",
+"kind": "bing",
+"src": "https://d1d37e9z843vy6.cloudfront.net/jp/images/3759166/700/41b97b04fa9303e384d54f9bf3180b9a340cb437.jpeg",
+"page": "https://www.travelbook.co.jp/topic/43391",
+"title": "北海道の大自然の中で車を走らせよう！ドライブで巡る人気の観光スポット13選！ - おすすめ旅行を探すならトラベルブック(TravelBook)",
+"size": [
+700,
+445
+]
+},
+{
+"file": "01_21.jpg",
+"kind": "bing",
+"src": "https://res.klook.com/image/upload/fl_lossy.progressive,q_85/c_fill,w_1000/v1654078944/blog/k7yn4os6sqfpuott0plx.jpg",
+"page": "https://www.klook.com/ja/blog/best-spots-in-summer-hokkaido/",
+"title": "北海道｜夏の観光スポット9選！家族連れやカップルにもオススメな絶景や名所を紹介 | Klookブログ",
+"size": [
+900,
+601
+]
+},
+{
+"file": "01_22.jpg",
+"kind": "bing",
+"src": "https://d1d37e9z843vy6.cloudfront.net/jp/images/3747906/11e48848b05476ea9299f922e186b94db3924491.jpeg",
+"page": "https://www.travelbook.co.jp/topic/42585",
+"title": "【北海道】美瑛の丘で春夏秋冬の絶景を堪能！おすすめ観光スポットとその楽しみ方 - おすすめ旅行を探すならトラベルブック(TravelBook)",
+"size": [
+900,
+600
+]
+},
+{
+"file": "01_23.jpg",
+"kind": "bing",
+"src": "https://www.visit-hokkaido.jp/lsc/upfile/top/visual/0000/0075/75_1_l.jpg",
+"page": "https://www.visit-hokkaido.jp/",
+"title": "【公式】北海道の観光・旅行情報サイト HOKKAIDO LOVE!",
+"size": [
+900,
+600
+]
+},
+{
+"file": "01_24.jpg",
+"kind": "bing",
+"src": "https://i.pinimg.com/originals/f2/32/58/f232586771a921f7c56ef034754365d8.png",
+"page": "https://www.pinterest.jp/pin/512917845040201730/",
+"title": "「北海道 地図 旅行」の検索結果 - Yahoo!検索(画像) | 北海道 地図, 観光マップ, 旅行",
+"size": [
+788,
+696
+]
+},
+{
+"file": "01_25.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/Uz_HDwZrwcM/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=Uz_HDwZrwcM",
+"title": "2023年12月5日　北海道議会本会議（質疑）",
+"size": [
+900,
+506
+]
+},
+{
+"file": "01_26.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/Ta5WFr4c4po/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=Ta5WFr4c4po",
+"title": "原発再稼働へ 北海道議会が１時間以上遅れ「再稼働はやむを得ない」知事の同意方針で一部会派が反発　副知事が説明に追われる",
+"size": [
+900,
+506
+]
+},
+{
+"file": "01_27.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/OkfztSo0XdQ/hqdefault.jpg",
+"page": "https://www.youtube.com/watch?v=OkfztSo0XdQ",
+"title": "2023 9 27北海道議会本会議　一般質問　真下紀子道議会議員",
+"size": [
+480,
+360
+]
+},
+{
+"file": "01_28.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/K7OECkjDGjc/hqdefault.jpg",
+"page": "https://www.youtube.com/watch?v=K7OECkjDGjc",
+"title": "2026年3月19日　北海道議会　第1回定例道議会本会議真下紀子道議",
+"size": [
+480,
+360
+]
+}
+]
+}

@@ -1,0 +1,82 @@
+{
+"pref": "香川県",
+"images": [
+{
+"file": "37_01.jpg",
+"kind": "page",
+"src": "https://www.pref.kagawa.lg.jp/shared/site_gikai/images/sns/ogp.png",
+"page": "https://www.pref.kagawa.lg.jp/gikai/annai/3_2.html",
+"title": "og:image",
+"size": [
+900,
+472
+]
+},
+{
+"file": "37_02.jpg",
+"kind": "page",
+"src": "https://www.pref.kagawa.lg.jp/shared/site_gikai/images/sns/ogp.png",
+"page": "https://www.pref.kagawa.lg.jp/gikai/aramashi/2_3.html",
+"title": "og:image",
+"size": [
+900,
+472
+]
+},
+{
+"file": "37_03.jpg",
+"kind": "page",
+"src": "https://bb-building.net/city/image/img-w/2007-01.webp",
+"page": "https://bb-building.net/city/info/2007.html",
+"title": "香川県議会議事堂",
+"size": [
+500,
+375
+]
+},
+{
+"file": "37_04.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/gUJksRDNcfE/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=gUJksRDNcfE",
+"title": "香川県議会　植田真紀議員への問責決議の撤回を　地方議員らが申し入れ「議員の発言萎縮につながる」",
+"size": [
+900,
+506
+]
+},
+{
+"file": "37_05.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/i53uvZSIbf4/hqdefault.jpg",
+"page": "https://www.youtube.com/watch?v=i53uvZSIbf4",
+"title": "故・丹下健三氏設計の旧県立体育館を解体する工事請負契約など４４議案を可決　香川県議会閉会【香川】 (25/12/11 16:00)",
+"size": [
+480,
+360
+]
+},
+{
+"file": "37_06.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/NPyJswX1VPg/hqdefault.jpg",
+"page": "https://www.youtube.com/watch?v=NPyJswX1VPg",
+"title": "池田知事２期目初の県議会　９月定例香川県議会開会【香川】 (26/09/24 18:45)",
+"size": [
+480,
+360
+]
+},
+{
+"file": "37_07.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/rb1O3IGTA5I/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=rb1O3IGTA5I",
+"title": "「ゲーム条例は憲法に反しない」香川県知事が答弁　議員の質問に議場から「やじ」も相次ぐ",
+"size": [
+900,
+506
+]
+}
+]
+}

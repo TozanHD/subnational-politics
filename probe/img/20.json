@@ -1,0 +1,93 @@
+{
+"pref": "長野県",
+"images": [
+{
+"file": "20_01.jpg",
+"kind": "page",
+"src": "https://www.pref.nagano.lg.jp/gikai/chosa/gaiyo/images/gikaitou_1kai_2305.jpg",
+"page": "https://www.pref.nagano.lg.jp/gikai/chosa/gaiyo/gijido-2.html",
+"title": "gikaitou_1kai",
+"size": [
+900,
+590
+]
+},
+{
+"file": "20_02.jpg",
+"kind": "page",
+"src": "https://www.pref.nagano.lg.jp/gikai/chosa/gaiyo/images/gikaitou_2kai_2305.jpg",
+"page": "https://www.pref.nagano.lg.jp/gikai/chosa/gaiyo/gijido-2.html",
+"title": "gikaitou_2kai",
+"size": [
+900,
+512
+]
+},
+{
+"file": "20_03.jpg",
+"kind": "page",
+"src": "https://www.pref.nagano.lg.jp/gikai/chosa/gaiyo/images/gikaitou_3kai_2305.jpg",
+"page": "https://www.pref.nagano.lg.jp/gikai/chosa/gaiyo/gijido-2.html",
+"title": "gikaitou_3kai",
+"size": [
+900,
+389
+]
+},
+{
+"file": "20_04.jpg",
+"kind": "page",
+"src": "https://www.pref.nagano.lg.jp/gikai/chosa/gaiyo/images/haisekizu2026.jpg",
+"page": "https://www.pref.nagano.lg.jp/gikai/chosa/gaiyo/gijido-2.html",
+"title": "haisekizu2026",
+"size": [
+794,
+800
+]
+},
+{
+"file": "20_05.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/b1V8-agvZL0/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=b1V8-agvZL0",
+"title": "「長野県議会　本会議中継（令和8年10月5日　一般質問㉔　藤岡義英議員）」",
+"size": [
+900,
+506
+]
+},
+{
+"file": "20_06.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/G3B0wPOjFKg/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=G3B0wPOjFKg",
+"title": "「長野県議会　本会議中継（令和8年10月2日　一般質問⑪　寺沢功希議員）」",
+"size": [
+900,
+506
+]
+},
+{
+"file": "20_07.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/2JqHS1LZ7j4/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=2JqHS1LZ7j4",
+"title": "「長野県議会　本会議中継（令和7年12月2日　一般質問⑦　加藤康治議員）",
+"size": [
+900,
+506
+]
+},
+{
+"file": "20_08.jpg",
+"kind": "youtube",
+"src": "https://i.ytimg.com/vi/evpuSg8Iu7Q/maxresdefault.jpg",
+"page": "https://www.youtube.com/watch?v=evpuSg8Iu7Q",
+"title": "「長野県議会　本会議中継（令和8年10月6日　一般質問㉛　佐藤千枝議員）」",
+"size": [
+900,
+506
+]
+}
+]
+}
