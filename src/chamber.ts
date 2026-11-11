@@ -10,8 +10,10 @@ export interface ChamberConfig {
   span?: number;
   /** 教室型: 通路で区切られた各ブロックの横の席数 */
   blocks?: number[];
-  /** 形を判断した根拠（議席図 / 写真） */
+  /** 形を判断した根拠 */
   basis?: string;
+  /** 補足（県別ページに表示） */
+  note?: string;
   /** 参照した県議会サイトのページ */
   source?: string;
 }

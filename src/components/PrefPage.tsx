@@ -68,12 +68,12 @@ export default function PrefPage({ pref }: { pref: Prefecture }) {
                 <>
                   （
                   <a href={chamber.config.source} target="_blank" rel="noopener noreferrer">
-                    公式サイトの{chamber.config.basis === '議席図' ? '議席図' : '議場の写真'}
+                    {chamber.config.basis ?? '資料'}
                   </a>
                   をもとに設定）
                 </>
               )}
-              。
+              。{chamber.config.note}
             </>
           )}
         </p>
