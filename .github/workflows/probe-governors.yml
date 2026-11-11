@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - run: mkdir -p probe && python scripts/governors/probe.py 2>&1 | tee probe/governors_probe.log
+      - run: mkdir -p probe && python scripts/governors/update_governors.py 2>&1 | tee probe/governors_update.log
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

@@ -240,9 +240,10 @@ def party_history(article_text: str) -> str | None:
     if not v:
         return None
     v = re.sub(r"^（(.*?)→）\s*", r"\1→", v)  # 「（無所属→）自由民主党」→「無所属→自由民主党」
-    v = re.sub(r"（([^（）]*?)→）", r"\1→", v)
+    v = re.sub(r"（((?:[^（）]|（[^（）]*）)*?)→）", r"\1→", v)
     v = re.sub(r"\s+", " ", v).replace(" →", "→").replace("→ ", "→")
-    return v.replace("→", " → ").strip()
+    v = v.replace("→", " → ").strip()
+    return v or None
 
 
 def election_titles(pref: str, *texts: str) -> list[str]:
@@ -282,12 +283,16 @@ def endorsements(text: str, name: str, article: str | None) -> str | None:
     keys = {name, name.replace(" ", "")}
     if article:
         keys.add(article.split(" (")[0])
+    from_template: str | None = None
     res = template_params(text, "選挙結果 (日本の首長)") or template_params(text, "選挙結果(日本の首長)")
     if res and "当選者名" in res:
         winner = strip_markup(res["当選者名"]).replace(" ", "")
-        if any(k and k.replace(" ", "") == winner for k in keys):
-            return tidy_support(strip_markup(res.get("当選者推薦・支持", "")))
-        return None  # 当選者が本人ではない選挙
+        winner_link = link_target(res["当選者名"])
+        if not (any(k and k.replace(" ", "") == winner for k in keys) or (article and winner_link == article)):
+            return None  # 当選者が本人ではない選挙
+        from_template = tidy_support(strip_markup(res.get("当選者推薦・支持", "")))
+        if from_template:
+            return from_template
     for table in re.findall(r"\{\|.*?\n\|\}", text, re.S):
         rows = re.split(r"\n\|-[^\n]*", table)
         header = next((r for r in rows if re.search(r"^!", r, re.M)), "")
@@ -296,7 +301,7 @@ def endorsements(text: str, name: str, article: str | None) -> str | None:
             continue
         for r in rows:
             plain = strip_markup(r).replace(" ", "")
-            if not any(k.replace(" ", "") in plain for k in keys if k):
+            if not (any(k.replace(" ", "") in plain for k in keys if k) or (article and f"[[{article}|" in r)):
                 continue
             cells = split_cells(r)
             if len(cells) < 2:
@@ -319,7 +324,7 @@ def endorsements(text: str, name: str, article: str | None) -> str | None:
             if notes:
                 return tidy_support("、".join(dict.fromkeys(n.strip("。 ") for n in notes)))
             return ""
-    return None
+    return from_template
 
 
 # ---------------------------------------------------------------------------
@@ -341,8 +346,14 @@ def build(fetch: Callable[[list[str]], dict[str, str]], today: dt.date) -> tuple
         titles = election_titles(pref, text)
         if c.get("sinceElection") and c["sinceElection"] not in titles:
             titles.append(c["sinceElection"])
+        if c.get("since"):
+            y0 = int(c["since"][:4])
+            for y in range(y0, today.year + 1, 4):  # 再選の選挙は就任年から 4 年ごと（任期満了の前年のこともある）
+                for yy in (y, y - 1):
+                    if yy <= today.year:
+                        titles.append(f"{yy}年{pref}知事選挙")
         cand[pref] = sorted(set(titles), reverse=True)
-    el = fetch(sorted({t for ts in cand.values() for t in ts[:4]}))
+    el = fetch(sorted({t for ts in cand.values() for t in ts[:8]}))
     out: dict[str, dict] = {}
     for pref in PREFECTURES:
         c = current.get(pref)
@@ -359,7 +370,7 @@ def build(fetch: Callable[[list[str]], dict[str, str]], today: dt.date) -> tuple
             "partyHistory": party_history(text) if text else None,
         }
         # 当選した直近の知事選挙: 投票日が今日以前で、候補者表に本人がいるもののうち最新
-        for title in cand.get(pref, [])[:4]:
+        for title in cand.get(pref, [])[:8]:
             et = el.get(title)
             if not et:
                 continue
