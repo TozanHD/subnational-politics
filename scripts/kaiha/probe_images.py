@@ -19,7 +19,7 @@ from extract import decode  # noqa: E402
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "probe" / "img"
 BROWSER = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
-JUNK = re.compile(r"logo|icon|banner|bnr|btn|button|header|footer|spacer|arrow|\.gif|\.svg|qr|sns|twitter|facebook|line_|search|menu|pagetop|adobe|get_", re.I)
+JUNK = re.compile(r"logo|icon|banner|bnr|btn|button|header|footer|spacer|arrow|\.svg|qr|sns|twitter|facebook|line_|search|menu|pagetop|adobe|get_", re.I)
 PAGE_KW = [("議席表", 10), ("議席図", 10), ("議席配置", 10), ("議場配置", 10), ("議場図", 10), ("配席", 8), ("座席表", 8),
            ("議長席", 5), ("演壇", 5), ("傍聴席", 3), ("議場", 2), ("議席", 2)]
 
@@ -75,7 +75,7 @@ def pdf_pages(data, n=2):
 
 
 def bing_images(q):
-    got = get("https://www.bing.com/images/search?form=HDRSC2&first=1&q=" + urllib.parse.quote(q))
+    got = get("https://www.bing.com/images/search?form=HDRSC2&first=1&mkt=ja-JP&setlang=ja&cc=JP&q=" + urllib.parse.quote(q))
     if not got:
         return []
     page = htmllib.unescape(got[0].decode("utf-8", "replace"))
@@ -150,7 +150,14 @@ def run(code, pref, t):
             saved.append({"file": name, "kind": kind, "src": src, "page": page, "title": title[:80], "size": size})
         return bool(size)
 
-    for url in t.get("pages", []):
+    queue = list(t.get("pages", []))
+    visited = set()
+    follow = re.compile(t["follow"]) if t.get("follow") else None
+    while queue and len(visited) < 12:
+        url = queue.pop(0)
+        if url in visited:
+            continue
+        visited.add(url)
         got = get(url)
         time.sleep(0.4)
         if not got:
@@ -164,6 +171,12 @@ def run(code, pref, t):
             add(body, "image", url, url, "")
             continue
         page = decode(body, ctype)
+        if follow and url in t.get("pages", []):
+            for m in re.finditer(r'<a\b[^>]*href=["\']([^"\']+)["\'][^>]*>(.*?)</a>', page, re.I | re.S):
+                text = re.sub(r"<[^>]+>", "", m.group(2))
+                alt = " ".join(re.findall(r'alt=["\']([^"\']*)', m.group(2)))
+                if follow.search(text + alt) and not re.search(r"\.(pdf|jpe?g|png)$", m.group(1), re.I):
+                    queue.append(urllib.parse.urljoin(final, htmllib.unescape(m.group(1))).split("#")[0])
         srcs = []
         og = re.search(r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)', page, re.I)
         if og:
@@ -180,7 +193,7 @@ def run(code, pref, t):
         done = set()
         for s, alt in srcs:
             u = urllib.parse.urljoin(final, htmllib.unescape(s))
-            if u in done or k >= 6:
+            if u in done or k >= 10:
                 continue
             done.add(u)
             g2 = get(u, referer=final)
@@ -192,6 +205,24 @@ def run(code, pref, t):
                     k += add(png, "pdf", u, final, alt + " " + note)
             else:
                 k += add(g2[0], "page", u, final, alt, 300)
+    import subprocess
+    for vid in t.get("videos", []):
+        try:
+            direct = subprocess.run(["yt-dlp", "-g", "-f", "best[height<=480]/best", "https://www.youtube.com/watch?v=" + vid],
+                                    capture_output=True, text=True, timeout=90)
+            stream = direct.stdout.strip().splitlines()[0] if direct.stdout.strip() else ""
+            if not stream:
+                print(f"   yt-dlp {vid}: {direct.stderr[-200:]}", file=sys.stderr)
+                continue
+            for ts in t.get("times", [20, 90, 300, 900, 2400]):
+                tmp = OUT / f"_tmp_{code}_{vid}_{ts}.jpg"
+                subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", str(ts), "-i", stream, "-frames:v", "1", str(tmp)],
+                               timeout=120)
+                if tmp.exists():
+                    add(tmp.read_bytes(), "frame", f"https://www.youtube.com/watch?v={vid}&t={ts}", "https://www.youtube.com/watch?v=" + vid, f"t={ts}")
+                    tmp.unlink()
+        except Exception as e:  # noqa: BLE001
+            print(f"   video {vid}: {e}", file=sys.stderr)
     for engine, fn, per in (("bing", bing_images, 6), ("ddg", ddg_images, 5), ("commons", commons, 4), ("youtube", youtube_thumbs, 4)):
         for q in t.get("queries", {}).get(engine, []):
             res = fn(q)
@@ -219,7 +250,7 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     targets = json.loads((ROOT / "probe" / "image_targets.json").read_text(encoding="utf-8"))
     codes = {p: i + 1 for i, (p, _) in enumerate(PREFS)}
-    with ThreadPoolExecutor(max_workers=6) as ex:
+    with ThreadPoolExecutor(max_workers=2) as ex:
         list(ex.map(lambda kv: run(codes[kv[0]], kv[0], kv[1]), targets.items()))
 
 

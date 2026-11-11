@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - run: pip install -r scripts/requirements.txt
+      - run: pip install -r scripts/requirements.txt yt-dlp
       - run: python scripts/kaiha/probe_images.py 2>&1 | tee probe/images.log
       - run: |
           git config user.name "github-actions[bot]"
