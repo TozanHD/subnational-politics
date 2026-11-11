@@ -59,9 +59,23 @@ export default function PrefPage({ pref }: { pref: Prefecture }) {
             </>
           )}{' '}
           {view === 'kaiha' && kaiha ? '白抜きの席は、欠員または名簿で会派を確認できなかった議席です。' : '白抜きの席は欠員です。'}
-          {chamber.isDefault
-            ? ` 図は標準の形（${CHAMBER_LABEL[chamber.config.type]}）で描いています。`
-            : ` 図は${pref.name}議会の議場の形（${CHAMBER_LABEL[chamber.config.type]}）に合わせた模式図で、実際の席順ではありません。`}
+          {chamber.isDefault ? (
+            ` 議場の形は未確認のため、標準の形（${CHAMBER_LABEL[chamber.config.type]}）で描いています。`
+          ) : (
+            <>
+              {' '}図は{pref.name}議会の議場の形（{CHAMBER_LABEL[chamber.config.type]}）に合わせた模式図で、実際の席順ではありません
+              {chamber.config.source && (
+                <>
+                  （
+                  <a href={chamber.config.source} target="_blank" rel="noopener noreferrer">
+                    公式サイトの{chamber.config.basis === '議席図' ? '議席図' : '議場の写真'}
+                  </a>
+                  をもとに設定）
+                </>
+              )}
+              。
+            </>
+          )}
         </p>
       </section>
 
