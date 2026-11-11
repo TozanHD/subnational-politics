@@ -35,6 +35,27 @@ scripts/kaiha/update_kaiha.py
 **Issue が届いたら**：県のサイトが大きく改装された可能性があります。`sites.json` の該当県の URL や方式を直してください。
 Actions の「会派ページ調査（開発用）」を手動実行すると、現在の取得結果とログが `probe/` に保存されます。
 
+### 議場の形（`src/data/chambers.json`）
+
+議席図は県ごとに議場の形に合わせて描けます。形は自動では判別できないため、このファイルに書いた県だけが反映され、書いていない県は `default` の形になります。
+
+```json
+"prefectures": {
+  "秋田県": { "type": "facing" },
+  "○○県": { "type": "classroom", "blocks": [3, 4, 3] }
+}
+```
+
+| `type` | 形 | 調整できる値 |
+| --- | --- | --- |
+| `hemicycle` | 半円形（標準） | `rows` 列の数 |
+| `fan` | 扇形 | `span` 開き角度（度）、`rows` |
+| `classroom` | 教室型（議長席に向かって横並び） | `blocks` 通路で区切った各ブロックの横の席数、`rows` |
+| `facing` | 対面型（通路をはさんで向かい合う） | `rows` 片側の奥行き |
+| `horseshoe` | 馬蹄形（U字） | `rows` |
+
+席数は定数から自動で決まるので、定数が変わっても直す必要はありません。図は形を表す模式図で、実際の席順ではありません。
+
 ### 所属党派（総務省・年 1 回）
 
 ```
@@ -102,4 +123,5 @@ Node のバージョンは `.nvmrc` から自動で読まれます。
 - `tests/` … テスト（実際の総務省の Excel・県議会サイトの文書を使用）
 - `src/data/latest.json` / `src/data/kaiha.json` … サイトが表示するデータ（自動生成）
 - `data/raw/` … 取り込んだ総務省の Excel の原本（記録用）
+- `src/data/chambers.json` … 県ごとの議場の形（手で設定）
 - `src/` … フロントエンド（React + Vite）

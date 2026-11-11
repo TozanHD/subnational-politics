@@ -1,0 +1,7 @@
+{
+  "_説明": "議場の形の設定。type: hemicycle(半円形) / fan(扇形) / classroom(教室型・議長席に向かって横並び) / facing(対面型・通路をはさんで向かい合う) / horseshoe(馬蹄形・U字)。任意の調整値: rows(列の数。対面型では片側の奥行き) / span(扇形の開き角度・度) / blocks(教室型の通路で区切られた各ブロックの横の席数。例 [3,4,3])。ここに無い都道府県は default の形で描く。",
+  "default": { "type": "hemicycle" },
+  "prefectures": {
+    "秋田県": { "type": "facing" }
+  }
+}

@@ -433,3 +433,11 @@ tfoot td {
 .tabs {
   margin-bottom: 8px;
 }
+
+.podium rect {
+  fill: var(--vacant);
+}
+
+.podium text {
+  fill: var(--muted);
+}

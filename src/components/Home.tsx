@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { REGIONS, bodySegments, dataset, largestParty, pct, regionOf, shortName, partyColor, sumBodies } from '../data';
-import Hemicycle from './Hemicycle';
+import { chamberOf } from '../chamber';
+import Chamber from './Chamber';
 import PartyBar from './PartyBar';
 
 type SortKey = 'code' | 'seats' | 'women' | 'ldp';
@@ -82,7 +83,7 @@ export default function Home() {
                   <h3>{p.name}</h3>
                   <span className="muted">{regionOf(p.code)}</span>
                 </div>
-                <Hemicycle segments={bodySegments(p.assembly)} fixed={p.assembly.fixed} label={`${p.name}議会 ${p.assembly.total[2]}人`} />
+                <Chamber segments={bodySegments(p.assembly)} fixed={p.assembly.fixed} chamber={chamberOf(p.name).config} label={`${p.name}議会 ${p.assembly.total[2]}人`} />
                 <PartyBar segments={bodySegments(p.assembly)} showLegend={false} />
                 <dl className="facts">
                   <div>
