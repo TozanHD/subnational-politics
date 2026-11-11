@@ -1,0 +1,88 @@
+{
+"pref": "秋田県",
+"visited": 45,
+"images": [
+{
+"file": "05_1.jpg",
+"url": "https://pref.akita.gsl-service.net/_files/00078221/kids_gijyou.jpg",
+"desc": "",
+"page": "https://pref.akita.gsl-service.net/kids/place.html",
+"prio": 54,
+"size": [
+1000,
+660
+]
+},
+{
+"file": "05_2.jpg",
+"url": "https://pref.akita.gsl-service.net/_files/00078245/kids_gijyou2.JPG",
+"desc": "",
+"page": "https://pref.akita.gsl-service.net/kids/place.html",
+"prio": 54,
+"size": [
+1000,
+667
+]
+},
+{
+"file": "05_3.jpg",
+"url": "https://pref.akita.gsl-service.net/_files/00045896/ndacchi_read.png",
+"desc": "んだッチ読書",
+"page": "https://pref.akita.gsl-service.net/kids/place.html",
+"prio": 19,
+"size": [
+600,
+704
+]
+},
+{
+"file": "05_4.jpg",
+"url": "https://pref.akita.gsl-service.net/_files/00074018/ndacchi_pla_new.png",
+"desc": "",
+"page": "https://pref.akita.gsl-service.net/kids/place.html",
+"prio": 19,
+"size": [
+476,
+712
+]
+},
+{
+"file": "05_5.jpg",
+"url": "https://pref.akita.gsl-service.net/_files/00045919/gicho.jpg",
+"desc": "議長席画像",
+"page": "https://pref.akita.gsl-service.net/kids/place.html",
+"prio": 19,
+"size": [
+800,
+534
+]
+},
+{
+"file": "05_6.jpg",
+"url": "https://pref.akita.gsl-service.net/_files/00078252/kids_giinseki.png",
+"desc": "",
+"page": "https://pref.akita.gsl-service.net/kids/place.html",
+"prio": 19,
+"size": [
+912,
+465
+]
+}
+],
+"pages": [
+{
+"url": "https://pref.akita.gsl-service.net/kids/place.html",
+"via": "3.本会議場(ほんかいぎじょう)ってどんなところ?",
+"score": 46,
+"lines": [
+"キッズページ トップへ",
+"本会議場(ほんかいぎじょう)ってどんなところ?",
+"本会議場(ほんかいぎじょう)とは?",
+"本会議場(ほんかいぎじょう)は、議員(ぎいん)と知事(ちじ)などが話(はな)し合(あ)いをする会議(かいぎ)の場(ば)で議事堂(ぎじどう)にあります。",
+"現在(げんざい)の議事堂(ぎじどう)は、昭和(しょうわ)34年(ねん)12月(がつ)に完成(かんせい)しました。その後(ご)、平成(へいせい)3年(ねん)3月(がつ)に常任(じょうにん)委員会室(いいんかいしつ)などを増改築(ぞうかいちく)しました。",
+"議長席(ぎちょうせき)"
+],
+"tables": []
+}
+]
+}

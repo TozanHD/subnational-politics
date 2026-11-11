@@ -1,0 +1,71 @@
+{
+"pref": "福井県",
+"visited": 45,
+"images": [
+{
+"file": "18_1.jpg",
+"url": "https://www.pref.fukui.lg.jp/doc/gikai-giji/giinshokai/gisekizu_d/img/020.jpg",
+"desc": "議席図080519",
+"page": "https://www.pref.fukui.lg.jp/doc/gikai-giji/giinshokai/gisekizu.html",
+"prio": 54,
+"size": [
+724,
+1024
+]
+},
+{
+"file": "18_2.jpg",
+"url": "https://www.pref.fukui.lg.jp/share/img/home-img-07-4.jpg",
+"desc": "福井県議会",
+"page": "https://www.pref.fukui.lg.jp/gikai/index.html",
+"prio": 19,
+"size": [
+682,
+232
+]
+}
+],
+"pages": [
+{
+"url": "https://www.pref.fukui.lg.jp/doc/gikai-giji/giinshokai/gisekizu.html",
+"via": "議席図",
+"score": 43,
+"lines": [
+"サイト内検索",
+"議会 > 議員の紹介 > 議席図",
+"議席図",
+"最終更新日 2026年5月19日 | ページID 042420",
+"(令和8年5月19日現在)",
+"このページのトップへ",
+"議会 > 議員の紹介 > 議席図",
+"福井県議会議会局議事調査課",
+"〒910-8580 福井市大手3丁目17番1号(地図・アクセス)"
+],
+"tables": []
+},
+{
+"url": "https://www.pref.fukui.lg.jp/gikai/giinshokai/index.html",
+"via": "議員の紹介",
+"score": 41,
+"lines": [
+"議員の紹介",
+"議員名簿、歴代正副議長、議長交際費、政務活動費、議席図",
+"≪ 「議会」に戻る",
+"「議員の紹介」の記事一覧"
+],
+"tables": []
+},
+{
+"url": "https://www.pref.fukui.lg.jp/gikai/index.html",
+"via": "議会",
+"score": 41,
+"lines": [
+"政務活動費",
+"議席図",
+"議会広報",
+"議会だより"
+],
+"tables": []
+}
+]
+}

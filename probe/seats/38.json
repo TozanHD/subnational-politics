@@ -1,0 +1,30 @@
+{
+"pref": "愛媛県",
+"visited": 45,
+"images": [
+{
+"file": "38_1.jpg",
+"url": "https://www.pref.ehime.jp/gikai/kids/images/yousu_photo_swap0.jpg",
+"desc": "県の仕事は、県民みんなが選んだ知事（執行機関）と県議会（議決機関）により進められています。",
+"page": "https://www.pref.ehime.jp/gikai/kids/shikumi_yousu.html",
+"prio": 19,
+"size": [
+750,
+435
+]
+}
+],
+"pages": [
+{
+"url": "https://www.pref.ehime.jp/gikai/kids/shikumi_yousu.html",
+"via": "",
+"score": 42,
+"lines": [
+"本文へスキップします。",
+"愛媛県議会 > 議場の様子",
+"ここから本文です。"
+],
+"tables": []
+}
+]
+}

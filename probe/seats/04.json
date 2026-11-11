@@ -1,0 +1,104 @@
+{
+"pref": "宮城県",
+"visited": 45,
+"images": [
+{
+"file": "04_1.jpg",
+"url": "https://www.pref.miyagi.jp/images/3217/627540_1.jpg",
+"desc": "議席図,議事堂豆知識",
+"page": "https://www.pref.miyagi.jp/site/kengikai/kids.html",
+"prio": 54,
+"size": [
+413,
+559
+]
+},
+{
+"file": "04_2.jpg",
+"url": "https://www.pref.miyagi.jp/images/3217/627305_1.jpg",
+"desc": "私たちの県議会",
+"page": "https://www.pref.miyagi.jp/site/kengikai/kids.html",
+"prio": 19,
+"size": [
+400,
+549
+]
+},
+{
+"file": "04_3.jpg",
+"url": "https://www.pref.miyagi.jp/images/3217/627530_1.jpg",
+"desc": "県議会のやくわり",
+"page": "https://www.pref.miyagi.jp/site/kengikai/kids.html",
+"prio": 19,
+"size": [
+847,
+600
+]
+},
+{
+"file": "04_4.jpg",
+"url": "https://www.pref.miyagi.jp/images/3217/627533_1.jpg",
+"desc": "県議会のしくみ",
+"page": "https://www.pref.miyagi.jp/site/kengikai/kids.html",
+"prio": 19,
+"size": [
+634,
+598
+]
+},
+{
+"file": "04_5.jpg",
+"url": "https://www.pref.miyagi.jp/images/3217/627532_1.jpg",
+"desc": "県議会のしごと",
+"page": "https://www.pref.miyagi.jp/site/kengikai/kids.html",
+"prio": 19,
+"size": [
+663,
+598
+]
+},
+{
+"file": "04_6.jpg",
+"url": "https://www.pref.miyagi.jp/images/3217/627534_1.jpg",
+"desc": "みんなの生活と県の仕事",
+"page": "https://www.pref.miyagi.jp/site/kengikai/kids.html",
+"prio": 19,
+"size": [
+417,
+600
+]
+}
+],
+"pages": [
+{
+"url": "https://www.pref.miyagi.jp/site/kengikai/kids.html",
+"via": "私たちの県議会(わたしたちのけんぎかい)みやぎけんぎかいキッズコーナー",
+"score": 42,
+"lines": [
+"5 みんなの生活と県の仕事 | 県民の皆さんの生活やまわりのことと県の役割を説明しています。",
+"6 議席図、議事堂豆知識 | 本会議のときに、議員や知事などが座る場所や議事堂を建てたときの豆知識です。",
+"1 私たちの県議会",
+"2 県議会のやくわり",
+"5 みんなの生活と県の仕事",
+"6 議席図、議事堂豆知識",
+"お問い合わせ先",
+"議会事務局 政務調査課広報情報班"
+],
+"tables": []
+},
+{
+"url": "https://www.pref.miyagi.jp/site/kengikai/saigai-shingijoukyou.html",
+"via": "概要",
+"score": 40,
+"lines": [],
+"tables": []
+},
+{
+"url": "https://www.pref.miyagi.jp/site/kengikai/daishinsai-shingijoukyou.html",
+"via": "活動内容",
+"score": 40,
+"lines": [],
+"tables": []
+}
+]
+}

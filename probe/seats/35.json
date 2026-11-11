@@ -1,0 +1,78 @@
+{
+"pref": "山口県",
+"visited": 45,
+"images": [
+{
+"file": "35_1.jpg",
+"url": "https://www.pref.yamaguchi.lg.jp/uploaded/attachment/147151.pdf",
+"desc": "1 議場 (PDF:2.23MB)",
+"page": "https://www.pref.yamaguchi.lg.jp/site/gikai/206354.html",
+"prio": 60,
+"size": [
+662,
+936
+]
+},
+{
+"file": "35_2.jpg",
+"url": "https://www.pref.yamaguchi.lg.jp/uploaded/attachment/147163.pdf",
+"desc": "4 議場参与員・議会事務局職員 (PDF:1017KB)",
+"page": "https://www.pref.yamaguchi.lg.jp/site/gikai/206354.html",
+"prio": 60,
+"size": [
+662,
+936
+]
+},
+{
+"file": "35_3.jpg",
+"url": "https://www.pref.yamaguchi.lg.jp/uploaded/image/151113.png",
+"desc": "議場配席図",
+"page": "https://www.pref.yamaguchi.lg.jp/soshiki/171/25699.html",
+"prio": 54,
+"size": [
+1000,
+642
+]
+},
+{
+"file": "35_4.jpg",
+"url": "https://www.pref.yamaguchi.lg.jp/img/site/gikai/top/mv.jpg",
+"desc": "山口県議会",
+"page": "https://www.pref.yamaguchi.lg.jp/site/gikai/",
+"prio": 19,
+"size": [
+960,
+194
+]
+}
+],
+"pages": [
+{
+"url": "https://www.pref.yamaguchi.lg.jp/soshiki/171/25699.html",
+"via": "議席図",
+"score": 42,
+"lines": [
+"サイトマップで探す",
+"現在地 トップページ > 組織で探す > 議会事務局 > 政務企画室 > 議席図",
+"本文",
+"議席図",
+"ページ番号:0025699 更新日:2026年8月23日更新",
+"印刷ページ表示"
+],
+"tables": []
+},
+{
+"url": "https://www.pref.yamaguchi.lg.jp/site/gikai/",
+"via": "",
+"score": 41,
+"lines": [
+"意見書・決議一覧",
+"議席図",
+"委員会情報",
+"常任委員会"
+],
+"tables": []
+}
+]
+}

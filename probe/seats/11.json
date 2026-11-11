@@ -1,0 +1,81 @@
+{
+"pref": "埼玉県",
+"visited": 45,
+"images": [
+{
+"file": "11_1.jpg",
+"url": "https://www.pref.saitama.lg.jp/images/35938/honn5jpg.jpg",
+"desc": "55",
+"page": "https://www.pref.saitama.lg.jp/kense/gaiyo/access/chosha-annai/haichizu.html",
+"prio": 19,
+"size": [
+740,
+318
+]
+},
+{
+"file": "11_2.jpg",
+"url": "https://www.pref.saitama.lg.jp/images/35938/honn4.jpg",
+"desc": "44",
+"page": "https://www.pref.saitama.lg.jp/kense/gaiyo/access/chosha-annai/haichizu.html",
+"prio": 19,
+"size": [
+740,
+312
+]
+},
+{
+"file": "11_3.jpg",
+"url": "https://www.pref.saitama.lg.jp/images/35938/11112254.jpg",
+"desc": "33",
+"page": "https://www.pref.saitama.lg.jp/kense/gaiyo/access/chosha-annai/haichizu.html",
+"prio": 19,
+"size": [
+740,
+347
+]
+},
+{
+"file": "11_4.jpg",
+"url": "https://www.pref.saitama.lg.jp/images/35938/44112714.jpg",
+"desc": "55",
+"page": "https://www.pref.saitama.lg.jp/kense/gaiyo/access/chosha-annai/haichizu.html",
+"prio": 19,
+"size": [
+740,
+337
+]
+},
+{
+"file": "11_5.jpg",
+"url": "https://www.pref.saitama.lg.jp/images/35938/1.jpg",
+"desc": "11",
+"page": "https://www.pref.saitama.lg.jp/kense/gaiyo/access/chosha-annai/haichizu.html",
+"prio": 19,
+"size": [
+740,
+350
+]
+},
+{
+"file": "11_6.jpg",
+"url": "https://www.pref.saitama.lg.jp/images/35938/2026.jpg",
+"desc": "1212",
+"page": "https://www.pref.saitama.lg.jp/kense/gaiyo/access/chosha-annai/haichizu.html",
+"prio": 19,
+"size": [
+740,
+289
+]
+}
+],
+"pages": [
+{
+"url": "https://www.pref.saitama.lg.jp/kense/gaiyo/access/chosha-annai/haichizu.html",
+"via": "各課の所在一覧(本庁舎配置図)",
+"score": 40,
+"lines": [],
+"tables": []
+}
+]
+}

@@ -1,0 +1,152 @@
+   x https://www.pref.tochigi.lg.jp/p01/assembly/: HTTP Error 403: Forbidden
+   x https://www.gikai.pref.chiba.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.gikai.pref.iwate.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.gikai.pref.tochigi.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.gikai.pref.akita.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.iwate.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.chiba.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.gikai.pref.gunma.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.yamagata.jp/600006/kensei/assembly/: HTTP Error 403: Forbidden
+   x https://www.gikai.pref.miyagi.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.gikai.pref.fukushima.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.gikai.pref.yamagata.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.gunma.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.miyagi.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.gikai.pref.aomori.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.saitama.lg.jp/e1601/gikai-member-kaiha.html/: HTTP Error 404: Not Found
+   x https://www.pref.yamagata.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.fukushima.jp/: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1011)>
+   x https://www.pref.aomori.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.hokkaido.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.gikai.pref.ibaraki.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.ibaraki.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.akita.jp/: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.pref.akita.jp'. (_ssl.c:1011)>
+   x https://www.gikai.pref.saitama.lg.jp/: <urlopen error [Errno -3] Temporary failure in name resolution>
+   x https://www.pref.tochigi.jp/: <urlopen error timed out>
+福島県: pages=45 cands=0 assets=0 saved=0
+千葉県: pages=45 cands=26 assets=30 saved=6
+群馬県: pages=45 cands=3 assets=3 saved=3
+青森県: pages=45 cands=0 assets=0 saved=0
+   x https://www.pref.saitama.jp/: <urlopen error timed out>
+   x https://www.gikai.pref.niigata.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.niigata.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.gikai.pref.kanagawa.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+宮城県: pages=45 cands=3 assets=72 saved=6
+   x https://www.gikai.pref.toyama.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.gikai.pref.ishikawa.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.toyama.lg.jp/: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.pref.toyama.lg.jp'. (_ssl.c:1011)>
+山形県: pages=45 cands=8 assets=22 saved=6
+岩手県: pages=45 cands=0 assets=0 saved=0
+北海道: pages=45 cands=2 assets=36 saved=6
+   x https://www.gikai.pref.yamanashi.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+栃木県: pages=45 cands=0 assets=0 saved=0
+   x https://www.pref.nagano.lg.jp/gikai/: HTTP Error 403: Forbidden
+   x https://www.pref.yamanashi.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.nagano.lg.jp/gikai/gikai/: HTTP Error 403: Forbidden
+   x https://www.gikai.pref.nagano.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.gikai.pref.fukui.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.nagano.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.fukui.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.gikai.pref.gifu.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.gifu.jp/: <urlopen error [Errno -2] Name or service not known>
+秋田県: pages=45 cands=1 assets=10 saved=6
+   x https://www.gikai.pref.shizuoka.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.shizuoka.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.nagano.lg.jp//kodomo-katei/hoiku/daisankikeikaku.html: HTTP Error 404: Not Found
+東京都: pages=45 cands=1 assets=1 saved=1
+神奈川県: pages=45 cands=3 assets=3 saved=3
+   x https://www.gikai.pref.aichi.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.aichi.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+新潟県: pages=45 cands=2 assets=0 saved=0
+長野県: pages=45 cands=3 assets=26 saved=6
+   x https://www.gikai.pref.shiga.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.gikai.pref.mie.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.mie.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.shiga.jp/: <urlopen error [Errno -2] Name or service not known>
+埼玉県: pages=45 cands=1 assets=6 saved=6
+   x https://www.gikai.pref.kyoto.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.kyoto.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.aichi.jp/adv/ba.php?id=825: HTTP Error 403: Forbidden
+石川県: pages=45 cands=0 assets=3 saved=3
+   x https://www.pref.osaka.lg.jp/o170010/gikai_giji/: HTTP Error 403: Forbidden
+富山県: pages=45 cands=2 assets=22 saved=6
+   x https://www.gikai.pref.osaka.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.osaka.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.gikai.pref.hyogo.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.hyogo.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.hyogo.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.gikai.pref.nara.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.aichi.jp/adv/ba.php?id=580: HTTP Error 403: Forbidden
+山梨県: pages=45 cands=13 assets=9 saved=6
+岐阜県: pages=45 cands=1 assets=2 saved=2
+   x https://www.gikai.pref.wakayama.lg.jp/: <urlopen error [Errno -5] No address associated with hostname>
+   x https://www.pref.wakayama.jp/: <urlopen error [Errno -2] Name or service not known>
+   x http://www.pref.shizuoka.jp/gikai/gikai_kids/index.html: HTTP Error 404: Not Found
+   x https://www.gikai.pref.tottori.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+福井県: pages=45 cands=3 assets=6 saved=2
+愛知県: pages=45 cands=0 assets=0 saved=0
+   x https://www.gikai.pref.shimane.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.shimane.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.shizuoka.jp/kensei/kengikai/giinshokai/\: HTTP Error 404: Not Found
+京都府: pages=45 cands=2 assets=1 saved=1
+   x https://www.pref.shizuoka.jp/kensei/kengikai/\: HTTP Error 404: Not Found
+   x https://www.gikai.pref.okayama.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.gikai.pref.hiroshima.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+静岡県: pages=45 cands=8 assets=105 saved=6
+   x https://www.pref.shiga.lg.jp/ja00/5003.html: HTTP Error 404: Not Found
+和歌山県: pages=13 cands=0 assets=0 saved=0
+   x https://www.gikai.pref.yamaguchi.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.yamaguchi.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.nara.lg.jp/n002/4258.html: HTTP Error 404: Not Found
+   x https://www.gikai.pref.tokushima.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.tokushima.jp/: <urlopen error [Errno -2] Name or service not known>
+大阪府: pages=45 cands=23 assets=3 saved=2
+茨城県: pages=45 cands=0 assets=1 saved=1
+   x https://www.pref.tottori.jp/: <urlopen error timed out>
+兵庫県: pages=45 cands=0 assets=1 saved=1
+   x https://www.gikai.pref.kagawa.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.kagawa.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.gikai.pref.ehime.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x http://www.police.pref.mie.jp/kids/index.html: <urlopen error timed out>
+   x https://www.pref.ehime.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+奈良県: pages=45 cands=1 assets=3 saved=3
+   x https://www.pref.fukuoka.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.hiroshima.jp/: <urlopen error timed out>
+三重県: pages=45 cands=1 assets=3 saved=1
+山口県: pages=45 cands=2 assets=5 saved=4
+   x https://www.gikai.pref.saga.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.saga.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.gikai.pref.nagasaki.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+島根県: pages=45 cands=0 assets=0 saved=0
+滋賀県: pages=45 cands=1 assets=30 saved=0
+   x https://www.gikai.pref.kumamoto.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.kumamoto.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.nagasaki.jp/press-contents/643164/index.html: HTTP Error 404: Not Found
+   x https://www.pref.nagasaki.jp/press-contents/628864/index.html: HTTP Error 404: Not Found
+   x https://www.gikai.pref.oita.lg.jp/: <urlopen error [Errno -5] No address associated with hostname>
+   x https://www.pref.nagasaki.jp/press-contents/617165/index.html: HTTP Error 404: Not Found
+   x https://www.pref.oita.lg.jp/: <urlopen error [Errno -5] No address associated with hostname>
+岡山県: pages=45 cands=3 assets=37 saved=6
+   x https://www.gikai.pref.miyazaki.lg.jp/: <urlopen error [Errno -5] No address associated with hostname>
+   x https://www.pref.miyazaki.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.gikai.pref.kochi.lg.jp/: <urlopen error timed out>
+   x https://www.pref.kochi.jp/: <urlopen error [Errno -5] No address associated with hostname>
+   x https://www.pref.nagasaki.jp/bunrui/kenseijoho/soshikiannai/gikai-gaiyo/517055.html: HTTP Error 404: Not Found
+広島県: pages=45 cands=3 assets=4 saved=0
+佐賀県: pages=45 cands=0 assets=0 saved=0
+   x https://www.gikai.pref.okinawa.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+香川県: pages=45 cands=0 assets=0 saved=0
+長崎県: pages=45 cands=1 assets=1 saved=1
+愛媛県: pages=45 cands=1 assets=2 saved=1
+   x https://www.pref.kagoshima.jp/aa02/gikai/: HTTP Error 403: Forbidden
+   x https://www.gikai.pref.kagoshima.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+   x https://www.pref.kagoshima.lg.jp/: <urlopen error [Errno -2] Name or service not known>
+福岡県: pages=45 cands=6 assets=7 saved=1
+鳥取県: pages=45 cands=2 assets=2 saved=2
+徳島県: pages=45 cands=1 assets=1 saved=0
+大分県: pages=45 cands=2 assets=5 saved=4
+熊本県: pages=45 cands=0 assets=0 saved=0
+宮崎県: pages=45 cands=1 assets=3 saved=3
+高知県: pages=45 cands=0 assets=0 saved=0
+沖縄県: pages=45 cands=2 assets=8 saved=6
+鹿児島県: pages=45 cands=0 assets=0 saved=0
