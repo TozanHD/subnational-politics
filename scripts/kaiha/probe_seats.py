@@ -79,7 +79,7 @@ def save_pdf(data: bytes, path: Path, need_score: bool = False) -> tuple[int, in
                     sc = sum(w for k, w in PAGE_KW if k in t)
                     if sc > best:
                         best, best_i = sc, i
-            if need_score and best < 10:
+            if need_score and best < 5:
                 return None
             img = pdf.pages[best_i].to_image(resolution=85).original
             buf = io.BytesIO()
@@ -182,8 +182,33 @@ def run(code: int, pref: str, romaji: str, seed_urls: list[str], direct: list[st
         size = save_pdf(data, OUT / name, desc.startswith("?")) if data[:5] == b"%PDF-" else save_image(data, OUT / name)
         if size:
             saved.append({"file": name, "url": u, "desc": desc, "page": src, "prio": prio, "size": size})
+    # Wikipedia の記事にある議場の写真
+    for title in (pref + "議会", pref + "議会議事堂", pref + "庁舎"):
+        got = get("https://ja.wikipedia.org/wiki/" + title, 3_000_000)
+        if not got:
+            continue
+        k = 0
+        for m in re.finditer(r"<img\b[^>]*>", decode(got[0], got[1]), re.I):
+            tag = m.group(0)
+            src = re.search(r'src="([^"]+)"', tag)
+            w = re.search(r'width="(\d+)"', tag)
+            if not src or not w or int(w.group(1)) < 160 or "upload.wikimedia.org" not in src.group(1) or ".svg" in src.group(1):
+                continue
+            u = urllib.parse.urljoin("https://ja.wikipedia.org/", re.sub(r"/\d+px-", "/960px-", src.group(1)))
+            g2 = get(u) or get(urllib.parse.urljoin("https://ja.wikipedia.org/", src.group(1)))
+            time.sleep(0.5)
+            if not g2:
+                continue
+            name = f"{code:02d}_w{len([x for x in saved if '_w' in x['file']]) + 1}.jpg"
+            size = save_image(g2[0], OUT / name)
+            if size:
+                saved.append({"file": name, "url": u, "desc": "wikipedia:" + title, "page": title, "prio": 0, "size": size})
+                k += 1
+            if k >= 3:
+                break
     (OUT / f"{code:02d}.json").write_text(json.dumps(
-        {"pref": pref, "visited": len(seen), "images": saved, "pages": cands[:6]}, ensure_ascii=False, indent=0), encoding="utf-8")
+        {"pref": pref, "visited": len(seen), "images": saved, "pages": cands[:6],
+         "assets": [(a[0], a[1], a[2][:40]) for a in assets[:25]]}, ensure_ascii=False, indent=0), encoding="utf-8")
     print(f"{pref}: pages={len(seen)} cands={len(cands)} assets={len(assets)} saved={len(saved)}", file=sys.stderr)
 
 
