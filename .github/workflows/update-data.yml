@@ -3,6 +3,7 @@ name: データ自動更新
 # 毎週、次の 2 つを確認して変更があれば main に直接コミットする。
 #   1. 総務省「所属党派別人員調」（年 1 回公表）→ src/data/latest.json
 #   2. 各都道府県議会の公式サイトの会派構成       → src/data/kaiha.json
+#   3. 知事の政党・派閥の経歴と当選時の推薦・支持（ウィキペディア）→ src/data/governors.json
 # main へのプッシュを検知して Cloudflare Pages が自動デプロイする。
 #
 # 読み取れなかった場合は既存データを変更しない（サイトは前回のデータのまま動き続ける）。
@@ -52,6 +53,10 @@ jobs:
         if: always()
         run: python scripts/kaiha/update_kaiha.py
 
+      - name: 知事の経歴・当選時の推薦を取得（ウィキペディア）
+        if: always()
+        run: python scripts/governors/update_governors.py
+
       - uses: actions/setup-node@v5
         if: always()
         with:
@@ -77,7 +82,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add src/data data/raw
-          git commit -m "データ自動更新（総務省 ${AS_OF} 現在 / 会派構成）"
+          git commit -m "データ自動更新（総務省 ${AS_OF} 現在 / 会派構成 / 知事）"
           git push
 
       - name: 会派取得エラーを Issue で知らせる

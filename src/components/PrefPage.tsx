@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import GovernorCard from './GovernorCard';
 import { bodySegments, dataset, formatDate, kaihaOf, kaihaSegments, partyColor, partyEntries, pct, regionOf, sumBodies } from '../data';
 import type { Body, Prefecture } from '../types';
 import { CHAMBER_LABEL, chamberOf } from '../chamber';
@@ -87,24 +88,9 @@ export default function PrefPage({ pref }: { pref: Prefecture }) {
         </p>
       </section>
 
+      <GovernorCard pref={pref} />
+
       <div className="two-col">
-        {pref.governor !== undefined && (
-          <section className="card">
-            <h3>知事</h3>
-            <p className="big">
-              {pref.governor ? (
-                <>
-                  <i className="dot" style={{ background: partyColor(pref.governor.party) }} />
-                  {pref.governor.party}
-                  {pref.governor.female && <span className="tag">女性</span>}
-                </>
-              ) : (
-                '欠員'
-              )}
-            </p>
-            <p className="muted small">選挙管理委員会への届出上の所属党派。政党の推薦・支持は含みません。</p>
-          </section>
-        )}
         {pref.cityAssembly && <SubBody title="県内の市区議会（合計）" body={pref.cityAssembly} />}
         {pref.townAssembly && <SubBody title="県内の町村議会（合計）" body={pref.townAssembly} />}
       </div>

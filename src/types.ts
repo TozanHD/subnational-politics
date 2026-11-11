@@ -41,3 +41,26 @@ export interface KaihaEntry {
 export interface KaihaData {
   prefectures: Record<string, KaihaEntry>;
 }
+
+export interface GovernorEntry {
+  name: string;
+  /** ウィキペディアの記事 */
+  url: string | null;
+  /** 就任日 (YYYY-MM-DD) */
+  since: string | null;
+  /** 期数 */
+  term: number | null;
+  /** 一覧ページ上の所属党派 */
+  party: string | null;
+  /** 主な前職 */
+  career: string[];
+  /** 所属政党の経歴（派閥を含む。例: 自由民主党（町村派 → 無派閥） → 無所属） */
+  partyHistory: string | null;
+  /** 直近に当選した知事選挙 */
+  election?: { title: string; url: string; date: string | null; support: string | null };
+}
+
+export interface GovernorData {
+  source: string;
+  prefectures: Record<string, GovernorEntry>;
+}
