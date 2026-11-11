@@ -8,7 +8,7 @@ export interface ChamberConfig {
   rows?: number;
   /** 扇形の開き角度（度） */
   span?: number;
-  /** 教室型: 通路で区切られた各ブロックの横の席数 */
+  /** 教室型: 通路で区切られた各ブロックの横の席数。半円形・扇形・馬蹄形: 放射状の通路で区切った各ブロックの幅の比 */
   blocks?: number[];
   /** 形を判断した根拠 */
   basis?: string;
@@ -54,54 +54,102 @@ export interface ChamberLayout {
 
 const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v));
 
-/** 同心の弧に席を並べる（半円形・扇形・馬蹄形の共通処理）。leg は弧の両端から下へ伸ばす直線部分の長さ。 */
-function arcs(n: number, spanDeg: number, leg: number, rowsOpt?: number): ChamberLayout {
+/**
+ * 同心の弧に席を並べる（半円形・扇形・馬蹄形の共通処理）。
+ * 議長席は図の上側（弧の中心）に置き、席がそちらを向く。leg は弧の両端から議長席の側（上）へ伸ばす直線部分の長さ。
+ * blocks を指定すると、放射状の通路で席をブロックに分ける（値は各ブロックの幅の比）。
+ * 席の間隔はすべての列・ブロックで同じにし、通路の幅も内側の列から外側の列まで一定にする。
+ */
+function arcs(n: number, spanDeg: number, leg: number, rowsOpt?: number, blocksOpt?: number[]): ChamberLayout {
   const span = (clamp(spanDeg, 40, 180) * Math.PI) / 180;
   const density = 3.2 * (span / Math.PI) + leg * 2.2;
   const rows = clamp(Math.round(rowsOpt ?? Math.ceil(Math.sqrt(n / density))), 2, 10);
-  const inner = rows <= 2 ? 0.6 : 0.47;
-  const radii = Array.from({ length: rows }, (_, i) => inner + ((1 - inner) * i) / (rows - 1));
-  const lengths = radii.map((rad) => rad * span + 2 * leg);
-  const sum = lengths.reduce((a, b) => a + b, 0);
-  const counts = lengths.map((l) => Math.max(1, Math.floor((n * l) / sum)));
-  // 端数は外側の列から順に配る
-  for (let i = rows - 1, rest = n - counts.reduce((a, b) => a + b, 0); rest > 0; i = (i - 1 + rows) % rows, rest--) counts[i]++;
-  for (let i = 0, over = counts.reduce((a, b) => a + b, 0) - n; over > 0; i = (i + 1) % rows) {
-    if (counts[i] > 1) {
-      counts[i]--;
-      over--;
+  const raw = (blocksOpt ?? []).filter((w) => w > 0);
+  const weights = raw.length > 1 ? raw : [1];
+  const nb = weights.length;
+  const wsum = weights.reduce((a, b) => a + b, 0);
+  const solve = (inner: number) => {
+    const radii = Array.from({ length: rows }, (_, i) => inner + ((1 - inner) * i) / (rows - 1));
+    const lengths = radii.map((rad) => rad * span + 2 * leg);
+    // 通路の幅は席の間隔の 0.9 倍（席 1 つ分ほどの隙間に見える）。どの列でも同じ幅なので放射状にまっすぐ通る
+    const segs = (pitch: number) =>
+      lengths.map((l) => weights.map((w) => (Math.max(0, l - (nb - 1) * 0.9 * pitch) * w) / wsum));
+    const capacity = (pitch: number) =>
+      segs(pitch).reduce((a, row) => a + row.reduce((b, seg) => b + Math.floor(seg / pitch + 1e-9), 0), 0);
+    // 全員が座れる最大の席の間隔を二分探索で求める（全列・全ブロックで同じ間隔）
+    let lo = 1e-4;
+    let hi = 2;
+    for (let it = 0; it < 60; it++) {
+      const mid = (lo + hi) / 2;
+      if (capacity(mid) >= n) lo = mid;
+      else hi = mid;
     }
+    const pitch = lo;
+    const seg = segs(pitch);
+    const per = seg.map((row) => row.map((s) => Math.floor(s / pitch + 1e-9)));
+    // 座れる席が余った分は、取り除いても間隔が最も広がらないブロックから 1 席ずつ減らす
+    for (let excess = per.flat().reduce((a, b) => a + b, 0) - n; excess > 0; excess--) {
+      let bi = -1;
+      let bb = -1;
+      let bestGap = Infinity;
+      per.forEach((row, i) =>
+        row.forEach((m, b) => {
+          if (m > 1 && seg[i][b] / (m - 1) < bestGap) {
+            bestGap = seg[i][b] / (m - 1);
+            bi = i;
+            bb = b;
+          }
+        }),
+      );
+      if (bi < 0) break;
+      per[bi][bb]--;
+    }
+    return { inner, radii, lengths, pitch, seg, per };
+  };
+  // 列の間隔が席の間隔に比べて開きすぎるとまばらに見えるので、内側の半径を広げて列を詰める
+  let sol = solve(rows <= 2 ? 0.6 : 0.47);
+  for (let it = 0; it < 4; it++) {
+    const radial = (1 - sol.inner) / Math.max(1, rows - 1);
+    if (radial <= 1.5 * sol.pitch) break;
+    sol = solve(Math.min(0.85, 1 - 1.5 * sol.pitch * (rows - 1)));
   }
+  const { inner, radii, lengths, pitch, seg, per } = sol;
   const a0 = Math.PI / 2 + span / 2; // 左端の角度
+  /** 左端からの道のり s の位置（左の直線部 → 弧 → 右の直線部） */
+  const at = (rad: number, s: number): Point => {
+    if (s < leg) return { x: rad * Math.cos(a0), y: rad * Math.sin(a0) - (leg - s) };
+    if (s <= leg + rad * span) {
+      const a = a0 - (s - leg) / rad;
+      return { x: rad * Math.cos(a), y: rad * Math.sin(a) };
+    }
+    return { x: rad * Math.cos(a0 - span), y: rad * Math.sin(a0 - span) - (s - leg - rad * span) };
+  };
   const pts: (Point & { t: number; rad: number })[] = [];
   let spacing = (1 - inner) / Math.max(1, rows - 1);
   radii.forEach((rad, i) => {
-    const k = counts[i];
-    const len = lengths[i];
-    if (k > 1) spacing = Math.min(spacing, len / (k - 1));
-    for (let j = 0; j < k; j++) {
-      const s = k === 1 ? len / 2 : (j * len) / (k - 1); // 左端からの道のり
-      let x: number, y: number;
-      if (s < leg) {
-        x = rad * Math.cos(a0);
-        y = -rad * Math.sin(a0) + (leg - s);
-      } else if (s <= leg + rad * span) {
-        const a = a0 - (s - leg) / rad;
-        x = rad * Math.cos(a);
-        y = -rad * Math.sin(a);
-      } else {
-        x = rad * Math.cos(a0 - span);
-        y = -rad * Math.sin(a0 - span) + (s - leg - rad * span);
+    let start = 0;
+    weights.forEach((_, b) => {
+      const m = per[i][b];
+      const w = seg[i][b];
+      if (m > 0) spacing = Math.min(spacing, w / m);
+      for (let j = 0; j < m; j++) {
+        const s = start + ((j + 0.5) * w) / m;
+        pts.push({ ...at(rad, s), t: s / lengths[i], rad });
       }
-      pts.push({ x, y, t: s / len, rad });
-    }
+      start += w + 0.9 * pitch;
+    });
   });
   // 左から右へ、同じ位置なら外側から
   pts.sort((p, q) => p.t - q.t || q.rad - p.rad);
   return {
     seats: pts,
     r: Math.min(0.08, spacing * 0.42),
-    label: { x: 0, y: leg > 0 ? leg * 0.5 : Math.min(-0.09, -inner * Math.cos(span / 2) + 0.27 * Math.sin(span / 2)), place: 'center' },
+    // 議長席は最も上の席のすぐ上に置く。人数は、中央に空きがある半円形・馬蹄形では中央、細い扇形では図の下
+    podium: { x: 0, y: Math.min(...pts.map((p) => p.y)) - 0.12 },
+    label:
+      spanDeg >= 170
+        ? { x: 0, y: 0.2, place: 'center' }
+        : { x: 0, y: Math.max(...pts.map((p) => p.y)) + 0.12, place: 'below' },
   };
 }
 
@@ -161,14 +209,14 @@ export function chamberLayout(n: number, c: ChamberConfig): ChamberLayout {
   if (n <= 0) return { seats: [], r: 0.05, label: { x: 0, y: 0, place: 'center' } };
   switch (c.type) {
     case 'fan':
-      return arcs(n, c.span ?? 110, 0, c.rows);
+      return arcs(n, c.span ?? 110, 0, c.rows, c.blocks);
     case 'horseshoe':
-      return arcs(n, 180, 0.45, c.rows);
+      return arcs(n, 180, 0.45, c.rows, c.blocks);
     case 'classroom':
       return classroom(n, c);
     case 'facing':
       return facing(n, c);
     default:
-      return arcs(n, 180, 0, c.rows);
+      return arcs(n, 180, 0, c.rows, c.blocks);
   }
 }

@@ -1,0 +1,264 @@
+{{Infobox Election
+| election_name = 2023年大分県知事選挙
+| country = 大分県
+| flag_year =
+| flag_image =
+| type = presidential
+| ongoing = no
+| party_colour = no
+| previous_election = 2019年大分県知事選挙
+| previous_year = 2019年
+| next_election = 2027年大分県知事選挙
+| next_year = 2027年
+| seats_for_election =
+| election_date = {{Start date|2023|4|9|}}
+| turnout            = 51.45％（{{increase}}4.04%）
+|1blank = 推薦
+
+| image1             = [[ファイル:Kiichiro Sato 20251127.jpg|150x150px]]
+| colour1            = 3CA324
+| nominee1           = '''[[佐藤樹一郎]]'''
+| home_state1 = [[大分市]]
+| party1             = 無所属{{!}}'''無所属'''
+| alliance1          = 
+| popular_vote1      = '''271,400''' 
+| percentage1        = '''57.25%'''
+| 1data1 = [[自由民主党 (日本)|自由民主党]]<br/>[[公明党]]
+
+| image2             = [[ファイル:Tadatomo Yoshida, Kiyoshi Adachi, Noriko Ishigaki and Katsuhiko Yokomitsu (1) (cropped).jpg|150x150px]]
+| colour2            = 0000CC
+| nominee2           = [[安達澄]]
+| home_state2 = [[別府市]]
+| party2             = 無所属
+| popular_vote2      = 202,623
+| percentage2        = 42.75%
+
+| title = [[大分県知事一覧|大分県知事]]
+| before_election = [[広瀬勝貞]]
+| before_party = 無所属
+| after_election = [[佐藤樹一郎]]
+| after_party = 無所属
+}}
+'''2023年大分県知事選挙'''（2023ねんおおいたけんちじせんきょ）は、[[2023年]]（[[令和]]5年）4月の[[第20回統一地方選挙]]にて執行された選挙である。
+
+== 概要 ==
+現職の[[広瀬勝貞]]の任期満了（期日：2023年[[4月27日]]）に伴い執行。現職の広瀬が不出馬を表明したため新人同士の知事選となった。
+
+== 選挙日程 ==
+* 告示日 - 2023年3月23日
+* 投開票日 - 2023年4月9日
+; 同日選挙
+* [[2023年大分県議会議員選挙|大分県議会議員選挙]]
+
+== 立候補者 ==
+（立候補届け出順、年齢は投開票日時点）
+{| class="wikitable"
+!氏名
+!年齢
+!党派
+!現元新
+!職業・肩書
+|-
+|'''[[安達澄]]'''<br/><small>（あだち きよし）</small>||53||無所属||新||前参議院議員
+|-
+|'''[[佐藤樹一郎]]'''<br/><small>（さとう きいちろう）</small>||64||無所属{{Efn2|[[自由民主党 (日本)|自由民主党]]・[[公明党]]大分県本部推薦}}||新||前大分市長<br>元[[中小企業庁]]次長
+|-
+|}
+=== 立候補を取りやめた人物 ===
+* [[岩屋毅]] - 衆議院議員（[[大分県第3区|大分3区]]選出）
+** 2022年11月11日に立候補の意向が報じられたが<ref>{{Cite news|title=岩屋氏が大分県知事選に出馬の意向 足立氏も意欲、候補者乱立の様相|newspaper=大分合同新聞|date=2022-11-12|url=https://www.oita-press.co.jp/1010000000/2022/11/12/JD0061837048}}</ref>、支援者の要請を受け同月30日に立候補の断念を表明した<ref>{{Cite news|url=https://www.sankei.com/article/20221130-D66BVGLKJJOZNBUFIBHFRD45Y4/?outputType=amp|title=岩屋氏が大分知事選断念を正式表明「国政で使命果たす」|newspaper=[[産経新聞]]|date=2022-11-30|accessdate=2022-11-30}}</ref>。
+* [[足立信也]] - 元参議院議員
+** 2022年11月、知事選を含めた統一地方選挙への立候補の意向を示したが<ref>{{Cite news |title=前 参議院議員・足立信也氏　知事選含む統一地方選出馬に向け調整 |newspaper=テレビ大分 |date=2022-11-11 |author= |url=https://tosonline.jp/news/20221111/00000002.html |accessdate=2022-12-14 |archiveurl=https://web.archive.org/web/20221124005522/https://tosonline.jp/news/20221111/00000002.html |archivedate=2022-11-24}}</ref>、大分市長選挙への立候補に変更<ref>{{Cite news |title=大分市長選 元 参議院議員・足立信也氏が出馬へ 15日正式表明 |newspaper=[[毎日新聞]] |date=2022-12-14 |author=石井尚 |url=https://mainichi.jp/articles/20221214/k00/00m/010/253000c |accessdate=2022-12-14}}</ref><ref>{{Cite news |title=足立氏、大分市長選に　知事選出馬を断念 |newspaper=[[朝日新聞]] |date=2022-12-15 |url=https://www.asahi.com/articles/ASQDH6HH4QDHTPJB00H.html |accessdate=2023-03-29}}</ref>。
+
+== タイムライン ==
+; 2022年
+* 10月4日 - 現職の広瀬勝貞が定例会見で次期知事選に立候補せず任期限りでの退任を表明<ref>{{Cite news |title=広瀬知事、6選不出馬を表明 |newspaper=大分合同新聞 |date=2022-10-04 |author= |url=https://www.oita-press.co.jp/1010000000/2022/10/04/JIT202210041449 |accessdate=2022-10-04}}</ref><ref>{{Cite news |title=大分県の広瀬勝貞知事、23年春引退へ　6選不出馬を表明 |newspaper=[[日本経済新聞]] |date=2022年10月4日 |author= |url=https://www.nikkei.com/article/DGXZQOJC045PN0U2A001C2000000/ |accessdate=2023-03-28}}</ref>。
+* 11月7日 - 参議院議員（[[大分県選挙区]]選出）の安達澄が取材に対し知事選への立候補を表明<ref>{{Cite news |title=安達氏、大分知事選出馬へ 参議院議員「未来切り開く」 |newspaper=[[日本経済新聞]] |date=2022-11-06 |author= |url=https://www.nikkei.com/article/DGXZQOUA0628T0W2A101C2000000/ |accessdate=2022-11-06}}</ref>。
+* 11月11日 - 大分市長の佐藤樹一郎が記者会見で知事選への立候補を表明<ref>{{Cite news|url=https://www.kobe-np.co.jp/news/zenkoku/compact/202211/sp/0015799271.shtml|title=大分市長が知事選出馬を表明 佐藤氏「県政を推進」|newspaper=[[神戸新聞]]|date=2022-11-11|accessdate=2022-11-13}}</ref><ref>{{Cite news|url=https://www.jiji.com/jc/article?k=2022111100701&g=pol|title=大分市長が出馬表明　大分知事選|newspaper=時事通信社|date=2022-11-11|accessdate=2023-03-29|archiveurl=https://web.archive.org/web/20230329090945/https://www.jiji.com/jc/article?k=2022111100701&g=pol|archivedate=2023-03-29}}</ref>。
+; 2023年
+* 2月10日 - 佐藤が大分市長の退職願を提出（辞職は3月2日付）<ref>{{Cite news |title=知事選出馬予定の佐藤氏、大分市長の退職申出書を議長に提出 |newspaper=朝日新聞 |date=2023-02-11 |author=白石昌幸 |url=https://www.asahi.com/articles/ASR2B7X3LR2BTIPE00B.html |accessdate=2023-03-21}}</ref>。
+* 3月10日 - 安達が参議院議員を辞職<ref>{{Cite news|url=https://www.kobe-np.co.jp/news/zenkoku/compact/202303/0016126228.shtml|title= 安達参院議員の辞職許可 4月23日、衆参5補選へ|newspaper=神戸新聞|date=2023-03-10|accessdate=2023-03-10}}</ref>。
+* 4月2日、読売新聞社は、3月30日から4月1日にかけて実施した電話世論調査に総支局などの取材情報を加味した情勢分析を発表。「佐藤が優位に立っている」と報じた<ref>{{Cite web|和書| url=https://www.yomiuri.co.jp/election/local/20230402-OYT1T50053/ | title=大分県知事選挙・情勢分析 佐藤樹一郎氏がリード | publisher=読売新聞 | date=2023-04-02 | accessdate=2023-04-03 }}</ref>。
+* 4月3日 - [[朝日新聞社]]は、4月1日、2日の両日に実施した電話世論調査に取材情報を加味した情勢分析を発表。「佐藤が先行し、安達が激しく追っている」と報じた<ref>{{Cite web|和書| author= | url=https://www.asahi.com/articles/ASR426718R3XUZPS00H.html | title=大分知事選　前大分市長先行、前参院議員が激しく追う　朝日調査 | publisher=朝日新聞 | date=2023-04-03 | accessdate=2023-04-03 }}</ref>。
+
+== 政党・団体の対応 ==
+* [[自由民主党 (日本)|自由民主党]]・[[公明党]]大分県本部は佐藤を推薦した。
+* [[立憲民主党 (日本 2020)|立憲民主党]]大分県連はいずれの候補の推薦・支持を見送り自主投票とした<ref>{{Cite news |title=大分県知事選は「統一的行動は行わず」　立憲民主党県連 |newspaper=朝日新聞 |date=2023-03-04 |author=倉富竜太 |url=https://www.asahi.com/articles/ASR346K7FR34TPJB004.html |accessdate=2023-03-24}}</ref>。
+* [[国民民主党 (日本 2020)|国民民主党]]大分県連は佐藤から推薦願を受けたが推薦を見送り自主投票とした<ref>{{Cite news |title=知事選自主投票　国民県連が方針 |newspaper=読売新聞 |date=2023-03-06 |author= |url=https://www.yomiuri.co.jp/local/oita/news/20230305-OYTNT50099/ |accessdate=2023-03-24|archiveurl=https://web.archive.org/web/20230310144656/https://www.yomiuri.co.jp/local/oita/news/20230305-OYTNT50099/|archivedate=2023-03-10}}</ref>。
+* [[日本共産党]]大分県委員会は候補者擁立を見送り安達を自主的に支援すると表明<ref>{{Cite news |title=共産県委が安達氏支援へ　知事選、候補擁立せず |newspaper=読売新聞 |date=2023-03-15 |author= |url=https://www.yomiuri.co.jp/local/oita/news/20230314-OYTNT50107/ |accessdate=2023-03-21|archiveurl=https://web.archive.org/web/20230321055220/https://www.yomiuri.co.jp/local/oita/news/20230314-OYTNT50107/|archivedate=2023-03-21}}</ref>。
+* [[社会民主党 (日本 1996-)|社会民主党]]大分県連合は安達を支援する<ref>{{Cite news |title=社民県連は安達氏支援　大分知事選 |newspaper=西日本新聞 |date=2023-03-09 |author=後藤潔貴 |url=https://www.nishinippon.co.jp/item/1064142/ |accessdate=2023-03-24}}</ref>。
+* [[日本労働組合総連合会|連合]]大分は安達・佐藤の双方から推薦願を受けたがいずれの推薦も見送り自主投票とした<ref>{{Cite news |title=知事選、連合大分が推薦見送り　「どちらかに決定、困難」 |newspaper=読売新聞 |date=2023-02-28 |author= |url=https://www.yomiuri.co.jp/local/oita/news/20230227-OYTNT50115/ |accessdate=2023-03-24|archiveurl=https://web.archive.org/web/20230302203855/https://www.yomiuri.co.jp/local/oita/news/20230227-OYTNT50115/|archivedate=2023-03-02}}</ref>。
+
+== 選挙結果 ==
+投開票の結果、新人の佐藤が初当選を果たした。投票率は前回を上回った。
+{{選挙結果 (日本の首長)
+|当日有権者数=930,813
+|最終投票率=51.45
+|前回比={{increase}}4.04
+|当選者名='''[[佐藤樹一郎]]'''
+|当選者年齢=65
+|当選者所属=無所属
+|当選者新旧別=新
+|当選者得票数=271,400
+|当選者得票率=57.25
+|当選者推薦・支持=[[自由民主党 (日本)|自由民主党]]大分県連・[[公明党]]大分県本部推薦
+|落選者名=[[安達澄]]
+|落選者年齢=53
+|落選者所属=無所属
+|落選者新旧別=新
+|落選者得票数=202,623
+|落選者得票率=42.75
+|落選者推薦・支持=
+}}
+{{Pie chart
+|thumb=right
+|caption=各候補の得票率
+|other=
+|label1='''[[佐藤樹一郎]]'''
+|value1=57.3
+|color1=#3CA324
+|label2=安達澄
+|value2=42.7
+|color2=#0000CC
+}}
+{| class="wikitable sortable" style="text-align:right; font-size:85%"
+|+市町村別開票結果
+! colspan="1" rowspan="2" |市区町村
+! colspan="2" rowspan="1" |[[佐藤樹一郎]]
+! colspan="2" rowspan="1" |[[安達澄]]
+|-
+!得票
+!%
+!得票
+!%
+|-
+!合計
+|'''271,400'''
+|'''57.25%'''
+|202,623
+|42.75%
+|-
+![[大分市]]
+|'''116,489'''
+|'''61.40%'''
+|73,238
+|38.60%
+|-
+![[別府市]]
+|22,681
+|46.40%
+|'''26,204'''
+|'''53.60%'''
+|-
+![[中津市]]
+|'''16,871'''
+|'''51.07%'''
+|16,162
+|48.93%
+|-
+![[日田市]]
+|'''16,169'''
+|'''54.79%'''
+|13,340
+|45.21%
+|-
+![[佐伯市]]
+|'''16,208'''
+|'''60.92%'''
+|10,399
+|39.08%
+|-
+![[臼杵市]]
+|'''9,733'''
+|'''58.83%'''
+|6,811
+|41.17%
+|-
+![[津久見市]]
+|'''4,246'''
+|'''62.64%'''
+|2,532
+|37.36%
+|-
+![[竹田市]]
+|'''6,780'''
+|'''61.78%'''
+|4,194
+|38.22%
+|-
+![[豊後高田市]]
+|'''6,877'''
+|'''62.25%'''
+|4,171
+|37.75%
+|-
+![[杵築市]]
+|'''7,185'''
+|'''52.86%'''
+|6,408
+|47.14%
+|-
+![[宇佐市]]
+|'''13,141'''
+|'''52.59%'''
+|11,846
+|47.41%
+|-
+![[豊後大野市]]
+|'''8,623'''
+|'''58.33%'''
+|6,160
+|41.67%
+|-
+![[由布市]]
+|'''7,724'''
+|'''58.18%'''
+|5,551
+|41.82%
+|-
+![[国東市]]
+|'''6,455'''
+|'''55.38%'''
+|5,200
+|44.62%
+|-
+![[姫島村]]
+|'''994'''
+|'''77.96%'''
+|281
+|22.04%
+|-
+![[日出町]]
+|'''5,901'''
+|'''51.62%'''
+|5,530
+|48.38%
+|-
+![[九重町]]
+|'''2,042'''
+|'''54.12%'''
+|1,731
+|45.88%
+|-
+![[玖珠町]]
+|'''3,281'''
+|'''53.38%'''
+|2,865
+|46.62%
+|}
+
+== 脚注 ==
+=== 注釈 ===
+{{Reflist|group="注"}}
+=== 出典 ===
+{{Reflist}}
+
+== 外部リンク ==
+* [https://www.pref.oita.jp/site/senkyo/5chijikengitop.html 令和５年　大分県知事選挙・大分県議会議員選挙　トップページ]
+
+{{大分県の選挙}}
+{{第20回統一地方選挙}}
+{{デフォルトソート:おおいたけんちしせんきよ2023}}
+[[Category:第20回統一地方選挙|おおいたけんちし]]
+[[Category:大分県知事選挙|2023]]
+[[Category:2023年の大分県|ちしせんきよ]]

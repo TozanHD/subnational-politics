@@ -32,8 +32,8 @@ export default function Chamber({ segments, fixed, chamber, detailed = false, la
   const ys = seats.map((s) => s.y);
   let minX = Math.min(...xs, 0) - r;
   let maxX = Math.max(...xs, 0) + r;
-  let minY = Math.min(...ys, 0) - r;
-  let maxY = Math.max(...ys, 0) + r;
+  let minY = Math.min(...ys) - r;
+  let maxY = Math.max(...ys) + r;
   const u = (maxX - minX) / 2; // 半円形の半径 1 に相当する長さ
   const pw = podium?.vertical ? 0.07 * u : 0.3 * u;
   const ph = podium?.vertical ? 0.3 * u : 0.07 * u;

@@ -1,0 +1,240 @@
+{{Infobox Election
+| election_name = 2023年山梨県知事選挙
+| country = 山梨県
+| flag_year =
+| flag_image =
+| type = presidential
+| ongoing = no
+| party_colour = no
+| previous_election = 2019年山梨県知事選挙
+| previous_year = 2019年
+| next_election = 2027年山梨県知事選挙
+| next_year = 2027年
+| seats_for_election =
+| election_date = {{Start date|2023|1|22}}
+| turnout = 52.29%
+| 1blank = 推薦・支持
+| image1 = [[File:Kōtarō Nagasaki, Governor of Yamanashi Prefecture N-E.X.T. High school kick off forum 2026.jpg|110x110px]]
+| colour1 = 00CC33
+| nominee1 = '''[[長崎幸太郎]]'''
+| home_state1 = 
+| 1data1 = [[自由民主党 (日本)|自由民主党]]<br>[[公明党]]
+| party1 = 無所属
+| popular_vote1 = '''215,517'''
+| percentage1 = '''61.33%'''
+| image2 = [[File:Replace this image JA.svg|110x110px]]
+| colour2 = CC0099
+| nominee2 = 志村直毅
+| 1data2 = なし
+| home_state2 = 
+| party2 = 無所属
+| popular_vote2 = 106,783
+| percentage2 = 30.38%
+| image3 = [[File:Replace this image JA.svg|110x110px]]
+| colour3 = 0000CC
+| nominee3 = [[倉嶋清次]]
+| home_state3 = 
+| 1data3 = [[日本共産党]]<br>[[社会民主党 (日本 1996-)|社会民主党]]<br>[[れいわ新選組]] 
+| party3 = 無所属
+| popular_vote3 = 29,195
+| percentage3 = 8.31%
+| title = [[山梨県知事一覧|知事]]
+| before_election = [[長崎幸太郎]]
+| before_party = 無所属
+| after_election = 長崎幸太郎
+| after_party = 無所属
+}}
+'''2023年山梨県知事選挙'''（2023ねんやまなしけんちじせんきょ）は、[[2023年]]（[[令和]]5年）1月22日に執行された[[山梨県知事一覧|山梨県知事]]を選出するための選挙である。
+
+== 概要 ==
+現職の[[長崎幸太郎]]の任期満了（期日：2023年2月16日）に伴い執行。
+
+2月の[[2023年愛知県知事選挙|愛知県知事選挙]]と併せてプレ[[統一地方選挙]]である。
+
+== 主な争点 ==
+; 保守分裂選挙
+: [[2019年山梨県知事選挙|前回の選挙]]では長崎が[[自由民主党 (日本)|自由民主党]]の推薦を受け当選したが、今回の選挙では自由民主党の県議会議員である[[志村直毅]]が県議会最大会派である「自民党誠心会」の支持を受けていることから保守分裂選挙になることが確実になった<ref name="mainichi20221110">{{Cite news |title=山梨　自民分裂の見通し　誠心会・志村氏出馬意向 |newspaper=[[毎日新聞]] |date=2022-11-10 |author= |url=https://mainichi.jp/articles/20221110/ddl/k19/010/131000c |accessdate=2022-11-10|archiveurl=https://web.archive.org/web/20221111220442/https://mainichi.jp/articles/20221110/ddl/k19/010/131000c|archivedate=2022-11-11}}</ref>。保守分裂状態になるのは[[2007年山梨県知事選挙]]以来となる。
+; 4年間の長崎県政への評価
+{{see also|長崎幸太郎#知事としての政策}}
+: 2019年に就任した長崎知事はこれまで[[中部横断自動車道]]の県負担減免<ref name="yomiuri20190703">{{Cite news |title=県負担減１６４億→１億円　知事見通し、交付税新算定方式で|newspaper=読売新聞|date=2019-07-01|url=https://www.yomiuri.co.jp/local/yamanashi/news/20190701-OYTNT50166/|accessdate=2019-07-03|archiveurl=https://web.archive.org/web/20190701235734/https://www.yomiuri.co.jp/local/yamanashi/news/20190701-OYTNT50166/|archivedate=2019年7月1日}}</ref>や[[新型コロナウイルス感染症の世界的流行 (2019年-)|新型コロナウイルス]]対応<ref>{{Cite news|url=https://project.nikkeibp.co.jp/behealth/atcl/keyperson/19/00047/|title=首都圏直結の山梨県がなぜコロナ封じ込みに成功したのか|publisher=[[日経ビジネス]]|date=2021-03-25|accessdate=2021-04-02|archiveurl=https://web.archive.org/web/20210402123943/https://project.nikkeibp.co.jp/behealth/atcl/keyperson/19/00047/|archivedate=2021-04-02}}</ref>などで評価を受ける一方、衆議院議員時代に[[山梨県第2区|山梨2区]]で議席を争った[[堀内詔子]]の夫が社長を務める[[富士急行]]と[[富士急行#山梨県との訴訟|県有地訴訟]]および[[ド・ドドンパ#事故・トラブル|ジェットコースター問題]]で対立<ref>{{Cite news|url=https://www.sankei.com/article/20220116-2EVFLWRKWNLOVFFFW4OJSLHZNA/|title=山梨県と富士急行の対立鮮明化　県有地訴訟とジェットコースター問題|publisher=[[産経新聞]]|date=2022-01-16|accessdate=2022-01-16|archiveurl=https://web.archive.org/web/20220116122529/https://www.sankei.com/article/20220116-2EVFLWRKWNLOVFFFW4OJSLHZNA/|archivedate=2022-01-16}}</ref>したことで保守分裂状態を招き、[[山梨県総合球技場構想]]の計画見直し<ref name="uty20191126">{{Cite news|url=http://www.uty.co.jp/news/20191126/6646/|title=財政負担の軽減目指す　総合球技場　知事が計画見直し |date=2019-11-26|newspaper=NHKニュース|archiveurl=https://web.archive.org/web/20191127113317/http://www.uty.co.jp/news/20191126/6646/ |archivedate=2019年11月27日}}</ref>や存続が決まっていた[[山梨県立八ヶ岳スケートセンター]]の廃止表明<ref>{{Cite news |title=スケートセンター存続へ、県と北杜市が基本協定締結|newspaper=[[朝日新聞]]|date=2021-03-30|url=https://www.asahi.com/articles/ASP3Y7VF0P3YUZOB012.html|accessdate=2021-05-03}}</ref>など就任前の計画・公約を転換することが相次いでいる。
+
+== 選挙日程 ==
+* 告示日 - 2023年1月5日
+* 投開票日 - 2023年1月22日
+
+=== 同日選挙 ===
+* [[甲府市|甲府市長選挙]]<ref name="nhk20221108">{{Cite news |title=甲府市長選 知事選と同じ１月２２日に投開票 |newspaper=NHKニュース |date=2022-11-08 |author= |url=https://www3.nhk.or.jp/lnews/kofu/20221108/1040018527.html |accessdate=2022-11-08|archiveurl=https://web.archive.org/web/20221108090250/https://www3.nhk.or.jp/lnews/kofu/20221108/1040018527.html|archivedate=2022-11-08}}</ref>
+* [[上野原市|上野原市議会]]議員選挙
+* [[中央市|中央市議会]]議員選挙
+
+== 立候補者 ==
+（立候補届け出順）
+{| class="wikitable"
+|-style="white-space:nowrap;"
+! 氏名 !! 年齢 !! 党派 !! 現元新 !! 職業・肩書 
+|-
+| '''[[長崎幸太郎]]'''<br><small>（ながさき こうたろう）</small>||54||無所属{{Efn2|[[自由民主党 (日本)|自由民主党]]・[[公明党]]推薦。}}||現||山梨県知事（現職）<br>元衆議院議員<br>元[[財務省]]主計官補佐
+|-
+|-
+| '''[[倉嶋清次]]'''<br><small>（くらしま せいじ）</small>||74||無所属{{Efn2|[[日本共産党]]・[[れいわ新選組]]・[[社会民主党 (日本 1996-)|社会民主党]]支持。}}||新||元[[笛吹市|笛吹市長]]<br>元[[農林水産省]]情報化対策室長<br>[[安保法制の廃止と立憲主義の回復を求める市民連合|市民連合]]やまなし共同代表
+|-
+| '''志村直毅'''<br><small>（しむら なおき）</small>||53||無所属||新||元山梨県議会議員<br>元笛吹市議会議員<br>農家
+|}
+=== 立候補が取り沙汰された人物 ===
+* [[中島克仁]] - 衆議院議員（[[比例南関東ブロック]]選出）
+** 立憲民主党山梨県連内で擁立が取り沙汰されたが<ref>{{Cite news |title=「中島克仁衆院議員に立候補を要請すべき」という意見も　山梨県知事選の対応を立憲民主党の一部県議が緊急協議 |newspaper=TBS NEWS DIG |date=2022-11-11 |author= |url=https://newsdig.tbs.co.jp/articles/uty/201942?display=1 |accessdate=2022-12-12}}</ref>、自主投票を決定したため擁立見送りとなった<ref name="uty221211">{{Cite news |title=来年の知事選挙　立憲民主党は候補者擁立を断念、自主投票 |newspaper=TBS NEWS DIG |date=2022-12-11 |accessdate=2022-12-11 |author= |url=https://newsdig.tbs.co.jp/articles/uty/227414?display=1 |archiveurl=https://web.archive.org/web/20221211152505/https://newsdig.tbs.co.jp/articles/uty/227414?display=1 |archivedate=2022-12-11}}</ref>。その後自由民主党を離党した志村の要請を受け<ref name="ybs221222">{{Cite news |title=知事選に向け自民党を離党した志村氏が立憲民主党・中島氏に支援を要請 |newspaper=[[山梨放送]] |date=2022-12-22 |author= |url=
+https://www.ybs.jp/tv/wnews/news120p8w7gtra46ibzrlm.html|archiveurl=
+https://web.archive.org/web/20221224122649/https://www.ybs.jp/tv/wnews/news120p8w7gtra46ibzrlm.html|archivedate=2022-12-24}}</ref>、志村支持を表明している<ref name="ybs221223">{{Cite news |title=年明けの知事選に向け立憲民主党・中島氏が県議・志村氏の支援を表明 |newspaper=山梨放送 |date=2022-12-23 |author= |url=
+https://www.ybs.jp/tv/wnews/news120u2xauxkr06qf3dmz.html|archiveurl=
+https://web.archive.org/web/20221224075927/https://www.ybs.jp/tv/wnews/news120u2xauxkr06qf3dmz.html|archivedate=2022-12-24}}</ref>。
+
+== タイムライン ==
+; 2022年
+* 9月21日 - 現職の長崎が[[山梨県議会|県議会]]本会議で再選を目指し立候補を表明<ref>{{Cite news |title=現職長崎氏、再選出馬表明　山梨知事選 |newspaper=時事ドットコム |date=2022-09-21 |author= |url=https://web.archive.org/web/20220921075832/https://www.jiji.com/jc/article?k=2022092100884&g=pol |accessdate=2022-10-07}}</ref>。
+* 11月2日 - 山梨県選挙管理委員会は告示日2023年1月5日、投票日を22日とした<ref>{{Cite news |title=山梨県知事選挙の期日決定について |newspaper=山梨県選挙管理委員会 |date=2022-11-02 |author= |url=https://www.pref.yamanashi.jp/senkyo/index.html |accessdate=2022-11-12}}</ref>。
+* 11月9日 - 志村が立候補を表明<ref>{{Cite news |title=知事選　自民党の志村直毅県議が立候補の意思表明　自民は分裂選挙の見通し　山梨県 |newspaper=TBS NEWS DIG |date=2022-11-09 |author= |url=https://newsdig.tbs.co.jp/articles/-/199697 |accessdate=2022-11-09}}</ref>。
+* 11月15日 - 倉嶋が立候補を表明<ref>{{Cite news |title=山梨県の知事選　倉嶋元笛吹市長が立候補の意向表明　一方で野党候補が出れば調整検討 |newspaper=UTY News |date=2022-11-15 |author= |url=https://newsdig.tbs.co.jp/articles/uty/204911?display=1 |accessdate=2022-11-15}}</ref>。
+* 12月6日 - 自由民主党が長崎の推薦を決定<ref NAME="jimin_20221212">{{Cite web|和書|url=https://www.jimin.jp/election/204794.html |title=山梨県知事選挙 |access-date=2022-12-12 |publisher=自由民主党本部}}</ref>。
+* 12月17日 - 志村が自由民主党を離党<ref NAME="asahi_202218">{{Cite web|和書|url=https://www.asahi.com/articles/ASQDK7T65QDKUZOB005.html |title=志村氏が自民を離党　知事選で |access-date=2022-12-18 |publisher=朝日新聞|archiveurl=https://web.archive.org/web/20221218121629/https://www.asahi.com/articles/ASQDK7T65QDKUZOB005.html|archivedate=2022-12-18}}</ref>。
+* 12月28日 - 志村が山梨県議会に辞職願を提出し受理（辞職は同月31日付）<ref>{{Cite news |title=知事選に向け　自民離党の志村氏が県議を辞職　山梨県 |newspaper=Yahoo!ニュース |date=2022-12-28 |author= |url=https://news.yahoo.co.jp/articles/eec2c7f11d2ca1877678599ae7faed945f6fbe9d |archiveurl=https://web.archive.org/web/20230102081918/https://news.yahoo.co.jp/articles/eec2c7f11d2ca1877678599ae7faed945f6fbe9d |accessdate=2023-01-05 |archivedate=2023-01-02}}</ref>。
+
+== 政党の対応 ==
+; 自由民主党
+: 県議会会派「自民党誠心会」は長崎知事の[[富士急行]]に関する県有地問題などの姿勢を考慮し志村を擁立した<ref name="mainichi20221110" />。
+: 山梨県連は11月12日、保守分裂が確実な状況を踏まえ、推薦の取り扱いについて協議を開始した。11月19日に県議団と国会議員の合同会議を開催し、県連としての決定を行うとしていた<ref>{{Cite news |title=来年の山梨県知事選に向け　「推薦」の取り扱い協議　自民党県連 |newspaper=テレビ山梨 |date=2022-11-11 |author= |url=https://www.pref.yamanashi.jp/senkyo/index.html |accessdate=2022-11-11
+|archiveurl=https://web.archive.org/web/20221113052326/https://newsdig.tbs.co.jp/articles/uty/202625?display=1|archivedate=2022-11-13}}</ref>。自民党に籍を置く候補予定者は長崎と志村の2人がいたが、12月6日に長崎の推薦を決定した<ref NAME="jimin_20221212" />。
+; 公明党
+: 公明党はは12月15日に長崎の支持を決定した<ref>{{Cite news |title=山梨知事選で現職推薦　公明 |newspaper=時事通信 |date=2022-12-15 |author= |url=https://www.jiji.com/jc/article?k=2022121500566&g=pol |accessdate=2022-12-15
+|archiveurl=https://web.archive.org/web/20221219233401/https://www.jiji.com/jc/article?k=2022121500566&g=pol|archivedate=2022-12-19}}</ref>。
+; 立憲民主党
+: [[立憲民主党 (日本 2020)|立憲民主党]]は11月18日、出馬を表明した長崎幸太郎知事に対し意見書を提出し、反応を踏まえ対応を決定するとしている<ref>{{Cite news |title=立憲民主党県連が知事に意見書を提出　反応踏まえ山梨県の知事選対応を検討へ |newspaper=テレビ山梨 |date=2022-11-18 |author= |url=https://newsdig.tbs.co.jp/articles/uty/207868?display=1 |accessdate=2022-11-18
+|archiveurl=https://web.archive.org/web/20221119060531/https://newsdig.tbs.co.jp/articles/uty/207868?display=1|archivedate=2022-11-19}}</ref>。その後、[[第49回衆議院議員総選挙]]・[[第26回参議院議員通常選挙]]での敗北を踏まえ候補者擁立見送りを決定。自民党籍を保持したまま立候補予定の長崎・志村について支援せず、倉嶋に対しても推薦を見送った<ref name="uty221211"/>。但し、志村についてはその後自民党を離党したことから、先述の通り中島が個人的に支持を表明している<ref name="ybs221223" />。
+; 日本共産党
+: [[日本共産党]]は48年ぶりに知事選への独自候補擁立を見送り、12月5日に倉嶋の支持を決定した<ref>{{Cite news |title=山梨県の知事選　共産党県委員会は倉嶋元笛吹市長を支持へ　共産党県委が独自候補擁立の見送りは48年ぶり |newspaper=UTY News |date=2022-12-05 |author= |url=https://newsdig.tbs.co.jp/articles/uty/222070 |accessdate=2022-12-05|archiveurl=https://web.archive.org/web/20221208132809/https://newsdig.tbs.co.jp/articles/uty/222070|archivedate=2022-12-08}}</ref>。
+; れいわ新選組
+: [[れいわ新選組]]は12月23日に倉嶋の支持を決定した<ref>{{Cite web|和書|url=https://reiwa-shinsengumi.com/comment/14124/ |title=山梨県知事選挙における、れいわ新選組支持候補予定者決定について |access-date=2022-12-30 |date=2022-12-24|publisher= |website=れいわ新選組公式サイト}}</ref>。
+; 社会民主党
+: [[社会民主党 (日本 1996-)|社会民主党]]は12月15日までに倉嶋の支持を決定した<ref>{{Cite news |title=来月投票の県知事選挙 県内各党の対応 |newspaper=NHK NEWS |date=2022-12-15 |author= |url=https://web.archive.org/web/20221215111137/https://www3.nhk.or.jp/lnews/kofu/20221215/1040018818.html |accessdate=2023-01-05}}</ref>。
+
+[[日本維新の会]]および[[国民民主党 (日本 2020)|国民民主党]]は態度を表明していない。
+
+== 選挙結果 ==
+投開票の結果、現職の長崎が再選を果たした<ref>{{Cite web|和書|url=https://www3.nhk.or.jp/lnews/kofu/20230123/1040019105.html |title=山梨県知事選 長崎幸太郎氏が再選 |publisher=日本放送協会 |accessdate=2023-06-16|archiveurl=https://web.archive.org/web/20230122224308/https://www3.nhk.or.jp/lnews/kofu/20230123/1040019105.html|archivedate=2023-01-22}}</ref>。
+{{選挙結果 (日本の首長)
+|当日有権者数=679,320
+|最終投票率=52.29<ref>{{Cite web|和書|url=http://www.yamanashi-senkyo.jp/page/01tohyo.php |title=山梨県知事選挙投票速報 |publisher=山梨県選挙管理委員会 |accessdate=2023-01-23}}</ref>
+|前回比=-5.64|当選者名='''[[長崎幸太郎]]'''|当選者年齢=54|当選者所属=[[無所属]]|当選者新旧別=現|当選者得票数=215,517|当選者得票率=61.33|当選者推薦・支持=（推薦）[[自由民主党 (日本)|自由民主党]]・[[公明党]]
+|落選者名=志村直毅|落選者年齢=53|落選者所属=無所属|落選者新旧別=新|落選者得票数=106,783|落選者得票率=30.38|落選者推薦・支持=
+|2落選者名=[[倉嶋清次]]|2落選者年齢=74|2落選者所属=無所属|2落選者新旧別=新|2落選者得票数=29,195|2落選者得票率=8.31|2落選者推薦・支持=（支持）[[日本共産党]]・[[社会民主党 (日本 1996-)|社会民主党]]・[[れいわ新選組]]
+}}
+{| class="wikitable sortable" style="text-align:right; font-size:85%"
+|+自治体別開票結果<ref>[http://www.yamanashi-senkyo.jp/houdou/download.php?sn=2&ft=e&tm=25 山梨県知事選挙　得票表]</ref>
+!rowspan="2"|市町村
+!colspan="2"|長崎幸太郎
+!colspan="2"|志村直毅
+!colspan="2"|倉嶋清次
+|-
+!得票!!%!!得票!!%!!得票!!%
+|-
+!合計
+|'''215,517'''||'''61.33%'''||106,783||30.38%||29,195||8.31%
+|-
+![[甲府市]]
+|'''39,758'''||'''56.59%'''||23,633||33.64%||6,865||9.77%
+|-
+![[富士吉田市]]
+|'''12,957'''||'''60.80%'''||7,433||34.88%||920||4.32%
+|-
+![[都留市]]
+|'''9,056'''||'''69.39%'''||3,215||24.64%||779||5.97%
+|-
+![[山梨市]]
+|'''9,878'''||'''62.50%'''||4,594||29.07%||1,333||8.43%
+|-
+![[大月市]]
+|'''8,901'''||'''74.60%'''||2,247||18.83%||784||6.57%
+|-
+![[韮崎市]]
+|'''7,505'''||'''60.54%'''||3,915||31.58%||977||7.88%
+|-
+![[南アルプス市]]
+|'''18,495'''||'''64.45%'''||7,657||26.68%||2,545||8.87%
+|-
+![[北杜市]]
+|'''12,869'''||'''57.97%'''||5,635||25.38%||3,695||16.64%
+|-
+![[甲斐市]]
+|'''16,647'''||'''59.57%'''||8,883||31.79%||2,415||8.64%
+|-
+![[笛吹市]]
+|'''14,251'''||'''48.99%'''||12,507||43.00%||2,330||8.01%
+|-
+![[上野原市]]
+|'''9,376'''||'''71.51%'''||2,949||22.49%||787||6.00%
+|-
+![[甲州市]]
+|'''9,152'''||'''62.38%'''||4,402||30.00%||1,117||7.61%
+|-
+![[中央市]]
+|'''9,356'''||'''63.84%'''||4,260||29.07%||1,039||7.09%
+|-
+![[市川三郷町]]
+|'''5,054'''||'''67.77%'''||1,796||24.08%||608||8.15%
+|-
+![[早川町]]
+|'''388'''||'''66.10%'''||176||29.98%||23||3.92%
+|-
+![[身延町]]
+|'''4,261'''||'''73.68%'''||1,164||20.13%||358||6.19%
+|-
+![[南部町 (山梨県)|南部町]]
+|'''3,051'''||'''73.57%'''||904||21.80%||192||4.63%
+|-
+![[富士川町]]
+|'''4,327'''||'''63.99%'''||1,893||27.99%||542||8.02%
+|-
+![[昭和町]]
+|'''4,535'''||'''59.81%'''||2,450||32.31%||597||7.87%
+|-
+![[道志村]]
+|'''652'''||'''65.53%'''||281||28.24%||62||6.23%
+|-
+![[西桂町]]
+|'''1,507'''||'''71.66%'''||515||24.49%||81||3.85%
+|-
+![[忍野村]]
+|'''2,344'''||'''58.72%'''||1,452||36.37%||196||4.91%
+|-
+![[山中湖村]]
+|'''1,727'''||'''61.94%'''||905||32.46%||156||5.60%
+|-
+![[鳴沢村]]
+|'''978'''||'''62.89%'''||500||32.15%||77||4.95%
+|-
+![[富士河口湖町]]
+|'''7,820'''||'''66.48%'''||3,258||27.70%||685||5.82%
+|-
+![[小菅村]]
+|'''372'''||'''75.46%'''||100||20.28%||21||4.26%
+|-
+![[丹波山村]]
+|'''300'''||'''81.08%'''||59||15.95%||11||2.97%
+|}
+
+== 脚注 ==
+{{脚注ヘルプ}}
+=== 注釈 ===
+{{Reflist|group="注"}}
+=== 出典 ===
+{{Reflist|2}}
+
+== 外部リンク ==
+*[https://www.pref.yamanashi.jp/senkyo/r5_tijisen.html 山梨県／令和5年1月22日執行山梨県知事選挙について]
+
+{{山梨県の選挙}}
+{{2023年日本の選挙}}
+{{デフォルトソート:やまなしけんちしせんきよ2023}}
+[[Category:2023年日本の選挙]]
+[[Category:山梨県知事選挙|2023]]
+[[Category:2023年1月]]
+[[Category:2023年の山梨県|ちしせんきよ]]
