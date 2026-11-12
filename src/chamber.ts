@@ -162,21 +162,20 @@ function arcs(n: number, spanDeg: number, leg: number, rowsOpt?: number, blocksO
 }
 
 /**
- * 両脇のブロックを議長席のほうへ傾ける。各ブロックの「通路側・最前列」の角を軸に回すので、
- * 外側の端が議長席に近づき、後ろの列ほど外へ開く（中央のブロックとは重ならない）。
+ * 両脇のブロックを議長席のほうへ傾ける。ブロック全体を回すのではなく、列ごとに通路側の端を軸に傾ける。
+ * 外側の端が議長席に近づく一方、通路側の端はまっすぐ後ろへそろうので、後ろの列が中央から離れていかない
+ * （実際の議席図と同じ、平行四辺形の並びになる）。
  */
 function splaySides<T extends Point>(pts: (T & { b: number })[], nb: number, deg: number | undefined, innerEdge: (b: number) => number): void {
   const th = (clamp(deg ?? 0, 0, 40) * Math.PI) / 180;
   if (!th || nb < 3) return;
-  const frontY = Math.min(...pts.map((p) => p.y));
   for (const p of pts) {
     if (p.b !== 0 && p.b !== nb - 1) continue;
-    const sign = p.b === 0 ? 1 : -1; // 左のブロックは左端が、右のブロックは右端が上がる
+    const sign = p.b === 0 ? 1 : -1; // 左のブロックは左端が、右のブロックは右端が議長席に近づく
     const px = innerEdge(p.b);
     const dx = p.x - px;
-    const dy = p.y - frontY;
-    p.x = px + dx * Math.cos(th) - sign * dy * Math.sin(th);
-    p.y = frontY + sign * dx * Math.sin(th) + dy * Math.cos(th);
+    p.x = px + dx * Math.cos(th);
+    p.y = p.y + sign * dx * Math.sin(th);
   }
 }
 
