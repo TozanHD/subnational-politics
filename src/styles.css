@@ -441,3 +441,37 @@ tfoot td {
 .podium text {
   fill: var(--muted);
 }
+
+.small-inline {
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+.gov-facts {
+  margin: 12px 0 0;
+  display: grid;
+  gap: 8px;
+}
+
+.gov-facts div {
+  display: grid;
+  grid-template-columns: 9.5em 1fr;
+  gap: 12px;
+}
+
+.gov-facts dt {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.gov-facts dd {
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .gov-facts div {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

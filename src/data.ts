@@ -1,9 +1,12 @@
 import raw from './data/latest.json';
 import kaihaRaw from './data/kaiha.json';
-import type { Body, Count, Dataset, KaihaData, KaihaEntry, Prefecture } from './types';
+import governorsRaw from './data/governors.json';
+import type { Body, Count, Dataset, GovernorData, GovernorEntry, KaihaData, KaihaEntry, Prefecture } from './types';
 
 export const dataset = raw as unknown as Dataset;
 export const kaihaData = kaihaRaw as unknown as KaihaData;
+export const governorData = governorsRaw as unknown as GovernorData;
+export const governorOf = (pref: string): GovernorEntry | undefined => governorData.prefectures[pref];
 
 export const kaihaOf = (pref: string): KaihaEntry | undefined => kaihaData.prefectures[pref];
 
