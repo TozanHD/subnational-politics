@@ -16,6 +16,8 @@ export interface ChamberConfig {
    * 指定すると rows / blocks より優先する。span を併せて指定すると列が議長席を囲む弧になる。
    */
   seats?: number[][];
+  /** 教室型: 両脇のブロックを議長席のほうへ傾ける角度（度） */
+  splay?: number;
   /** 形を判断した根拠 */
   basis?: string;
   /** 補足（県別ページに表示） */
@@ -160,6 +162,25 @@ function arcs(n: number, spanDeg: number, leg: number, rowsOpt?: number, blocksO
 }
 
 /**
+ * 両脇のブロックを議長席のほうへ傾ける。各ブロックの「通路側・最前列」の角を軸に回すので、
+ * 外側の端が議長席に近づき、後ろの列ほど外へ開く（中央のブロックとは重ならない）。
+ */
+function splaySides<T extends Point>(pts: (T & { b: number })[], nb: number, deg: number | undefined, innerEdge: (b: number) => number): void {
+  const th = (clamp(deg ?? 0, 0, 40) * Math.PI) / 180;
+  if (!th || nb < 3) return;
+  const frontY = Math.min(...pts.map((p) => p.y));
+  for (const p of pts) {
+    if (p.b !== 0 && p.b !== nb - 1) continue;
+    const sign = p.b === 0 ? 1 : -1; // 左のブロックは左端が、右のブロックは右端が上がる
+    const px = innerEdge(p.b);
+    const dx = p.x - px;
+    const dy = p.y - frontY;
+    p.x = px + dx * Math.cos(th) - sign * dy * Math.sin(th);
+    p.y = frontY + sign * dx * Math.sin(th) + dy * Math.cos(th);
+  }
+}
+
+/**
  * 議席図どおりの並び。各列・各ブロックの席数をそのまま置く。
  * 左側のブロックは右（通路側）に、右側のブロックは左に、中央のブロックは中央に寄せる。
  * 席数が定数より少ないときは最後列に足す（定数が増えても図が欠けないように）。
@@ -182,7 +203,7 @@ function grid(n: number, c: ChamberConfig): ChamberLayout {
   const pitchY = 1.12;
   const spanRad = c.span ? (clamp(c.span, 10, 170) * Math.PI) / 180 : 0;
   const rBack = spanRad ? Math.max(W / spanRad, (rows.length - 1) * pitchY + 3) : 0;
-  const pts: (Point & { fx: number })[] = [];
+  const pts: (Point & { fx: number; b: number })[] = [];
   rows.forEach((r, i) => {
     r.forEach((m, b) => {
       const mid = (nb - 1) / 2;
@@ -190,16 +211,17 @@ function grid(n: number, c: ChamberConfig): ChamberLayout {
       for (let j = 0; j < m; j++) {
         const fx = starts[b] + off + j - W / 2;
         if (!spanRad) {
-          pts.push({ x: fx, y: i * pitchY, fx });
+          pts.push({ x: fx, y: i * pitchY, fx, b });
         } else {
           // 議長席の側を中心とする弧に曲げる（席の間隔と通路の幅は保つ）
           const rad = rBack - (rows.length - 1 - i) * pitchY;
           const a = fx / rad;
-          pts.push({ x: rad * Math.sin(a), y: rad * Math.cos(a) - (rBack - (rows.length - 1) * pitchY), fx });
+          pts.push({ x: rad * Math.sin(a), y: rad * Math.cos(a) - (rBack - (rows.length - 1) * pitchY), fx, b });
         }
       }
     });
   });
+  if (!spanRad) splaySides(pts, nb, c.splay, (b) => (b === 0 ? starts[0] + widths[0] - 0.5 : starts[nb - 1] - 0.5) - W / 2);
   // 会派は左から順に帯になるように塗る
   pts.sort((p, q) => p.fx - q.fx || p.y - q.y);
   const minY = Math.min(...pts.map((p) => p.y));
@@ -218,22 +240,31 @@ function classroom(n: number, c: ChamberConfig): ChamberLayout {
     const side = Math.max(1, Math.round(cols * 0.3));
     blocks = cols >= 6 ? [side, cols - 2 * side, side] : [cols];
   }
-  const rows = Math.max(1, Math.ceil(n / cols));
   const aisle = 0.7;
   const xs: number[] = [];
+  const blockOf: number[] = [];
+  const edges: [number, number][] = []; // 各ブロックの左端・右端（席の中心）
   let x = 0;
   blocks.forEach((b, i) => {
-    for (let j = 0; j < b; j++) xs.push(x++);
+    edges.push([x, x + b - 1]);
+    for (let j = 0; j < b; j++) {
+      xs.push(x++);
+      blockOf.push(i);
+    }
     if (i < blocks!.length - 1) x += aisle;
   });
   const width = xs[xs.length - 1];
-  const seats: Point[] = [];
+  const seats: (Point & { b: number })[] = [];
   // 列ごと（左から）に前から後ろへ。端数は各列の後ろを空ける。
   const perCol = xs.map((_, i) => Math.floor(n / cols) + (i < n % cols ? 1 : 0));
   xs.forEach((cx, i) => {
-    for (let j = 0; j < perCol[i]; j++) seats.push({ x: cx - width / 2, y: j });
+    for (let j = 0; j < perCol[i]; j++) seats.push({ x: cx - width / 2, y: j, b: blockOf[i] });
   });
-  return { seats, r: 0.4, podium: { x: 0, y: -1.5 }, label: { x: 0, y: rows + 0.5, place: 'below' } };
+  const nb = blocks.length;
+  splaySides(seats, nb, c.splay, (bi) => (bi === 0 ? edges[0][1] + 0.5 : edges[nb - 1][0] - 0.5) - width / 2);
+  const minY = Math.min(...seats.map((p) => p.y));
+  const maxY = Math.max(...seats.map((p) => p.y));
+  return { seats, r: 0.4, podium: { x: 0, y: minY - 1.5 }, label: { x: 0, y: maxY + 1.5, place: 'below' } };
 }
 
 /** 対面型: 中央の通路をはさんで 2 つの議席群が向かい合う。議長席は左端。 */
