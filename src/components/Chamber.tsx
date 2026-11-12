@@ -26,10 +26,11 @@ export default function Chamber({ segments, fixed, chamber, detailed = false, la
   }, [segments, fixed, total]);
   const lay = useMemo(() => chamberLayout(fills.length, chamber), [fills.length, chamber]);
   const { seats, r, podium, label: lb } = lay;
+  const ghosts = lay.ghosts ?? [];
 
   // 図全体の大きさ（席の並びの幅を基準に文字や議長席の大きさを決める）
-  const xs = seats.map((s) => s.x);
-  const ys = seats.map((s) => s.y);
+  const xs = [...seats, ...ghosts].map((s) => s.x);
+  const ys = [...seats, ...ghosts].map((s) => s.y);
   let minX = Math.min(...xs, 0) - r;
   let maxX = Math.max(...xs, 0) + r;
   let minY = Math.min(...ys) - r;
@@ -77,6 +78,11 @@ export default function Chamber({ segments, fixed, chamber, detailed = false, la
             ))}
         </g>
       )}
+      {ghosts.map((s, i) => (
+        <circle key={`g${i}`} cx={s.x} cy={s.y} r={r * 0.8} fill="none" className="seat-unused" strokeWidth={r * 0.12} strokeDasharray={`${r * 0.3} ${r * 0.3}`}>
+          {detailed && <title>使われていない席</title>}
+        </circle>
+      ))}
       {seats.map((s, i) => {
         const f = fills[i] ?? { party: null, color: 'none' };
         return (
