@@ -64,7 +64,7 @@ export default function PrefPage({ pref }: { pref: Prefecture }) {
             ` 議場の形は未確認のため、標準の形（${CHAMBER_LABEL[chamber.config.type]}）で描いています。`
           ) : (
             <>
-              {' '}図は{pref.name}議会の議場の形（{CHAMBER_LABEL[chamber.config.type]}）に合わせた模式図で、実際の席順ではありません
+              {' '}図は{pref.name}議会の議場の形（{CHAMBER_LABEL[chamber.config.type]}）に合わせた図です{chamber.config.seats ? '。列ごと・ブロックごとの席数は議席図のとおりですが、' : '。席の数と並びは模式的なもので、'}どの席にどの会派が座るかは実際と異なります
               {chamber.config.source && (
                 <>
                   （

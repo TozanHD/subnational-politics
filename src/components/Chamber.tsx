@@ -78,7 +78,7 @@ export default function Chamber({ segments, fixed, chamber, detailed = false, la
         </g>
       )}
       {seats.map((s, i) => {
-        const f = fills[i];
+        const f = fills[i] ?? { party: null, color: 'none' };
         return (
           <circle
             key={i}
@@ -89,7 +89,7 @@ export default function Chamber({ segments, fixed, chamber, detailed = false, la
             className={f.party ? undefined : 'seat-vacant'}
             strokeWidth={f.party ? 0 : r * 0.25}
           >
-            {detailed && <title>{f.party ?? emptyLabel}</title>}
+            {detailed && <title>{f.party ?? (i < fills.length ? emptyLabel : '空席')}</title>}
           </circle>
         );
       })}
