@@ -10,6 +10,12 @@ export interface ChamberConfig {
   span?: number;
   /** 教室型: 通路で区切られた各ブロックの横の席数。半円形・扇形・馬蹄形: 放射状の通路で区切った各ブロックの幅の比 */
   blocks?: number[];
+  /**
+   * 議席図どおりの席の並び。前の列から順に、各列の「ブロックごとの席数」を書く（議長席を上にして左のブロックから）。
+   * 例: [[4,7,4],[6,8,6]] = 1 列目は左 4・中央 7・右 4 席、2 列目は 6・8・6 席。
+   * 指定すると rows / blocks より優先する。span を併せて指定すると列が議長席を囲む弧になる。
+   */
+  seats?: number[][];
   /** 形を判断した根拠 */
   basis?: string;
   /** 補足（県別ページに表示） */
@@ -153,6 +159,54 @@ function arcs(n: number, spanDeg: number, leg: number, rowsOpt?: number, blocksO
   };
 }
 
+/**
+ * 議席図どおりの並び。各列・各ブロックの席数をそのまま置く。
+ * 左側のブロックは右（通路側）に、右側のブロックは左に、中央のブロックは中央に寄せる。
+ * 席数が定数より少ないときは最後列に足す（定数が増えても図が欠けないように）。
+ */
+function grid(n: number, c: ChamberConfig): ChamberLayout {
+  const rowsIn = (c.seats ?? []).map((r) => r.map((v) => Math.max(0, Math.round(v))));
+  const nb = Math.max(...rowsIn.map((r) => r.length));
+  const rows = rowsIn.map((r) => Array.from({ length: nb }, (_, b) => r[b] ?? 0));
+  let total = rows.flat().reduce((a, b) => a + b, 0);
+  for (let b = Math.floor((nb - 1) / 2); total < n; total++) rows[rows.length - 1][b]++;
+  const widths = Array.from({ length: nb }, (_, b) => Math.max(...rows.map((r) => r[b])));
+  const aisle = 0.8;
+  const starts: number[] = [];
+  let x = 0;
+  widths.forEach((w, b) => {
+    starts.push(x);
+    x += w + (b < nb - 1 ? aisle : 0);
+  });
+  const W = x - 1; // 左端の席の中心から右端の席の中心まで
+  const pitchY = 1.12;
+  const spanRad = c.span ? (clamp(c.span, 10, 170) * Math.PI) / 180 : 0;
+  const rBack = spanRad ? Math.max(W / spanRad, (rows.length - 1) * pitchY + 3) : 0;
+  const pts: (Point & { fx: number })[] = [];
+  rows.forEach((r, i) => {
+    r.forEach((m, b) => {
+      const mid = (nb - 1) / 2;
+      const off = b < mid ? widths[b] - m : b > mid ? 0 : (widths[b] - m) / 2;
+      for (let j = 0; j < m; j++) {
+        const fx = starts[b] + off + j - W / 2;
+        if (!spanRad) {
+          pts.push({ x: fx, y: i * pitchY, fx });
+        } else {
+          // 議長席の側を中心とする弧に曲げる（席の間隔と通路の幅は保つ）
+          const rad = rBack - (rows.length - 1 - i) * pitchY;
+          const a = fx / rad;
+          pts.push({ x: rad * Math.sin(a), y: rad * Math.cos(a) - (rBack - (rows.length - 1) * pitchY), fx });
+        }
+      }
+    });
+  });
+  // 会派は左から順に帯になるように塗る
+  pts.sort((p, q) => p.fx - q.fx || p.y - q.y);
+  const minY = Math.min(...pts.map((p) => p.y));
+  const maxY = Math.max(...pts.map((p) => p.y));
+  return { seats: pts, r: 0.4, podium: { x: 0, y: minY - 1.5 }, label: { x: 0, y: maxY + 0.9, place: 'below' } };
+}
+
 /** 教室型: 議長席（上）に向かって横に並ぶ。会派は左から縦の帯になる。 */
 function classroom(n: number, c: ChamberConfig): ChamberLayout {
   let blocks = c.blocks?.filter((b) => b > 0);
@@ -207,6 +261,7 @@ function facing(n: number, c: ChamberConfig): ChamberLayout {
 
 export function chamberLayout(n: number, c: ChamberConfig): ChamberLayout {
   if (n <= 0) return { seats: [], r: 0.05, label: { x: 0, y: 0, place: 'center' } };
+  if (c.seats?.length && c.seats.some((r) => r.some((v) => v > 0))) return grid(n, c);
   switch (c.type) {
     case 'fan':
       return arcs(n, c.span ?? 110, 0, c.rows, c.blocks);
