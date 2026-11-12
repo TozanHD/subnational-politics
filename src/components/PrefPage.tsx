@@ -60,6 +60,7 @@ export default function PrefPage({ pref }: { pref: Prefecture }) {
             </>
           )}{' '}
           {view === 'kaiha' && kaiha ? '白抜きの席は、欠員または名簿で会派を確認できなかった議席です。' : '白抜きの席は欠員です。'}
+          {chamber.config.desks ? ' 点線の丸は、机はあるものの使われていない席です。' : ''}
           {chamber.isDefault ? (
             ` 議場の形は未確認のため、標準の形（${CHAMBER_LABEL[chamber.config.type]}）で描いています。`
           ) : (

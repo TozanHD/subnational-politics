@@ -475,3 +475,8 @@ tfoot td {
     gap: 0;
   }
 }
+
+.seat-unused {
+  stroke: var(--vacant);
+  opacity: 0.7;
+}

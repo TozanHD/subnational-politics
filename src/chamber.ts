@@ -16,6 +16,8 @@ export interface ChamberConfig {
    * 指定すると rows / blocks より優先する。span を併せて指定すると列が議長席を囲む弧になる。
    */
   seats?: number[][];
+  /** seats と同じ形で、使われていない席も含めた机の数。差の分は「使われていない席」として薄く描く */
+  desks?: number[][];
   /** 教室型: 両脇のブロックを議長席のほうへ傾ける角度（度） */
   splay?: number;
   /** 形を判断した根拠 */
@@ -52,6 +54,8 @@ export interface Point {
 export interface ChamberLayout {
   /** 塗る順（会派の並び順）に並んだ席。y は下向きが正。 */
   seats: Point[];
+  /** 使われていない席（机はあるが議員の席ではない） */
+  ghosts?: Point[];
   /** 席の半径 */
   r: number;
   /** 議長席の位置と向き（横長か縦長か）。中央に人数を書く形では省略。 */
@@ -185,47 +189,90 @@ function splaySides<T extends Point>(pts: (T & { b: number })[], nb: number, deg
  * 席数が定数より少ないときは最後列に足す（定数が増えても図が欠けないように）。
  */
 function grid(n: number, c: ChamberConfig): ChamberLayout {
-  const rowsIn = (c.seats ?? []).map((r) => r.map((v) => Math.max(0, Math.round(v))));
+  const norm = (rs: number[][] | undefined) => (rs ?? []).map((r) => r.map((v) => Math.max(0, Math.round(v))));
+  const rowsIn = norm(c.seats);
   const nb = Math.max(...rowsIn.map((r) => r.length));
   const rows = rowsIn.map((r) => Array.from({ length: nb }, (_, b) => r[b] ?? 0));
   let total = rows.flat().reduce((a, b) => a + b, 0);
   for (let b = Math.floor((nb - 1) / 2); total < n; total++) rows[rows.length - 1][b]++;
-  const widths = Array.from({ length: nb }, (_, b) => Math.max(...rows.map((r) => r[b])));
+  // 机の数（使われていない席を含む）。指定が無ければ使う席と同じ
+  const desksIn = norm(c.desks);
+  const desks = rows.map((r, i) => r.map((m, b) => Math.max(m, desksIn[i]?.[b] ?? 0)));
+  const mid = (nb - 1) / 2;
   const aisle = 0.8;
-  const starts: number[] = [];
-  let x = 0;
-  widths.forEach((w, b) => {
-    starts.push(x);
-    x += w + (b < nb - 1 ? aisle : 0);
-  });
-  const W = x - 1; // 左端の席の中心から右端の席の中心まで
   const pitchY = 1.12;
-  const spanRad = c.span ? (clamp(c.span, 10, 170) * Math.PI) / 180 : 0;
-  const rBack = spanRad ? Math.max(W / spanRad, (rows.length - 1) * pitchY + 3) : 0;
   const pts: (Point & { fx: number; b: number })[] = [];
-  rows.forEach((r, i) => {
-    r.forEach((m, b) => {
-      const mid = (nb - 1) / 2;
-      const off = b < mid ? widths[b] - m : b > mid ? 0 : (widths[b] - m) / 2;
-      for (let j = 0; j < m; j++) {
-        const fx = starts[b] + off + j - W / 2;
-        if (!spanRad) {
-          pts.push({ x: fx, y: i * pitchY, fx, b });
-        } else {
-          // 議長席の側を中心とする弧に曲げる（席の間隔と通路の幅は保つ）
-          const rad = rBack - (rows.length - 1 - i) * pitchY;
-          const a = fx / rad;
-          pts.push({ x: rad * Math.sin(a), y: rad * Math.cos(a) - (rBack - (rows.length - 1) * pitchY), fx, b });
+  const ghosts: Point[] = [];
+  /** ブロック内の席の横位置（0 始まり）。両脇のブロックは通路側から、中央は真ん中から使う。 */
+  const slots = (i: number, b: number, width: number): { off: number; used: boolean }[] => {
+    const d = desks[i][b];
+    const m = rows[i][b];
+    const start = b < mid ? width - d : b > mid ? 0 : (width - d) / 2;
+    const usedFrom = b < mid ? d - m : b > mid ? 0 : Math.floor((d - m) / 2);
+    return Array.from({ length: d }, (_, j) => ({ off: start + j, used: j >= usedFrom && j < usedFrom + m }));
+  };
+  const spanRad = c.span ? (clamp(c.span, 10, 170) * Math.PI) / 180 : 0;
+  if (!spanRad) {
+    const widths = Array.from({ length: nb }, (_, b) => Math.max(...desks.map((r) => r[b])));
+    const starts: number[] = [];
+    let x = 0;
+    widths.forEach((w, b) => {
+      starts.push(x);
+      x += w + (b < nb - 1 ? aisle : 0);
+    });
+    const W = x - 1; // 左端の席の中心から右端の席の中心まで
+    const all: (Point & { fx: number; b: number; used: boolean })[] = [];
+    rows.forEach((_, i) => {
+      for (let b = 0; b < nb; b++) {
+        for (const s of slots(i, b, widths[b])) {
+          const fx = starts[b] + s.off - W / 2;
+          all.push({ x: fx, y: i * pitchY, fx, b, used: s.used });
         }
       }
     });
-  });
-  if (!spanRad) splaySides(pts, nb, c.splay, (b) => (b === 0 ? starts[0] + widths[0] - 0.5 : starts[nb - 1] - 0.5) - W / 2);
+    splaySides(all, nb, c.splay, (b) => (b === 0 ? starts[0] + widths[0] - 0.5 : starts[nb - 1] - 0.5) - W / 2);
+    for (const p of all) (p.used ? pts : ghosts).push(p);
+  } else {
+    // 扇形: 列は議長席の側を中心とする弧、通路は放射状。各ブロックは決まった角度の範囲を占め、
+    // 席はその範囲の中央に同じ間隔で並ぶ（後ろの列ほどブロックが広がり、両脇は外へずれる）。
+    const layoutFor = (r0: number) => {
+      const rad = rows.map((_, i) => r0 + i * pitchY);
+      const ang = Array.from({ length: nb }, (_, b) => Math.max(...desks.map((r, i) => r[b] / rad[i])));
+      const gap = aisle / (r0 + ((rows.length - 1) * pitchY) / 2);
+      return { rad, ang, gap, total: ang.reduce((a, v) => a + v, 0) + gap * (nb - 1) };
+    };
+    let lo = 1;
+    let hi = 400;
+    for (let it = 0; it < 60; it++) {
+      const m = (lo + hi) / 2;
+      if (layoutFor(m).total > spanRad) lo = m;
+      else hi = m;
+    }
+    const { rad, ang, gap, total: tot } = layoutFor(hi);
+    const centers: number[] = [];
+    let a = -tot / 2;
+    ang.forEach((w) => {
+      centers.push(a + w / 2);
+      a += w + gap;
+    });
+    rows.forEach((_, i) => {
+      for (let b = 0; b < nb; b++) {
+        const d = desks[i][b];
+        for (const s of slots(i, b, d)) {
+          const t = centers[b] + (s.off - (d - 1) / 2) / rad[i];
+          const p = { x: rad[i] * Math.sin(t), y: rad[i] * Math.cos(t) - rad[0], fx: t, b };
+          if (s.used) pts.push(p);
+          else ghosts.push(p);
+        }
+      }
+    });
+  }
   // 会派は左から順に帯になるように塗る
   pts.sort((p, q) => p.fx - q.fx || p.y - q.y);
-  const minY = Math.min(...pts.map((p) => p.y));
-  const maxY = Math.max(...pts.map((p) => p.y));
-  return { seats: pts, r: 0.4, podium: { x: 0, y: minY - 1.5 }, label: { x: 0, y: maxY + 0.9, place: 'below' } };
+  const allY = [...pts, ...ghosts].map((p) => p.y);
+  const minY = Math.min(...allY);
+  const maxY = Math.max(...allY);
+  return { seats: pts, ghosts, r: 0.4, podium: { x: 0, y: minY - 1.5 }, label: { x: 0, y: maxY + 0.9, place: 'below' } };
 }
 
 /** 教室型: 議長席（上）に向かって横に並ぶ。会派は左から縦の帯になる。 */
