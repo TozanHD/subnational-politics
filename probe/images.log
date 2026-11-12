@@ -1,0 +1,165 @@
+   北海道 bing '北海道議会 議場': 35
+   青森県 bing '青森県議会 議場': 35
+   北海道 bing '北海道議会 本会議場 全景 議席': 35
+   青森県 bing '青森県議会 本会議場 全景 議席': 35
+北海道: saved=10
+青森県: saved=10
+   岩手県 bing '岩手県議会 議場': 35
+   宮城県 bing '宮城県議会 議場': 35
+   宮城県 bing '宮城県議会 本会議場 全景 議席': 35
+   岩手県 bing '岩手県議会 本会議場 全景 議席': 35
+宮城県: saved=10
+   x https://news-pctr.c.yimg.jp/uUzvQ3lML_bkIqyakc1vFhNrRI0RUQxg5aFkrX0xDg1_T0wXrbEJjtNGtrf1o9y3ugr42hCqJyTALw7zRmdegQ3T-Bbh: HTTP Error 404: Not Found
+岩手県: saved=10
+   秋田県 bing '秋田県議会 議場': 35
+   山形県 bing '山形県議会 議場': 35
+   x https://www.pref.yamagata.jp/images/6439/r706teireikaihonkaigijyo.jpg: HTTP Error 404: Not Found
+   秋田県 bing '秋田県議会 本会議場 全景 議席': 35
+   山形県 bing '山形県議会 本会議場 全景 議席': 35
+   x https://www.pref.yamagata.jp/images/6439/r706teireikaihonkaigijyo.jpg: HTTP Error 404: Not Found
+秋田県: saved=10
+山形県: saved=10
+   福島県 bing '福島県議会 議場': 35
+   茨城県 bing '茨城県議会 議場': 35
+   福島県 bing '福島県議会 本会議場 全景 議席': 35
+   x https://www.city.fukushima.fukushima.jp/material/images/group/72/070326heikaibi.jpg: HTTP Error 404: Not Found
+   茨城県 bing '茨城県議会 本会議場 全景 議席': 35
+福島県: saved=10
+   栃木県 bing '栃木県議会 議場': 35
+茨城県: saved=10
+   x http://shoichi-kato.ecnet.jp/wordpress/wp-content/uploads/2015/05/8da23ceee735c982cc65e8dcf926b914-1024x416.jpg: HTTP Error 503: Service Unavailable
+   群馬県 bing '群馬県議会 議場': 35
+   栃木県 bing '栃木県議会 本会議場 全景 議席': 35
+   x http://shoichi-kato.ecnet.jp/wordpress/wp-content/uploads/2015/05/8da23ceee735c982cc65e8dcf926b914.jpg: HTTP Error 503: Service Unavailable
+   群馬県 bing '群馬県議会 本会議場 全景 議席': 35
+栃木県: saved=10
+群馬県: saved=10
+   埼玉県 bing '埼玉県議会 議場': 35
+   千葉県 bing '千葉県議会 議場': 35
+   埼玉県 bing '埼玉県議会 本会議場 全景 議席': 35
+   千葉県 bing '千葉県議会 本会議場 全景 議席': 35
+埼玉県: saved=10
+千葉県: saved=10
+   東京都 bing '東京都議会 議場': 35
+   神奈川県 bing '神奈川県議会 議場': 35
+   東京都 bing '東京都議会 本会議場 全景 議席': 35
+   神奈川県 bing '神奈川県議会 本会議場 全景 議席': 35
+東京都: saved=10
+神奈川県: saved=10
+   新潟県 bing '新潟県議会 議場': 35
+   富山県 bing '富山県議会 議場': 35
+   x https://www.pref.toyama.lg.jp/images/44344/seinengikaizenkei.jpg: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.pref.toyama.lg.jp'. (_ssl.c:1011)>
+   x https://www.pref.toyama.lg.jp/images/44989/kokoseitoyamakengikaizenkei.jpg: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'www.pref.toyama.lg.jp'. (_ssl.c:1011)>
+   富山県 bing '富山県議会 本会議場 全景 議席': 35
+   新潟県 bing '新潟県議会 本会議場 全景 議席': 35
+富山県: saved=10
+新潟県: saved=10
+   石川県 bing '石川県議会 議場': 35
+   福井県 bing '福井県議会 議場': 35
+   x https://www.nishida-syoji.jp/wp-content/uploads/2017/10/2014年6月　石川県議会で一般質問-2.jpg: HTTP Error 404: Not Found
+   福井県 bing '福井県議会 本会議場 全景 議席': 35
+   石川県 bing '石川県議会 本会議場 全景 議席': 35
+福井県: saved=10
+   山梨県 bing '山梨県議会 議場': 35
+   x https://www.nishida-syoji.jp/wp-content/uploads/2017/10/2014.12石川県議会予算委員会にて質問中.jpg: HTTP Error 404: Not Found
+石川県: saved=10
+   x https://babasekkei.co.jp/pub/wp-content/uploads/2017/04/kengikaigijido02-2.jpg: HTTP Error 403: Forbidden
+   x https://babasekkei.co.jp/pub/wp-content/uploads/2017/04/kengikaigijido03-2.jpg: HTTP Error 403: Forbidden
+   長野県 bing '長野県議会 議場': 35
+   x https://babasekkei.co.jp/pub/wp-content/uploads/2012/03/kengikaigijido02-1.jpg: HTTP Error 403: Forbidden
+   x https://babasekkei.co.jp/pub/wp-content/uploads/2012/03/kengikaigijido01-1.jpg: HTTP Error 403: Forbidden
+   山梨県 bing '山梨県議会 本会議場 全景 議席': 35
+   x https://babasekkei.co.jp/pub/wp-content/uploads/2017/04/kengikaigijido02-2.jpg: HTTP Error 403: Forbidden
+   x https://babasekkei.co.jp/pub/wp-content/uploads/2017/04/kengikaigijido03-2.jpg: HTTP Error 403: Forbidden
+山梨県: saved=10
+   岐阜県 bing '岐阜県議会 議場': 35
+   岐阜県 bing '岐阜県議会 本会議場 全景 議席': 35
+   長野県 bing '長野県議会 本会議場 全景 議席': 35
+   x https://www.pref.nagano.lg.jp/gikai/chosa/gaiyo/images/haisekizu2402.jpg: HTTP Error 404: Not Found
+岐阜県: saved=10
+長野県: saved=10
+   静岡県 bing '静岡県議会 議場': 35
+   x https://www.pref.shizuoka.jp/_res/projects/default_project/_page_/001/040/296/070519gijou.jpg: HTTP Error 404: Not Found
+   愛知県 bing '愛知県議会 議場': 35
+   静岡県 bing '静岡県議会 本会議場 全景 議席': 35
+静岡県: saved=10
+   三重県 bing '三重県議会 議場': 35
+   愛知県 bing '愛知県議会 本会議場 全景 議席': 35
+愛知県: saved=10
+   滋賀県 bing '滋賀県議会 議場': 35
+   三重県 bing '三重県議会 本会議場 全景 議席': 35
+三重県: saved=10
+   x https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1YYbNu.img?w=1600&h=900&m=4&q=75: HTTP Error 404: Not Found
+   京都府 bing '京都府議会 議場': 35
+   滋賀県 bing '滋賀県議会 本会議場 全景 議席': 35
+   京都府 bing '京都府議会 本会議場 全景 議席': 35
+滋賀県: saved=10
+京都府: saved=10
+   大阪府 bing '大阪府議会 議場': 35
+   兵庫県 bing '兵庫県議会 議場': 35
+   大阪府 bing '大阪府議会 本会議場 全景 議席': 35
+   兵庫県 bing '兵庫県議会 本会議場 全景 議席': 35
+兵庫県: saved=10
+大阪府: saved=10
+   奈良県 bing '奈良県議会 議場': 35
+   和歌山県 bing '和歌山県議会 議場': 35
+   奈良県 bing '奈良県議会 本会議場 全景 議席': 35
+奈良県: saved=10
+   鳥取県 bing '鳥取県議会 議場': 35
+   和歌山県 bing '和歌山県議会 本会議場 全景 議席': 35
+和歌山県: saved=10
+   鳥取県 bing '鳥取県議会 本会議場 全景 議席': 35
+   島根県 bing '島根県議会 議場': 35
+鳥取県: saved=10
+   島根県 bing '島根県議会 本会議場 全景 議席': 34
+   岡山県 bing '岡山県議会 議場': 35
+島根県: saved=10
+   広島県 bing '広島県議会 議場': 35
+   岡山県 bing '岡山県議会 本会議場 全景 議席': 35
+   x https://user0514.cdnw.net/shared/img/thumb/susigikaiPAR58593-9269_TP_V.jpg: HTTP Error 403: Not Auth
+   広島県 bing '広島県議会 本会議場 全景 議席': 35
+広島県: saved=10
+   山口県 bing '山口県議会 議場': 35
+   山口県 bing '山口県議会 本会議場 全景 議席': 35
+山口県: saved=10
+   徳島県 bing '徳島県議会 議場': 35
+   x https://www.takahasi.okayama-c.ed.jp/wp/wp-content/uploads/2024/12/IMG_0277.jpg: <urlopen error timed out>
+岡山県: saved=10
+   香川県 bing '香川県議会 議場': 35
+   徳島県 bing '徳島県議会 本会議場 全景 議席': 35
+徳島県: saved=10
+   香川県 bing '香川県議会 本会議場 全景 議席': 35
+   愛媛県 bing '愛媛県議会 議場': 35
+香川県: saved=10
+   高知県 bing '高知県議会 議場': 35
+   愛媛県 bing '愛媛県議会 本会議場 全景 議席': 35
+   高知県 bing '高知県議会 本会議場 全景 議席': 35
+愛媛県: saved=10
+高知県: saved=10
+   福岡県 bing '福岡県議会 議場': 35
+   佐賀県 bing '佐賀県議会 議場': 35
+   福岡県 bing '福岡県議会 本会議場 全景 議席': 35
+福岡県: saved=10
+   佐賀県 bing '佐賀県議会 本会議場 全景 議席': 35
+   長崎県 bing '長崎県議会 議場': 35
+佐賀県: saved=10
+   熊本県 bing '熊本県議会 議場': 35
+   長崎県 bing '長崎県議会 本会議場 全景 議席': 35
+   x https://www.city.yatsushiro.lg.jp/gikai/common/upload/slide/19_14_pp1_36xbg0te.jpg: HTTP Error 403: Forbidden
+   x https://www.city.yatsushiro.lg.jp/dynamic/gikai/common/images/gikai/mainvisual.webp: HTTP Error 403: Forbidden
+長崎県: saved=10
+   熊本県 bing '熊本県議会 本会議場 全景 議席': 35
+   大分県 bing '大分県議会 議場': 35
+熊本県: saved=10
+   宮崎県 bing '宮崎県議会 議場': 35
+   大分県 bing '大分県議会 本会議場 全景 議席': 35
+   宮崎県 bing '宮崎県議会 本会議場 全景 議席': 35
+大分県: saved=10
+   鹿児島県 bing '鹿児島県議会 議場': 35
+宮崎県: saved=10
+   沖縄県 bing '沖縄県議会 議場': 35
+   鹿児島県 bing '鹿児島県議会 本会議場 全景 議席': 35
+   x https://www.pref.kagoshima.jp/ha01/gikai/kidssite/images/20533.jpg: HTTP Error 404: Not Found
+鹿児島県: saved=10
+   沖縄県 bing '沖縄県議会 本会議場 全景 議席': 35
+沖縄県: saved=10
