@@ -234,7 +234,8 @@ function grid(n: number, c: ChamberConfig): ChamberLayout {
     for (const p of all) (p.used ? pts : ghosts).push(p);
   } else {
     // 扇形: 列は議長席の側を中心とする弧、通路は放射状。各ブロックは決まった角度の範囲を占め、
-    // 席はその範囲の中央に同じ間隔で並ぶ（後ろの列ほどブロックが広がり、両脇は外へずれる）。
+    // 
+    // 中央のブロックは真ん中に、両脇のブロックは通路側に寄せて同じ間隔で並べる。
     const layoutFor = (r0: number) => {
       const rad = rows.map((_, i) => r0 + i * pitchY);
       const ang = Array.from({ length: nb }, (_, b) => Math.max(...desks.map((r, i) => r[b] / rad[i])));
@@ -248,18 +249,23 @@ function grid(n: number, c: ChamberConfig): ChamberLayout {
       if (layoutFor(m).total > spanRad) lo = m;
       else hi = m;
     }
-    const { rad, ang, gap, total: tot } = layoutFor(hi);
-    const centers: number[] = [];
-    let a = -tot / 2;
-    ang.forEach((w) => {
-      centers.push(a + w / 2);
-      a += w + gap;
-    });
+    const { rad, ang } = layoutFor(hi);
+    const odd = nb % 2 === 1;
     rows.forEach((_, i) => {
+      const g = aisle / rad[i]; // 通路はどの列でも同じ幅
       for (let b = 0; b < nb; b++) {
         const d = desks[i][b];
+        // 通路側の端の角度（中央からの距離）。両脇のブロックは通路側に寄せる
+        let edge = odd ? ang[Math.floor(mid)] / 2 + g : g / 2;
+        if (b > mid) for (let k = Math.ceil(mid + 0.5); k < b; k++) edge += ang[k] + g;
+        if (b < mid) for (let k = Math.floor(mid - 0.5); k > b; k--) edge += ang[k] + g;
         for (const s of slots(i, b, d)) {
-          const t = centers[b] + (s.off - (d - 1) / 2) / rad[i];
+          const t =
+            b === mid
+              ? (s.off - (d - 1) / 2) / rad[i]
+              : b > mid
+                ? edge + (s.off + 0.5) / rad[i]
+                : -(edge + (d - 1 - s.off + 0.5) / rad[i]);
           const p = { x: rad[i] * Math.sin(t), y: rad[i] * Math.cos(t) - rad[0], fx: t, b };
           if (s.used) pts.push(p);
           else ghosts.push(p);
