@@ -3,6 +3,7 @@ import { REGIONS, bodySegments, dataset, largestParty, pct, regionOf, shortName,
 import { chamberOf } from '../chamber';
 import Chamber from './Chamber';
 import PartyBar from './PartyBar';
+import DpjCompare from './DpjCompare';
 
 type SortKey = 'code' | 'seats' | 'women' | 'ldp';
 
@@ -52,6 +53,8 @@ export default function Home() {
         </div>
         <PartyBar segments={bodySegments(national)} />
       </section>
+
+      <DpjCompare />
 
       <section>
         <div className="toolbar">
