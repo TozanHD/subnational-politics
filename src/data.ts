@@ -76,6 +76,11 @@ const KNOWN_COLORS: Record<string, string> = {
   諸派: '#a5876c',
   無所属: '#9aa1ab',
   都民ファーストの会: '#2fa37a',
+  // 過去の政党（民主党政権期との比較用）
+  民主党: '#4a90d9',
+  みんなの党: '#d9a400',
+  国民新党: '#b5652d',
+  たちあがれ日本: '#6b8e23',
 };
 
 /** 既知の政党は固定色、未知の政党（新党など）は名前から決まる色を自動で割り当てる。 */
@@ -100,6 +105,10 @@ const SHORT: Record<string, string> = {
   日本保守党: '保守',
   社会民主党: '社民',
   みんなでつくる党: 'みんつく',
+  民主党: '民主',
+  みんなの党: 'みんな',
+  国民新党: '国民新',
+  たちあがれ日本: 'たちあがれ',
 };
 export const shortName = (name: string) => SHORT[name] ?? (name.length > 4 ? name.slice(0, 4) : name);
 

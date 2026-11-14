@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { SOUMU_INDEX_URL, dataset, findPrefecture, formatDate } from './data';
 import Home from './components/Home';
 import PrefPage from './components/PrefPage';
+import { CompareToggle } from './components/DpjCompare';
 
 /** ハッシュ方式のルーティング（静的ホスティングの設定なしで直リンクが動く）。 */
 function useRoute(): string {
@@ -71,6 +72,7 @@ export default function App() {
         <p className="muted">
           総務省は毎年12月31日時点の集計を翌年3月ごろに公表します。本サイトは公表データを毎週自動で確認し、新しい年次が出ると自動的に更新されます。
         </p>
+        <CompareToggle />
       </footer>
     </div>
   );

@@ -5,6 +5,7 @@ import type { Body, Prefecture } from '../types';
 import { CHAMBER_LABEL, chamberOf } from '../chamber';
 import Chamber from './Chamber';
 import PartyBar from './PartyBar';
+import DpjCompare from './DpjCompare';
 
 export default function PrefPage({ pref }: { pref: Prefecture }) {
   const national = sumBodies(dataset.prefectures.map((p) => p.assembly));
@@ -88,6 +89,8 @@ export default function PrefPage({ pref }: { pref: Prefecture }) {
           ※ 議員が選挙管理委員会に届け出ている所属党派です。議会内の「会派」とは一致しないことがあります。地域政党は「諸派」に含まれます。
         </p>
       </section>
+
+      <DpjCompare pref={pref} />
 
       <GovernorCard pref={pref} />
 
