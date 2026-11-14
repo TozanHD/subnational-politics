@@ -2,11 +2,12 @@
  * 民主党政権期（2009〜2011年末）との比較。
  *
  * このサイトの本筋ではない追加機能なので、次の 2 段階で外せるようにしている。
- *   1. 閲覧者ごと（オプトアウト）: 初期状態は表示。「比較を隠す」で非表示にでき、選択はブラウザに記憶する。
+ *   1. 閲覧者ごと（オプトイン）: 初期状態は非表示。「民主党政権期と比べる」を押した人にだけ表示し、選択はブラウザに記憶する。
  *   2. サイトごと: ビルド時に環境変数 VITE_HISTORY_COMPARE=off を指定すると、機能もデータも含めない。
  * 比較用データ（src/data/history.json）は表示するときだけ読み込む別ファイルにしている。
  */
 import { useEffect, useState, useSyncExternalStore } from 'react';
+import { dataset, partyColor, shortName, type Segment } from './data';
 
 export const HISTORY_ENABLED = import.meta.env.VITE_HISTORY_COMPARE !== 'off';
 
@@ -42,7 +43,7 @@ export const DPJ_SUCCESSORS = ['立憲民主党', '国民民主党'];
 // 表示する・しない、どの年と比べるか（ブラウザに記憶し、画面内のすべての場所で共有する）
 // ---------------------------------------------------------------------------
 
-const KEY_OFF = 'compare-dpj-off';
+const KEY_ON = 'compare-dpj-on';
 const KEY_YEAR = 'compare-dpj-year';
 const listeners = new Set<() => void>();
 
@@ -62,7 +63,7 @@ const write = (k: string, v: string | null) => {
   }
 };
 
-let state = { on: read(KEY_OFF) !== '1', year: read(KEY_YEAR) };
+let state = { on: read(KEY_ON) === '1', year: read(KEY_YEAR) };
 const subscribe = (fn: () => void) => {
   listeners.add(fn);
   return () => listeners.delete(fn);
@@ -78,7 +79,7 @@ export function useCompare() {
     on: HISTORY_ENABLED && s.on,
     year: s.year,
     setOn: (on: boolean) => {
-      write(KEY_OFF, on ? null : '1');
+      write(KEY_ON, on ? '1' : null);
       set({ on });
     },
     setYear: (year: string) => {
@@ -124,3 +125,19 @@ export const sumHistory = (bodies: HistoryBody[]): HistoryBody => {
 };
 
 export const historyTotal = (b: HistoryBody) => Object.values(b.parties).reduce((a, n) => a + n, 0);
+
+/** 当時と現在の政党を 1 つの並びにする。民主党は後継政党の前に置き、諸派・無所属は最後。 */
+export function partyOrder(snap: HistorySnapshot): string[] {
+  const tail = ['諸派', '無所属'];
+  const order = ['自由民主党', DPJ, ...DPJ_SUCCESSORS, ...dataset.parties, ...snap.parties].filter((p, i, a) => a.indexOf(p) === i);
+  return [...order.filter((p) => !tail.includes(p)), ...tail];
+}
+
+/** 当時の議会を議席図・帯グラフ用の区分にする。 */
+export function historySegments(snap: HistorySnapshot, body: HistoryBody): Segment[] {
+  return partyOrder(snap)
+    .filter((p) => (body.parties[p] ?? 0) > 0)
+    .map((p) => ({ name: p, short: shortName(p), count: body.parties[p], color: partyColor(p) }));
+}
+
+export const yearOf = (snap: HistorySnapshot) => snap.asOf.slice(0, 4);

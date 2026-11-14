@@ -550,3 +550,13 @@ tfoot td {
     white-space: normal;
   }
 }
+
+.compare-optin {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -6px;
+}
+
+.pref-card.then {
+  border-style: dashed;
+}

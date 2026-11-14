@@ -4,6 +4,7 @@ import {
   DPJ_SUCCESSORS,
   HISTORY_ENABLED,
   historyTotal,
+  partyOrder,
   pickSnapshot,
   sumHistory,
   useCompare,
@@ -18,13 +19,22 @@ import PartyBar from './PartyBar';
 export default function DpjCompare({ pref }: { pref?: Prefecture }) {
   const { on, year, setOn, setYear } = useCompare();
   const data = useHistoryData(on);
-  if (!on) return null;
+  if (!HISTORY_ENABLED) return null;
+  if (!on) {
+    return (
+      <div className="compare-optin">
+        <button type="button" className="chip" onClick={() => setOn(true)}>
+          民主党政権期（2009〜2011年）と比べる
+        </button>
+      </div>
+    );
+  }
 
   const head = (
     <div className="compare-head">
       <h3>民主党政権期との比較</h3>
       <button type="button" className="link-button" onClick={() => setOn(false)}>
-        比較を隠す
+        比較をやめる
       </button>
     </div>
   );
@@ -176,31 +186,13 @@ function NationalExtras({ snap }: { snap: HistorySnapshot }) {
   );
 }
 
-/** フッターに置く「比較を表示する」ボタン（隠したあとに戻す場所）。 */
-export function CompareToggle() {
-  const { on, setOn } = useCompare();
-  if (!HISTORY_ENABLED || on) return null;
-  return (
-    <p>
-      <button type="button" className="link-button" onClick={() => setOn(true)}>
-        民主党政権期（2009〜2011年）との比較を表示する
-      </button>
-    </p>
-  );
-}
-
 // ---------------------------------------------------------------------------
 
 const share = (n: number, d: number) => (d ? (n / d) * 100 : 0);
 const signed = (d: number) => (Math.abs(d) < 0.05 ? '±0' : `${d > 0 ? '+' : '−'}${Math.abs(d).toFixed(1)}`);
 
-/** 当時と現在の政党を 1 つの並びにする。民主党は後継政党の前に置き、諸派・無所属は最後。 */
 function mergedParties(snap: HistorySnapshot, then: HistoryBody, now: Body): string[] {
-  const head = ['自由民主党', DPJ, ...DPJ_SUCCESSORS];
-  const tail = ['諸派', '無所属'];
-  const order = [...head, ...dataset.parties, ...snap.parties].filter((p, i, a) => a.indexOf(p) === i);
-  const used = (p: string) => (then.parties[p] ?? 0) > 0 || (now.parties[p]?.[2] ?? 0) > 0;
-  return [...order.filter((p) => !tail.includes(p)), ...tail].filter(used);
+  return partyOrder(snap).filter((p) => (then.parties[p] ?? 0) > 0 || (now.parties[p]?.[2] ?? 0) > 0);
 }
 
 function toSegments(rows: string[], count: (p: string) => number): Segment[] {

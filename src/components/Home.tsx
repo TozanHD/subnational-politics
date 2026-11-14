@@ -4,6 +4,7 @@ import { chamberOf } from '../chamber';
 import Chamber from './Chamber';
 import PartyBar from './PartyBar';
 import DpjCompare from './DpjCompare';
+import { historySegments, historyTotal, pickSnapshot, useCompare, useHistoryData, yearOf } from '../history';
 
 type SortKey = 'code' | 'seats' | 'women' | 'ldp';
 
@@ -18,6 +19,11 @@ export default function Home() {
   const [region, setRegion] = useState<string>('すべて');
   const [sort, setSort] = useState<SortKey>('code');
   const national = useMemo(() => sumBodies(dataset.prefectures.map((p) => p.assembly)), []);
+  const compare = useCompare();
+  const hist = useHistoryData(compare.on);
+  const snap = compare.on && hist ? pickSnapshot(hist, compare.year) : null;
+  const [mapThen, setMapThen] = useState(false);
+  const showThen = mapThen && !!snap;
 
   const prefs = useMemo(() => {
     const list = dataset.prefectures.filter((p) => region === 'すべて' || regionOf(p.code) === region);
@@ -65,6 +71,16 @@ export default function Home() {
               </button>
             ))}
           </div>
+          {snap && (
+            <div className="chips" role="tablist" aria-label="議席図の時点">
+              <button role="tab" aria-selected={!showThen} className={!showThen ? 'chip on' : 'chip'} onClick={() => setMapThen(false)}>
+                現在
+              </button>
+              <button role="tab" aria-selected={showThen} className={showThen ? 'chip on' : 'chip'} onClick={() => setMapThen(true)}>
+                {yearOf(snap)}年末（{snap.cabinet}）
+              </button>
+            </div>
+          )}
           <label className="sort">
             並び替え
             <select value={sort} onChange={(e) => setSort(e.target.value as SortKey)}>
@@ -79,6 +95,45 @@ export default function Home() {
 
         <div className="grid">
           {prefs.map((p) => {
+            if (showThen && snap) {
+              const t = snap.prefectures[p.name];
+              const segs = historySegments(snap, t.assembly);
+              const n = historyTotal(t.assembly);
+              const big = segs.reduce<(typeof segs)[number] | null>((m, s) => (!m || s.count > m.count ? s : m), null);
+              return (
+                <a key={p.code} className="card pref-card then" href={`#/pref/${encodeURIComponent(p.name)}`}>
+                  <div className="pref-head">
+                    <h3>{p.name}</h3>
+                    <span className="muted">{yearOf(snap)}年末</span>
+                  </div>
+                  <Chamber segments={segs} fixed={t.assembly.fixed} chamber={chamberOf(p.name).config} label={`${p.name}議会 ${yearOf(snap)}年末 ${n}人`} />
+                  <PartyBar segments={segs} showLegend={false} />
+                  <dl className="facts">
+                    <div>
+                      <dt>最大</dt>
+                      <dd>
+                        {big ? (
+                          <>
+                            <i className="dot" style={{ background: big.color }} />
+                            {big.short} {pct(big.count, n, 0)}
+                          </>
+                        ) : (
+                          '—'
+                        )}
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>民主</dt>
+                      <dd>{pct(t.assembly.parties['民主党'] ?? 0, n, 0)}</dd>
+                    </div>
+                    <div>
+                      <dt>知事</dt>
+                      <dd>{t.governor ? shortName(t.governor) : '—'}</dd>
+                    </div>
+                  </dl>
+                </a>
+              );
+            }
             const top = largestParty(p.assembly);
             return (
               <a key={p.code} className="card pref-card" href={`#/pref/${encodeURIComponent(p.name)}`}>

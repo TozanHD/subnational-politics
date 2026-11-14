@@ -6,6 +6,7 @@ import { CHAMBER_LABEL, chamberOf } from '../chamber';
 import Chamber from './Chamber';
 import PartyBar from './PartyBar';
 import DpjCompare from './DpjCompare';
+import { historySegments, pickSnapshot, useCompare, useHistoryData, yearOf } from '../history';
 
 export default function PrefPage({ pref }: { pref: Prefecture }) {
   const national = sumBodies(dataset.prefectures.map((p) => p.assembly));
@@ -15,8 +16,22 @@ export default function PrefPage({ pref }: { pref: Prefecture }) {
   const next = dataset.prefectures[idx + 1];
   const kaiha = kaihaOf(pref.name);
   const chamber = chamberOf(pref.name);
-  const [view, setView] = useState<'kaiha' | 'party'>(kaiha ? 'kaiha' : 'party');
-  const segments = view === 'kaiha' && kaiha ? kaihaSegments(kaiha) : bodySegments(a);
+  const compare = useCompare();
+  const hist = useHistoryData(compare.on);
+  const snap = compare.on && hist ? pickSnapshot(hist, compare.year) : null;
+  const thenBody = snap?.prefectures[pref.name]?.assembly;
+  const [picked, setView] = useState<'kaiha' | 'party' | 'then'>(kaiha ? 'kaiha' : 'party');
+  // 比較をやめたら「当時」のタブは消えるので、元の表示に戻す
+  const view = picked === 'then' && !thenBody ? (kaiha ? 'kaiha' : 'party') : picked;
+  const segments =
+    view === 'then' && snap && thenBody ? historySegments(snap, thenBody) : view === 'kaiha' && kaiha ? kaihaSegments(kaiha) : bodySegments(a);
+  const fixed = view === 'then' && thenBody ? thenBody.fixed : a.fixed;
+  const tabs: { key: typeof picked; label: string }[] = [
+    ...(kaiha ? [{ key: 'kaiha' as const, label: '会派別' }, { key: 'party' as const, label: '所属党派別' }] : []),
+    ...(snap && thenBody
+      ? [...(kaiha ? [] : [{ key: 'party' as const, label: '所属党派別（現在）' }]), { key: 'then' as const, label: `${yearOf(snap)}年末（${snap.cabinet}）` }]
+      : []),
+  ];
 
   return (
     <>
@@ -27,27 +42,30 @@ export default function PrefPage({ pref }: { pref: Prefecture }) {
       <h2 className="pref-title">{pref.name}議会</h2>
 
       <section className="card">
-        {kaiha && (
+        {tabs.length > 1 && (
           <div className="chips tabs" role="tablist" aria-label="表示の切り替え">
-            <button role="tab" aria-selected={view === 'kaiha'} className={view === 'kaiha' ? 'chip on' : 'chip'} onClick={() => setView('kaiha')}>
-              会派別
-            </button>
-            <button role="tab" aria-selected={view === 'party'} className={view === 'party' ? 'chip on' : 'chip'} onClick={() => setView('party')}>
-              所属党派別
-            </button>
+            {tabs.map((t) => (
+              <button key={t.key} role="tab" aria-selected={view === t.key} className={view === t.key ? 'chip on' : 'chip'} onClick={() => setView(t.key)}>
+                {t.label}
+              </button>
+            ))}
           </div>
         )}
         <Chamber
           chamber={chamber.config}
           segments={segments}
-          fixed={a.fixed}
+          fixed={fixed}
           emptyLabel={view === 'kaiha' && kaiha ? '欠員・会派なし等' : '欠員'}
           detailed
-          label={`${pref.name}議会の${view === 'kaiha' ? '会派' : '所属党派'}別議席（定数${a.fixed}）`}
+          label={`${pref.name}議会の${view === 'then' && snap ? `${yearOf(snap)}年末の所属党派` : view === 'kaiha' ? '会派' : '所属党派'}別議席（定数${fixed}）`}
         />
         <PartyBar segments={segments} />
         <p className="muted small">
-          {view === 'kaiha' && kaiha ? (
+          {view === 'then' && snap && thenBody ? (
+            <>
+              出典：総務省（{formatDate(snap.asOf)}現在・{snap.cabinet}）。当時の定数 {thenBody.fixed}・欠員 {thenBody.vacant}。議場の形は現在のものです。
+            </>
+          ) : view === 'kaiha' && kaiha ? (
             <>
               出典：
               <a href={kaiha.url} target="_blank" rel="noopener noreferrer">
