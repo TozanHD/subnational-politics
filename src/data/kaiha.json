@@ -379,7 +379,7 @@
    "kaiha": [
     {
      "name": "自由民主党千葉県議会議員会",
-     "seats": 49
+     "seats": 48
     },
     {
      "name": "立憲民主党千葉県議会議員会",
@@ -438,7 +438,7 @@
      "seats": 1
     }
    ],
-   "fetchedAt": "2026-11-10"
+   "fetchedAt": "2026-11-16"
   },
   "東京都": {
    "url": "https://www.gikai.metro.tokyo.lg.jp/outline/factional.html",
@@ -653,7 +653,7 @@
    "fetchedAt": "2026-11-10"
   },
   "山梨県": {
-   "url": "https://www.pref.yamanashi.jp/documents/120080/kaihabetumeibo_20261028.pdf",
+   "url": "https://www.pref.yamanashi.jp/documents/120080/kaihabetumeibo_20261112.pdf",
    "kaiha": [
     {
      "name": "自由民主党政風やまなし",
@@ -661,7 +661,7 @@
     },
     {
      "name": "自由民主党新緑の会",
-     "seats": 7
+     "seats": 6
     },
     {
      "name": "未来やまなし",
@@ -688,7 +688,7 @@
      "seats": 1
     }
    ],
-   "fetchedAt": "2026-11-10"
+   "fetchedAt": "2026-11-16"
   },
   "長野県": {
    "url": "https://www.pref.nagano.lg.jp/gikai/gikai/giin/toha.html",
