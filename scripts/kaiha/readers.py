@@ -45,7 +45,8 @@ def clean_name(name: str) -> str:
     name = re.sub(r"[\(（]\s*\d+\s*(人|名)?\s*[\)）]", "", name)
     name = re.sub(r"【\s*\d+\s*(人|名)\s*】", "", name)
     name = re.sub(r"\s*\d+\s*(人|名)$", "", name)
-    name = re.sub(r"^[\d\.．、\s]+", "", name)
+    # 先頭の番号（「1. 」「2、」など）は外す。「21世紀クラブ」のように区切りの無い数字は会派名の一部なので残す
+    name = re.sub(r"^(?:\d+(?:[\.．、]\s*|\s+)|[\.．、\s]+)+", "", name)
     name = re.sub(r"^[○〇●◎■□◆◇・※\-\s]+", "", name)
     # 末尾の略称「(自民)」は外す（ただし無所属(○○) のように中身が本体の場合は残す）
     m = re.match(r"^(.{5,}?)\s*[\(（]([^()（）]{1,8})[\)）]$", name)
@@ -168,10 +169,31 @@ PAREN = re.compile(r"^(?P<name>[^|()（）【】]{2,50}?)\s*(?:[\(（]\s*(?P<n1>
 LONE_COUNT = re.compile(r"^(?:[\(（]\s*(\d{1,3})\s*(?:人|名)\s*[\)）]|【\s*(\d{1,3})\s*(?:人|名)\s*】)$")
 
 
+# 人数が書かれず、直後に議員名が並ぶ「無所属」の見出し（例: 千葉県「無所属議員 | 栗原直也（くりはらなおや）」）
+UNAFFILIATED = re.compile(r"^(無所属|無所属議員|無会派|会派に属さない議員)$")
+
+
+def _member_name(token: str) -> bool:
+    """議員名らしいか。「栗原直也（くりはらなおや）」のような読みがな付きか、「栗原 直也」のような姓名の間の空白が必要。"""
+    t = unicodedata.normalize("NFKC", token).replace("※", "").strip()
+    if is_person(t):
+        return True
+    m = re.fullmatch(r"(" + CJK + r"{2,8})\(([ぁ-ゖー ]{2,16})\)", t)
+    return bool(m) and not KAIHA_HINT.search(m.group(1))
+
+
 def paren_counts(doc: dict, start: str | None = None, end: str | None = None) -> dict[str, int]:
     out: dict[str, int] = {}
     prev = ""
-    for part in _parts(doc, start, end):
+    parts = _parts(doc, start, end)
+    unaffiliated: str | None = None  # 人数なしの無所属見出しの後ろで、議員名を数えている間の見出し
+    for i, part in enumerate(parts):
+        if unaffiliated:
+            if _member_name(part):
+                _add(out, unaffiliated, 1)
+                prev = part
+                continue
+            unaffiliated = None
         lone = LONE_COUNT.match(part)
         if lone and prev:
             _add(out, prev, int(lone.group(1) or lone.group(2)))
@@ -179,6 +201,8 @@ def paren_counts(doc: dict, start: str | None = None, end: str | None = None) ->
             m = PAREN.match(part)
             if m:
                 _add(out, m.group("name"), int(m.group("n1") or m.group("n2")))
+            elif UNAFFILIATED.match(part) and i + 1 < len(parts) and not LONE_COUNT.match(parts[i + 1]) and _member_name(parts[i + 1]):
+                unaffiliated = part
         prev = part
     return out
 
@@ -200,7 +224,8 @@ def _parts(doc: dict, start: str | None, end: str | None) -> list[str]:
 
 # --- text: 「自由民主党 29人」 -----------------------------------------------------
 
-LINE_RE = re.compile(r"^(?P<name>[^\d|]{2,50}?)\s*[:：]?\s*[\(（【]?\s*(?P<n>\d{1,3})\s*(人|名)\s*[\)）】]?(?:\s*[\(（][^)）]{1,20}[\)）])?$")
+# 会派名は数字を含まないのが基本だが、「21世紀クラブ」のように先頭が数字の会派名は認める
+LINE_RE = re.compile(r"^(?P<name>(?:\d{1,3}(?=[^\d\s人名:：/／]))?[^\d|]{2,50}?)\s*[:：]?\s*[\(（【]?\s*(?P<n>\d{1,3})\s*(人|名)\s*[\)）】]?(?:\s*[\(（][^)）]{1,20}[\)）])?$")
 
 
 def text_counts(doc: dict, start: str | None = None, end: str | None = None) -> dict[str, int]:

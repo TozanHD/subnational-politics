@@ -37,6 +37,16 @@ class ParseList(unittest.TestCase):
     def test_wrapped_name(self):
         self.assertEqual(self.rows["沖縄県"]["name"], "古謝玄太")
 
+    def test_last_row_stops_at_table_end(self):
+        # 表の最後の行（沖縄県）の前職欄に、表の後ろの見出しや本文が混ざらないこと
+        text = FX["list"].rstrip()
+        if not text.endswith("|}"):
+            text += "\n|}"
+        rows = g.parse_list(text + "\n\n== 脚注 ==\n=== 出典 ===\n== 外部リンク ==\n* [https://example.jp 知事ファイル]\n")
+        career = rows["沖縄県"]["career"]
+        self.assertTrue(career)
+        self.assertFalse([c for c in career if "==" in c or "外部リンク" in c or "知事ファイル" in c], career)
+
 
 class PartyHistory(unittest.TestCase):
     def test_factions(self):

@@ -173,11 +173,13 @@ def split_cells(row: str) -> list[str]:
     """表の 1 行を、行頭の「|」「!」で始まるセルに分ける（同じ行の「||」区切りにも対応）。"""
     cells: list[str] = []
     for line in row.split("\n"):
-        if line.startswith(("|", "!")) and not line.startswith(("|-", "|}", "{|", "|+")):
+        if line.startswith("|}"):
+            break  # 表の終わり。以降は本文（最後の行のセルに続けて読まない）
+        if line.startswith(("|", "!")) and not line.startswith(("|-", "{|", "|+")):
             body = line[1:]
             parts = re.split(r"\|\||!!", body)
             cells.extend(parts)
-        elif cells and not line.startswith("|}"):
+        elif cells:
             cells[-1] += "\n" + line
     out = []
     for c in cells:

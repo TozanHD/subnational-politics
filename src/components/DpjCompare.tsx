@@ -1,4 +1,4 @@
-import { dataset, formatDate, partyColor, pct, shortName, sumBodies, type Segment } from '../data';
+import { currentGovernor, dataset, formatDate, partyColor, pct, shortName, sumBodies, type Segment } from '../data';
 import {
   DPJ,
   DPJ_SUCCESSORS,
@@ -151,7 +151,7 @@ function Cell({ n, total }: { n: number; total: number }) {
 
 function GovernorThenNow({ snap, pref }: { snap: HistorySnapshot; pref: Prefecture }) {
   const then = snap.prefectures[pref.name].governor;
-  const now = pref.governor?.party;
+  const now = currentGovernor(pref)?.party;
   if (!then && !now) return null;
   return (
     <p className="small">
@@ -171,8 +171,9 @@ function NationalExtras({ snap }: { snap: HistorySnapshot }) {
     .filter(([, p]) => p.governor && p.governor !== '無所属')
     .map(([name, p]) => `${name}（${p.governor}）`);
   const govNow = dataset.prefectures
-    .filter((p) => p.governor && p.governor.party !== '無所属')
-    .map((p) => `${p.name}（${p.governor!.party}）`);
+    .map((p) => [p.name, currentGovernor(p)?.party] as const)
+    .filter(([, party]) => party && party !== '無所属')
+    .map(([name, party]) => `${name}（${party}）`);
   return (
     <ul className="small compare-extra">
       <li>

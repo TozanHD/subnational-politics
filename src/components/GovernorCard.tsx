@@ -1,11 +1,11 @@
-import { formatDate, governorOf, partyColor } from '../data';
+import { currentGovernor, dataset, formatDate, governorOf, partyColor } from '../data';
 import type { Prefecture } from '../types';
 
-/** 知事: 現在の所属党派（総務省）と、ウィキペディアから取得した経歴・当選時の推薦・支持。 */
+/** 知事: 所属党派と、ウィキペディアから取得した経歴・当選時の推薦・支持。 */
 export default function GovernorCard({ pref }: { pref: Prefecture }) {
   const g = governorOf(pref.name);
-  const official = pref.governor;
-  if (official === undefined && !g) return null;
+  const cur = currentGovernor(pref);
+  if (!cur && !g) return null;
 
   return (
     <section className="card governor">
@@ -19,12 +19,8 @@ export default function GovernorCard({ pref }: { pref: Prefecture }) {
           ) : (
             g.name
           )
-        ) : official ? (
-          '—'
-        ) : (
-          '欠員'
-        )}
-        {official?.female && <span className="tag">女性</span>}
+        ) : cur?.name ?? '欠員'}
+        {cur?.female && <span className="tag">女性</span>}
         {g?.since && (
           <span className="muted small-inline">
             {formatDate(g.since)}就任{g.term ? `・${g.term}期目` : ''}
@@ -33,13 +29,17 @@ export default function GovernorCard({ pref }: { pref: Prefecture }) {
       </p>
 
       <dl className="gov-facts">
-        {official && (
+        {cur?.party && (
           <div>
             <dt>所属党派</dt>
             <dd>
-              <i className="dot" style={{ background: partyColor(official.party) }} />
-              {official.party}
-              <span className="muted">（総務省・選挙管理委員会への届出）</span>
+              <i className="dot" style={{ background: partyColor(cur.party) }} />
+              {cur.party}
+              <span className="muted">
+                {cur.partySource === 'soumu'
+                  ? `（総務省・選挙管理委員会への届出、${formatDate(dataset.asOf)}現在）`
+                  : '（ウィキペディアの知事一覧）'}
+              </span>
             </dd>
           </div>
         )}
@@ -71,6 +71,13 @@ export default function GovernorCard({ pref }: { pref: Prefecture }) {
           </div>
         )}
       </dl>
+      {cur?.changedAfterSoumu && (
+        <p className="muted small">
+          ※ 総務省の集計（{formatDate(dataset.asOf)}現在）より後に就任した知事です。総務省の集計では
+          {pref.governor ? `前知事（所属党派：${pref.governor.party}）` : '欠員'}
+          となっているため、所属党派はウィキペディアの知事一覧の記載を表示しています。
+        </p>
+      )}
       {g && (
         <p className="muted small">
           経歴・推薦・支持の出典：ウィキペディア（

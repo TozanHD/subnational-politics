@@ -8,6 +8,38 @@ export const kaihaData = kaihaRaw as unknown as KaihaData;
 export const governorData = governorsRaw as unknown as GovernorData;
 export const governorOf = (pref: string): GovernorEntry | undefined => governorData.prefectures[pref];
 
+/** 画面に出す現職知事。総務省のデータとウィキペディアの日付のずれをここで吸収する。 */
+export interface CurrentGovernor {
+  name: string | null;
+  party: string | null;
+  /** 総務省のデータで女性か（総務省の基準日より後に就任した知事は不明なので null） */
+  female: boolean | null;
+  since: string | null;
+  /** 党派の出典 */
+  partySource: 'soumu' | 'wikipedia';
+  /** 総務省の基準日より後に知事が代わった */
+  changedAfterSoumu: boolean;
+}
+
+/**
+ * 現職知事を返す。
+ * - 名前・就任日はウィキペディア（毎週取得）。
+ * - 所属党派は、総務省の基準日（12月31日）の時点ですでに在職していれば総務省の届出を使い、
+ *   基準日より後に就任した知事は総務省のデータが前知事（または欠員）のものなので、ウィキペディアの値を使う。
+ */
+export function currentGovernor(pref: Prefecture): CurrentGovernor | null {
+  const w = governorOf(pref.name);
+  const official = pref.governor;
+  const changed = !!(w?.since && w.since > dataset.asOf);
+  if (w && (changed || !official)) {
+    return { name: w.name, party: w.party, female: null, since: w.since, partySource: 'wikipedia', changedAfterSoumu: changed };
+  }
+  if (official) {
+    return { name: w?.name ?? null, party: official.party, female: official.female, since: w?.since ?? null, partySource: 'soumu', changedAfterSoumu: false };
+  }
+  return null;
+}
+
 export const kaihaOf = (pref: string): KaihaEntry | undefined => kaihaData.prefectures[pref];
 
 /** 図やグラフに渡す 1 区分。 */

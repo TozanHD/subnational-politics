@@ -38,6 +38,15 @@ class Readers(unittest.TestCase):
     def test_paren_lone_count_kagoshima_subpage(self):
         self.assertEqual(r.paren_counts(DOCS["鹿児島県"]), {"自由民主党鹿児島県議会議員団": 34})
 
+    def test_paren_unaffiliated_without_count_chiba(self):
+        # 「無所属議員」の見出しに人数が無く、直後に議員名（読みがな付き）が 1 人ずつ並ぶ。目次の「無所属議員」は数えない
+        c = self.check("千葉県", "paren", 95, {"自由民主党千葉県議会議員会": 48, "無所属議員": 2})
+        self.assertEqual(sum(c.values()), 88)  # ページの「現員88名」
+
+    def test_text_name_starting_with_digits_miyagi(self):
+        c = self.check("宮城県", "text", 59, {"21世紀クラブ": 2, "自由民主党・県民会議": 30, "無所属": 1})
+        self.assertEqual(sum(c.values()), 56)
+
     def test_grouped_ishikawa(self):
         self.check("石川県", "grouped", 41, {"自由民主党石川県議会議員協議会": 29, "未来石川議員会": 6},
                    start="会派別名簿", end="お問い合わせ")
@@ -90,6 +99,8 @@ class Validation(unittest.TestCase):
 
 class CleanName(unittest.TestCase):
     def test_cases(self):
+        self.assertEqual(r.clean_name("21世紀クラブ"), "21世紀クラブ")
+        self.assertEqual(r.clean_name("1. 自由民主党"), "自由民主党")
         self.assertEqual(r.clean_name("大阪維新の会大阪府議会議員団(外部サイトへリンク)"), "大阪維新の会大阪府議会議員団")
         self.assertEqual(r.clean_name("〇 自由民主党島根県議会議員連盟"), "自由民主党島根県議会議員連盟")
         self.assertEqual(r.clean_name("​自由民主党"), "自由民主党")
