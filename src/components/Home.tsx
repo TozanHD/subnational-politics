@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { REGIONS, bodySegments, dataset, largestParty, pct, regionOf, shortName, partyColor, sumBodies } from '../data';
+import { REGIONS, bodySegments, currentGovernor, dataset, largestParty, pct, regionOf, shortName, partyColor, sumBodies } from '../data';
 import { chamberOf } from '../chamber';
 import Chamber from './Chamber';
 import PartyBar from './PartyBar';
@@ -52,9 +52,9 @@ export default function Home() {
           />
           <Stat
             label="無所属の知事"
-            value={`${dataset.prefectures.filter((p) => p.governor?.party === '無所属').length} / 47`}
-            note="総務省の届出上の所属"
-            hidden={!dataset.prefectures[0].governor}
+            value={`${dataset.prefectures.filter((p) => currentGovernor(p)?.party === '無所属').length} / 47`}
+            note="現職知事の所属（届出）"
+            hidden={!dataset.prefectures.some((p) => p.governor !== undefined)}
           />
         </div>
         <PartyBar segments={bodySegments(national)} />
@@ -164,7 +164,7 @@ export default function Home() {
                   {p.governor !== undefined && (
                     <div>
                       <dt>知事</dt>
-                      <dd>{p.governor ? shortName(p.governor.party) : '—'}</dd>
+                      <dd>{currentGovernor(p)?.party ? shortName(currentGovernor(p)!.party!) : '欠員'}</dd>
                     </div>
                   )}
                 </dl>

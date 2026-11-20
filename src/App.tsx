@@ -36,7 +36,9 @@ export default function App() {
         <a href="#/" className="brand">
           都道府県議会の党派構成
         </a>
-        <span className="asof">{formatDate(dataset.asOf)} 現在</span>
+        <span className="asof">
+          所属党派：{formatDate(dataset.asOf)}現在（総務省）／会派・知事：毎週更新
+        </span>
       </header>
 
       <main>

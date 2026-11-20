@@ -126,6 +126,10 @@
      "seats": 3
     },
     {
+     "name": "21世紀クラブ",
+     "seats": 2
+    },
+    {
      "name": "日本維新の会",
      "seats": 2
     },
@@ -134,7 +138,7 @@
      "seats": 1
     }
    ],
-   "fetchedAt": "2026-11-10"
+   "fetchedAt": "2026-11-20"
   },
   "秋田県": {
    "url": "https://pref.akita.gsl-service.net/doc/2018042300017/",
@@ -398,6 +402,10 @@
      "seats": 4
     },
     {
+     "name": "無所属議員",
+     "seats": 2
+    },
+    {
      "name": "平和の党",
      "seats": 1
     },
@@ -438,7 +446,7 @@
      "seats": 1
     }
    ],
-   "fetchedAt": "2026-11-16"
+   "fetchedAt": "2026-11-20"
   },
   "東京都": {
    "url": "https://www.gikai.metro.tokyo.lg.jp/outline/factional.html",
